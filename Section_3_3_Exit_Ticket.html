@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 3.3 Exit Ticket: Dividing Polynomials; Remainder and Factor Theorems</title>
+<style>
+/* Core CSS */
+:root{color-scheme:light;--bg:#fff;--ink:#1a1a1a;--soft:#374151;--accent:#1d4ed8;--on-accent:#fff;--warm:#fff8e9;--cool:#f1f5fb;--line:#64748b;--good:#166534;--warn:#854d0e;--bad:#b91c1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}
+*{box-sizing:border-box} html{scroll-padding-top:1rem} body{margin:0;background:var(--bg);color:var(--ink);font:1.125rem/1.6 system-ui,sans-serif;overflow-wrap:break-word}
+a{color:var(--accent)} .skip{position:absolute;left:-10000px;top:0} .skip:focus{left:1rem;top:1rem;z-index:10;padding:.75rem 1rem;background:var(--bg);color:var(--accent);border:2px solid var(--accent)}
+header{padding:1.5rem max(1rem,calc((100% - 76rem)/2));background:var(--cool);border-bottom:1px solid var(--line)}
+.tag{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.15;margin:.4rem 0 .6rem;max-width:34ch} h2{font-size:1.75rem;line-height:1.25;margin:.5rem 0 1rem} h3{font-size:1.3rem;line-height:1.3;margin:2rem 0 .75rem}
+button,input,select,textarea{font:inherit;min-height:44px;padding:.45rem .85rem;border:1px solid var(--line);border-radius:.45rem;background:var(--bg);color:var(--ink)} button{cursor:pointer}
+button.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:650}
+button.linkbtn{background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline;padding:.45rem .4rem;font-size:1rem}
+input[type=text],textarea{width:100%;min-width:0;min-height:48px;padding:.5rem;border:1px solid var(--line);border-radius:.35rem;background:var(--bg);color:var(--ink)}
+textarea{min-height:6rem;line-height:1.5;resize:vertical}
+input[type=radio],input[type=checkbox]{width:1.4rem;height:1.4rem;margin:0 .6rem 0 0;flex:none;accent-color:var(--accent)}
+:focus-visible,h2:focus,main:focus{outline:3px solid var(--accent);outline-offset:3px}
+fieldset{border:1px solid var(--line);border-radius:.5rem;padding:.75rem 1rem;margin:0} legend{font-weight:600;padding:0 .25rem} fieldset label{display:flex;align-items:center;min-height:44px;padding:.25rem 0;cursor:pointer}
+.layout{max-width:76rem;margin:auto;display:grid;grid-template-columns:minmax(0,1fr)} nav{padding:.75rem 1rem;border-bottom:1px solid var(--line)} nav ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem}
+nav button{display:block;width:100%;text-align:left;background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline} nav button[aria-current]{background:var(--accent);color:var(--on-accent);font-weight:650;text-decoration:none}
+main{min-width:0;padding:1rem;max-width:78ch}
+@media(min-width:62rem){html.js .layout{grid-template-columns:minmax(18rem,20rem) minmax(0,1fr)} nav{border-bottom:0;border-right:1px solid var(--line)} nav ol{display:block;position:sticky;top:1rem} main{padding:1.5rem 2rem}}
+.q,.tool{border:1px solid var(--line);border-radius:.6rem;padding:1rem;margin:1rem 0;background:var(--bg)} .q{background:var(--cool)} .tool{border-width:2px}
+.why{border-left:4px solid var(--accent);background:var(--cool);padding:.75rem 1rem;margin:1rem 0}
+.qlabel{font-weight:700;margin-right:.35rem} .inline{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center} .help{font-size:.95rem;margin:.25rem 0;color:var(--soft)}
+.feedback{margin:.5rem 0} .feedback:empty{margin:0} .feedback.good,.feedback.almost,.feedback.wrong,.feedback.info{border-left:5px solid var(--line);padding:.5rem .8rem;background:var(--bg)} .feedback.good{border-color:var(--good)} .feedback.almost{border-color:var(--warn)} .feedback.wrong{border-color:var(--bad)}
+details{margin:.3rem 0} summary{display:list-item;cursor:pointer;min-height:44px;padding:.55rem 0;font-weight:600;color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0} .section-end{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem} .pager{display:flex;justify-content:space-between;gap:.5rem;margin-top:.75rem}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0} [hidden]{display:none!important}
+.answer-row{margin:.5rem 0}
+.bridge{border:2px solid var(--accent);border-radius:.6rem;padding:1rem;margin:2rem 0 1rem;background:var(--bg)}
+.doors{display:grid;gap:1rem;margin:1rem 0} .door{border:1px solid var(--line);border-radius:.6rem;padding:1rem;background:var(--cool)}
+.door ul{padding-left:1.2rem} .door li{margin:.6rem 0} .door button{margin:.2rem .3rem .2rem 0}
+.outreach-box{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.98rem;background:var(--cool);border:1px solid var(--line);border-radius:.35rem;padding:.75rem;white-space:pre-wrap;margin:.5rem 0}
+.small-links{margin:.75rem 0 0}
+html:not(.js) .js-only{display:none!important}
+.ptr{font-size:1rem;margin:.4rem 0 0;color:var(--soft)}
+code{font-size:1em}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{nav,.actions,.section-end,.answer-row,#theme,.small-links,.skip{display:none!important} main>section,main>section[hidden]{display:block!important} details>*{display:block}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+<div class="tag">Math 150 · Section 3.3 Exit Ticket</div>
+<h1>Section 3.3 Exit Ticket: Dividing Polynomials; Remainder and Factor Theorems</h1>
+<p>A short, ungraded check after the Section 3.3 notes and videos. It shows what clicked, points you back to the right page or video for anything that did not, and makes it easy to reach Matt.</p>
+<div class="actions"><button type="button" id="theme" class="js-only" aria-pressed="false">Dark mode</button></div>
+<div class="js-only"><label for="overall">Sections marked complete: <span id="overall-text">0 of 5</span></label><br><progress id="overall" max="5" value="0"></progress></div>
+</header>
+<div class="layout">
+<nav class="js-only" aria-label="Exit ticket sections"><ol>
+<li><button type="button" data-target="s1">1. How this works<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s2">2. Zeros and Long Division<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s3">3. Synthetic Division<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s4">4. Remainder and Factor Theorems<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s5">5. Your results and help from Matt<span class="donemark sr"></span></button></li>
+</ol></nav>
+<main id="main" tabindex="-1">
+
+<section id="s1" aria-labelledby="s1h">
+<h2 id="s1h" tabindex="-1">1. How this works</h2>
+<div class="why">
+<strong>Why this is here.</strong> In a face-to-face class, your instructor, Matt Read, would see how the lesson went just by looking around the room. Online, this exit ticket does that job. It has 13 quick checks on the Section 3.3 notes and videos. It is ungraded, and nobody sees your answers unless you choose to send them.
+</div>
+<ul>
+<li>Do this <strong>after</strong> you finish the Section 3.3 notes and videos. It takes about 10 to 15 minutes.</li>
+<li>Each check tells you right away whether you have it. If not, it names the exact item, page, or video to go back to.</li>
+<li>Section 5 shows your results and makes it easy to reach Matt by email or set up a quick Zoom meeting.</li>
+<li>Your answers save on this device so you can come back later.</li>
+</ul>
+<div class="doors">
+<div class="door">
+<p><strong>Take it in order.</strong></p>
+<button type="button" class="primary" data-go="s2">Start with Section 2</button>
+</div>
+<div class="door js-only">
+<p><strong>Jump to one part.</strong></p>
+<ul>
+<li><button type="button" data-go="s2">Zeros and Long Division</button></li>
+<li><button type="button" data-go="s3">Synthetic Division</button></li>
+<li><button type="button" data-go="s4">Remainder and Factor Theorems</button></li>
+<li><button type="button" data-go="s5">Your results and help from Matt</button></li>
+</ul>
+</div>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s1" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><span></span><button type="button" class="primary" data-go="s2">Next section</button></div>
+</div>
+</section>
+
+<section id="s2" aria-labelledby="s2h">
+<h2 id="s2h" tabindex="-1">2. Zeros and Long Division</h2>
+<p>These checks match item 1 on pages 1 and 2 and Classroom Example 3.3.1 on page 5.</p>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Substitute 3 for x and see whether the result is 0. Review: item 1, Zero of a Polynomial Function, on page 1 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. Square 3 before multiplying by 2: 2 times 9 is 18. Review: item 1, Zero of a Polynomial Function, on page 1 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. A zero is a value that makes P(x) = 0. Substitute and check. Review: item 1, Zero of a Polynomial Function, on page 1 of the notes.&quot;}" data-review="item 1, Zero of a Polynomial Function, on page 1 of the notes." data-title="Zero of a Polynomial" data-why="Correct. 2 times 9 minus 18 = 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 1 (Zero of a Polynomial).</b> Is x = 3 a zero of <span class="m"><span aria-hidden="true">P(x) = 2x² − 18</span><span class="sr">P of x equals 2 x squared minus 18</span></span>?</legend>
+<label><input type="radio" name="mc1" value="a"> No, because 3 is not a factor of 18.</label>
+<label><input type="radio" name="mc1" value="b"> No, because P(3) = 6.</label>
+<label><input type="radio" name="mc1" value="c"> Yes, because P(3) = 0.</label>
+<label><input type="radio" name="mc1" value="d"> Yes, because 3 divides 18 evenly.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Yes, because P(3) = 0.</strong></p><p class="ptr">Where this is in your notes: item 1, Zero of a Polynomial Function, on page 1 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. x + 3 is the quotient, the result of dividing. Review: item 1, Long Division Terminology, on page 1 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. That is the dividend, what is being divided. Review: item 1, Long Division Terminology, on page 1 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. 1 is the remainder, what is left over. Review: item 1, Long Division Terminology, on page 1 of the notes.&quot;}" data-review="item 1, Long Division Terminology, on page 1 of the notes." data-title="Long Division Terminology" data-why="Correct. The divisor is what is doing the dividing.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 2 (Long Division Terminology).</b> In <span class="m"><span aria-hidden="true">(x² + 5x + 7) ÷ (x + 2)</span><span class="sr">the quantity x squared plus 5 x plus 7, divided by the quantity x plus 2</span></span>, the result is x + 3 with remainder 1. Which is the divisor?</legend>
+<label><input type="radio" name="mc2" value="a"> x + 2</label>
+<label><input type="radio" name="mc2" value="b"> x + 3</label>
+<label><input type="radio" name="mc2" value="c"> x² + 5x + 7</label>
+<label><input type="radio" name="mc2" value="d"> 1</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>x + 2</strong></p><p class="ptr">Where this is in your notes: item 1, Long Division Terminology, on page 1 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Divide the coefficient 6 by 2 as well. Review: item 1 and the long division example on pages 1 and 2 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. Dividing x cubed by x leaves x squared. Review: item 1 and the long division example on pages 1 and 2 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. x cubed divided by x is x squared, not x. Review: item 1 and the long division example on pages 1 and 2 of the notes.&quot;}" data-review="item 1 and the long division example on pages 1 and 2 of the notes." data-title="First Step of Long Division" data-why="Correct. Divide the leading terms: 6x cubed over 2x is 3x squared.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 3 (First Step of Long Division).</b> What is the first term of the quotient for <span class="m"><span aria-hidden="true">(6x³ + 5x² − 4) ÷ (2x − 1)</span><span class="sr">the quantity 6 x cubed plus 5 x squared minus 4, divided by the quantity 2 x minus 1</span></span>?</legend>
+<label><input type="radio" name="mc3" value="a"> 6x²</label>
+<label><input type="radio" name="mc3" value="b"> 3x³</label>
+<label><input type="radio" name="mc3" value="c"> 3x²</label>
+<label><input type="radio" name="mc3" value="d"> 3x</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>3x²</strong></p><p class="ptr">Where this is in your notes: item 1 and the long division example on pages 1 and 2 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. When you subtract negative 12x from negative 10x, you get positive 2x. Review: item 1 and the long division example on page 2, Classroom Example 3.3.1 on page 5 of the notes and the video \&quot;Classroom Example 3.3.1.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Negative 1 minus (negative 3) is positive 2. Review: item 1 and the long division example on page 2, Classroom Example 3.3.1 on page 5 of the notes and the video \&quot;Classroom Example 3.3.1.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Multiply 4x by the entire divisor, 2x minus 3, then subtract. Review: item 1 and the long division example on page 2, Classroom Example 3.3.1 on page 5 of the notes and the video \&quot;Classroom Example 3.3.1.\&quot;&quot;}" data-review="item 1 and the long division example on page 2, Classroom Example 3.3.1 on page 5 of the notes and the video &quot;Classroom Example 3.3.1.&quot;" data-title="Classroom Example 3.3.1" data-why="Correct. 4x(2x minus 3) = 8x squared minus 12x, leaving 2x minus 1. Then 1(2x minus 3) leaves 2.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 4 (Classroom Example 3.3.1).</b> Divide <span class="m"><span aria-hidden="true">(8x² − 10x − 1) ÷ (2x − 3)</span><span class="sr">the quantity 8 x squared minus 10 x minus 1, divided by the quantity 2 x minus 3</span></span>. What are the quotient and remainder?</legend>
+<label><input type="radio" name="mc4" value="a"> Quotient 4x − 11, remainder 32</label>
+<label><input type="radio" name="mc4" value="b"> Quotient 4x + 1, remainder 2</label>
+<label><input type="radio" name="mc4" value="c"> Quotient 4x + 1, remainder −4</label>
+<label><input type="radio" name="mc4" value="d"> Quotient 4x − 5, remainder 14</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Quotient 4x + 1, remainder 2</strong></p><p class="ptr">Where this is in your notes: item 1 and the long division example on page 2, Classroom Example 3.3.1 on page 5 of the notes and the video &quot;Classroom Example 3.3.1.&quot;</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. The missing x squared and x terms need zero placeholders. Review: the long division video \&quot;Long Division With Polynomials - The Easy Way!\&quot; on page 1 (missing terms at 6:56) and the video \&quot;Why and how to we apply synthetic division with a missing term\&quot; on page 3.&quot;, &quot;b&quot;: &quot;Not quite. The placeholders have a coefficient of 0, not 1. Review: the long division video \&quot;Long Division With Polynomials - The Easy Way!\&quot; on page 1 (missing terms at 6:56) and the video \&quot;Why and how to we apply synthetic division with a missing term\&quot; on page 3.&quot;, &quot;c&quot;: &quot;Not quite. The constant stays a constant. Add 0x squared and 0x. Review: the long division video \&quot;Long Division With Polynomials - The Easy Way!\&quot; on page 1 (missing terms at 6:56) and the video \&quot;Why and how to we apply synthetic division with a missing term\&quot; on page 3.&quot;}" data-review="the long division video &quot;Long Division With Polynomials - The Easy Way!&quot; on page 1 (missing terms at 6:56) and the video &quot;Why and how to we apply synthetic division with a missing term&quot; on page 3." data-title="Missing Terms" data-why="Correct. Zero placeholders keep each power in its own column.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 5 (Missing Terms).</b> Before dividing <span class="m"><span aria-hidden="true">x³ − 8</span><span class="sr">x cubed minus 8</span></span> by x − 2, how should the dividend be written?</legend>
+<label><input type="radio" name="mc5" value="a"> <span class="m"><span aria-hidden="true">x³ − 8</span><span class="sr">x cubed minus 8, with nothing added</span></span></label>
+<label><input type="radio" name="mc5" value="b"> <span class="m"><span aria-hidden="true">x³ + x² + x − 8</span><span class="sr">x cubed plus x squared plus x minus 8</span></span></label>
+<label><input type="radio" name="mc5" value="c"> <span class="m"><span aria-hidden="true">x³ − 8x</span><span class="sr">x cubed minus 8 x</span></span></label>
+<label><input type="radio" name="mc5" value="d"> <span class="m"><span aria-hidden="true">x³ + 0x² + 0x − 8</span><span class="sr">x cubed plus 0 x squared plus 0 x minus 8</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x³ + 0x² + 0x − 8</span><span class="sr">x cubed plus 0 x squared plus 0 x minus 8</span></span></strong></p><p class="ptr">Where this is in your notes: the long division video &quot;Long Division With Polynomials - The Easy Way!&quot; on page 1 (missing terms at 6:56) and the video &quot;Why and how to we apply synthetic division with a missing term&quot; on page 3.</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s2">
+<h3 id="br-s2" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Zero of a Polynomial Function and Long Division Terminology: item 1, page 1</li>
+<li>The long division example: page 2, and the two long division videos on pages 1 and 2</li>
+<li>Classroom Example 3.3.1, page 5, and its video</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s2" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s1">Previous section</button><button type="button" class="primary" data-go="s3">Next section</button></div>
+</div>
+</section>
+
+<section id="s3" aria-labelledby="s3h">
+<h2 id="s3h" tabindex="-1">3. Synthetic Division</h2>
+<p>These checks match item 2 on pages 2 and 3 and Classroom Examples 3.3.2 and 3.3.3 on page 5.</p>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. Synthetic division uses c from x minus c. Write x + 4 as x minus (negative 4). Review: item 2 (Using Synthetic Division) and its example on pages 2 and 3 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. Use the c in x minus c. Review: item 2 (Using Synthetic Division) and its example on pages 2 and 3 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. Synthetic division uses only numbers. Review: item 2 (Using Synthetic Division) and its example on pages 2 and 3 of the notes.&quot;}" data-review="item 2 (Using Synthetic Division) and its example on pages 2 and 3 of the notes." data-title="Setting Up Synthetic Division" data-why="Correct. x + 4 is x minus (negative 4), so c = negative 4.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 6 (Setting Up Synthetic Division).</b> You are dividing by x + 4 with synthetic division. What number goes in the box?</legend>
+<label><input type="radio" name="mc6" value="a"> 4</label>
+<label><input type="radio" name="mc6" value="b"> −4</label>
+<label><input type="radio" name="mc6" value="c"> 1</label>
+<label><input type="radio" name="mc6" value="d"> x</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>−4</strong></p><p class="ptr">Where this is in your notes: item 2 (Using Synthetic Division) and its example on pages 2 and 3 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. x minus 5 has the form x minus c, with c = 5. Review: the Warning in item 2 on page 2 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. x + 1 has the form x minus c, with c = negative 1. Review: the Warning in item 2 on page 2 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. x + 9 has the form x minus c, with c = negative 9. Review: the Warning in item 2 on page 2 of the notes.&quot;}" data-review="the Warning in item 2 on page 2 of the notes." data-title="When Synthetic Division Works" data-why="Correct. Synthetic division only works for a divisor of the form x minus c.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 7 (When Synthetic Division Works).</b> Which division can NOT be done with synthetic division, according to the Warning?</legend>
+<label><input type="radio" name="mc7" value="a"> Dividing by x − 5</label>
+<label><input type="radio" name="mc7" value="b"> Dividing by x + 1</label>
+<label><input type="radio" name="mc7" value="c"> Dividing by x² + 3</label>
+<label><input type="radio" name="mc7" value="d"> Dividing by x + 9</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Dividing by x² + 3</strong></p><p class="ptr">Where this is in your notes: the Warning in item 2 on page 2 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="num" data-answer="17" data-miss="{&quot;1&quot;: &quot;Not quite. The x cubed term is missing. Put a 0 in its place in the coefficient list. Review: item 2 and its example on pages 2 and 3, Classroom Example 3.3.2 on page 5 of the notes and the video \&quot;Classroom Example 3.3.2.\&quot;&quot;, &quot;13&quot;: &quot;Not quite. Use 2 for x minus 2, not negative 2. Review: item 2 and its example on pages 2 and 3, Classroom Example 3.3.2 on page 5 of the notes and the video \&quot;Classroom Example 3.3.2.\&quot;&quot;}" data-review="item 2 and its example on pages 2 and 3, Classroom Example 3.3.2 on page 5 of the notes and the video &quot;Classroom Example 3.3.2.&quot;" data-title="Classroom Example 3.3.2">
+<p class="prompt"><b class="qlabel">Check 8 (Classroom Example 3.3.2).</b> Use synthetic division to divide <span class="m"><span aria-hidden="true">(2x⁴ − 3x² + x − 5)</span><span class="sr">the quantity 2 x to the fourth minus 3 x squared plus x minus 5</span></span> by x − 2. What is the remainder?</p>
+<details><summary>Hint</summary><p>List the coefficients 2, 0, negative 3, 1, negative 5. Then multiply and add, as in Classroom Example 3.3.2.</p></details>
+<details><summary>Show answer</summary><p><strong>17</strong></p><p class="ptr">Where this is in your notes: item 2 and its example on pages 2 and 3, Classroom Example 3.3.2 on page 5 of the notes and the video &quot;Classroom Example 3.3.2.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Every power from 4 down to 0 needs a coefficient. Use 0 for missing terms. Review: item 2 on pages 2 and 3, Classroom Example 3.3.3 on page 5 of the notes and the video \&quot;Classroom Example 3.3.3.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Two terms are missing, x cubed and x squared. Review: item 2 on pages 2 and 3, Classroom Example 3.3.3 on page 5 of the notes and the video \&quot;Classroom Example 3.3.3.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Use the coefficients, not the exponents. Review: item 2 on pages 2 and 3, Classroom Example 3.3.3 on page 5 of the notes and the video \&quot;Classroom Example 3.3.3.\&quot;&quot;}" data-review="item 2 on pages 2 and 3, Classroom Example 3.3.3 on page 5 of the notes and the video &quot;Classroom Example 3.3.3.&quot;" data-title="Classroom Example 3.3.3" data-why="Correct. The x cubed and x squared terms are missing, so each gets a 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 9 (Classroom Example 3.3.3).</b> What coefficient row do you use to divide <span class="m"><span aria-hidden="true">x⁴ + 3x − 2</span><span class="sr">x to the fourth plus 3 x minus 2</span></span> by x − 1?</legend>
+<label><input type="radio" name="mc9" value="a"> 1, 3, −2</label>
+<label><input type="radio" name="mc9" value="b"> 1, 0, 3, −2</label>
+<label><input type="radio" name="mc9" value="c"> 1, 0, 0, 3, −2</label>
+<label><input type="radio" name="mc9" value="d"> 4, 3, −2</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>1, 0, 0, 3, −2</strong></p><p class="ptr">Where this is in your notes: item 2 on pages 2 and 3, Classroom Example 3.3.3 on page 5 of the notes and the video &quot;Classroom Example 3.3.3.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. The quotient is one degree lower than the dividend. Review: step 5 of the synthetic division example on page 3 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. The last sum, 3, is the remainder. Write it over the divisor. Review: step 5 of the synthetic division example on page 3 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. The first three sums are the quotient coefficients, and only the last is the remainder. Review: step 5 of the synthetic division example on page 3 of the notes.&quot;}" data-review="step 5 of the synthetic division example on page 3 of the notes." data-title="Reading the Answer" data-why="Correct. A cubic divided by a linear expression gives a quadratic. The last sum is the remainder.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 10 (Reading the Answer).</b> You divide a cubic by x − c with synthetic division, and the bottom row is 2, −1, 4, 3. What is the answer?</legend>
+<label><input type="radio" name="mc10" value="a"> <span class="m"><span aria-hidden="true">2x³ − x² + 4x + 3</span><span class="sr">2 x cubed minus x squared plus 4 x plus 3</span></span></label>
+<label><input type="radio" name="mc10" value="b"> <span class="m"><span aria-hidden="true">2x² − x + 4 + 3/(x − c)</span><span class="sr">2 x squared minus x plus 4, plus 3 over the quantity x minus c</span></span></label>
+<label><input type="radio" name="mc10" value="c"> <span class="m"><span aria-hidden="true">2x² − x + 4</span><span class="sr">2 x squared minus x plus 4, with no remainder</span></span></label>
+<label><input type="radio" name="mc10" value="d"> <span class="m"><span aria-hidden="true">2x − 1 + 4/(x − c)</span><span class="sr">2 x minus 1 plus 4 over the quantity x minus c</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">2x² − x + 4 + 3/(x − c)</span><span class="sr">2 x squared minus x plus 4, plus 3 over the quantity x minus c</span></span></strong></p><p class="ptr">Where this is in your notes: step 5 of the synthetic division example on page 3 of the notes.</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s3">
+<h3 id="br-s3" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Synthetic division and its Warning: item 2, pages 2 and 3, and the two synthetic division videos</li>
+<li>Classroom Examples 3.3.2 and 3.3.3, page 5, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s3" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s2">Previous section</button><button type="button" class="primary" data-go="s4">Next section</button></div>
+</div>
+</section>
+
+<section id="s4" aria-labelledby="s4h">
+<h2 id="s4h" tabindex="-1">4. Remainder and Factor Theorems</h2>
+<p>These checks match items 3 and 4 on page 4 and Classroom Example 3.3.4 on page 5.</p>
+<div class="q" data-topic="s4" data-mode="num" data-answer="11" data-miss="{&quot;-9&quot;: &quot;Not quite. Negative 5 times negative 2 is positive 10. Review: item 3 (The Remainder Theorem) on page 4, Classroom Example 3.3.4 on page 5 of the notes and the video \&quot;Classroom Example 3.3.4.\&quot;&quot;, &quot;43&quot;: &quot;Not quite. (Negative 2) cubed is negative 8, so 2 times it is negative 16. Review: item 3 (The Remainder Theorem) on page 4, Classroom Example 3.3.4 on page 5 of the notes and the video \&quot;Classroom Example 3.3.4.\&quot;&quot;, &quot;9&quot;: &quot;Not quite. Check the constant term: the function adds 1 at the end. Review: item 3 (The Remainder Theorem) on page 4, Classroom Example 3.3.4 on page 5 of the notes and the video \&quot;Classroom Example 3.3.4.\&quot;&quot;}" data-review="item 3 (The Remainder Theorem) on page 4, Classroom Example 3.3.4 on page 5 of the notes and the video &quot;Classroom Example 3.3.4.&quot;" data-title="Classroom Example 3.3.4">
+<p class="prompt"><b class="qlabel">Check 11 (Classroom Example 3.3.4).</b> Use the Remainder Theorem to find f(−2) for <span class="m"><span aria-hidden="true">f(x) = 2x³ + 4x² − 5x + 1</span><span class="sr">f of x equals 2 x cubed plus 4 x squared minus 5 x plus 1</span></span>.</p>
+<details><summary>Hint</summary><p>Use synthetic division with negative 2, or substitute negative 2 directly. Both give the remainder.</p></details>
+<details><summary>Show answer</summary><p><strong>11</strong></p><p class="ptr">Where this is in your notes: item 3 (The Remainder Theorem) on page 4, Classroom Example 3.3.4 on page 5 of the notes and the video &quot;Classroom Example 3.3.4.&quot;</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. For x minus 3, test c = 3, not negative 3. Review: item 4 (The Factor Theorem) and its example on page 4 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. The Factor Theorem uses P(c). Substitute 3 and check for 0. Review: item 4 (The Factor Theorem) and its example on page 4 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. The Factor Theorem answers this without dividing. Find P(3). Review: item 4 (The Factor Theorem) and its example on page 4 of the notes.&quot;}" data-review="item 4 (The Factor Theorem) and its example on page 4 of the notes." data-title="The Factor Theorem" data-why="Correct. 27 minus 36 + 3 + 6 = 0, so x minus 3 is a factor.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 12 (The Factor Theorem).</b> Is x − 3 a factor of <span class="m"><span aria-hidden="true">P(x) = x³ − 4x² + x + 6</span><span class="sr">P of x equals x cubed minus 4 x squared plus x plus 6</span></span>?</legend>
+<label><input type="radio" name="mc12" value="a"> No, because P(−3) is not 0.</label>
+<label><input type="radio" name="mc12" value="b"> No, because 3 does not divide the leading coefficient.</label>
+<label><input type="radio" name="mc12" value="c"> It cannot be decided without long division.</label>
+<label><input type="radio" name="mc12" value="d"> Yes, because P(3) = 0.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Yes, because P(3) = 0.</strong></p><p class="ptr">Where this is in your notes: item 4 (The Factor Theorem) and its example on page 4 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. Use the opposite of the constant in the divisor. Review: item 3 (The Remainder Theorem) and its Note on page 4 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. Substitute the c from x minus c. Review: item 3 (The Remainder Theorem) and its Note on page 4 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. The remainder is the value of P at c. Review: item 3 (The Remainder Theorem) and its Note on page 4 of the notes.&quot;}" data-review="item 3 (The Remainder Theorem) and its Note on page 4 of the notes." data-title="The Remainder Theorem" data-why="Correct. x + 5 is x minus (negative 5), so the remainder is P(negative 5).">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 13 (The Remainder Theorem).</b> What is the remainder when P(x) is divided by x + 5?</legend>
+<label><input type="radio" name="mc13" value="a"> P(5)</label>
+<label><input type="radio" name="mc13" value="b"> P(−5)</label>
+<label><input type="radio" name="mc13" value="c"> P(0)</label>
+<label><input type="radio" name="mc13" value="d"> P(x) + 5</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>P(−5)</strong></p><p class="ptr">Where this is in your notes: item 3 (The Remainder Theorem) and its Note on page 4 of the notes.</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s4">
+<h3 id="br-s4" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>The Remainder Theorem: item 3, page 4</li>
+<li>The Factor Theorem: item 4, page 4</li>
+<li>Classroom Example 3.3.4, page 5, and its video</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s4" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s3">Previous section</button><button type="button" class="primary" data-go="s5">Next: Your results</button></div>
+</div>
+</section>
+
+<section id="s5" aria-labelledby="s5h">
+<h2 id="s5h" tabindex="-1">5. Your results and help from Matt</h2>
+<p id="res-line" role="status" aria-live="polite">Answer the checks in Sections 2 to 4 and your results will show here.</p>
+<div id="goback-wrap" hidden>
+<h3>Go back to</h3>
+<ul id="goback-list"></ul>
+</div>
+<p id="unanswered" hidden></p>
+
+<div class="tool" role="region" aria-labelledby="help-h">
+<h3 id="help-h" style="margin-top:0">Would you like help from Matt?</h3>
+<p>Start with the "Go back to" list. If something is still unclear after that, Matt would rather hear from you now than after a quiz.</p>
+<fieldset>
+<legend class="sr">Would you like help from Matt?</legend>
+<label><input type="radio" name="helpwant" value="none"> No thanks. I am just sharing my results.</label>
+<label><input type="radio" name="helpwant" value="question"> I went back to the notes and still have a specific question.</label>
+<label><input type="radio" name="helpwant" value="zoom"> I would like a quick 10 to 15 minute Zoom meeting.</label>
+</fieldset>
+<div style="margin:1rem 0">
+<label for="stu-name"><strong>Your name</strong></label>
+<input type="text" id="stu-name" autocomplete="name">
+</div>
+<div style="margin-bottom:1rem">
+<label for="stu-question"><strong>Your question, or a few times that work for Zoom</strong></label>
+<p class="help" id="q-ex">Example: "On Check 8, I got 1. Where did I go wrong?"</p>
+<textarea id="stu-question" aria-describedby="q-ex"></textarea>
+</div>
+<div class="actions">
+<button type="button" id="mailto-btn" class="primary">Email Matt</button>
+<button type="button" id="copy-btn">Copy message</button>
+</div>
+<p id="copy-status" class="feedback" role="status" aria-live="polite"></p>
+<p class="help">If the email button does nothing, copy the message and paste it into an email to <a href="mailto:mread@kish.edu">mread@kish.edu</a> or a D2L message to Matt.</p>
+<details><summary>See the message</summary><pre id="outreach-text" class="outreach-box" tabindex="0" aria-label="Your message to Matt"></pre></details>
+<p class="small-links"><button type="button" id="print-btn" class="linkbtn">Print or save as PDF</button> <button type="button" id="reset-btn" class="linkbtn">Start over</button></p>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s5" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s4">Previous section</button><span></span></div>
+</div>
+</section>
+
+</main>
+</div>
+<script>
+'use strict';
+(function(){
+const root=document.documentElement; root.classList.add('js');
+const $=(s,c=document)=>c.querySelector(s); const $$=(s,c=document)=>Array.from(c.querySelectorAll(s));
+const KEY='coreq-math150-exitticket-3-3-v1';
+const SECTION='3.3';
+const blank=()=>({done:[],theme:null,ans:{},ok:{},dz:[],help:'',stuName:'',stuQuestion:''});
+let store=blank();
+try{
+  const x=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(x&&typeof x==='object'){
+    const b=blank();
+    for(const k of Object.keys(b)){ if(x[k]!==undefined&&x[k]!==null&&typeof x[k]===typeof b[k]&&Array.isArray(x[k])===Array.isArray(b[k]))store[k]=x[k]; }
+    if(typeof x.theme==='string')store.theme=x.theme;
+  }
+}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+let ready=false; /* results wait until everything below is set up */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ---------- answer checking ---------- */
+const norm=s=>String(s).toLowerCase().replace(/[−–—]/g,'-').replace(/[,%$\s]/g,'');
+function toNum(s){ s=norm(s); return /^-?(\d+\.?\d*|\.\d+)$/.test(s)?Number(s):null; }
+function show(q,state,msg,record){
+  const fb=q._fb; fb.className='feedback '+state; fb.textContent=msg;
+  if(record){ store.ok[q._qid]=state==='good'?1:0; save(); updateResults(); }
+}
+function clearFb(q){
+  q._fb.textContent=''; q._fb.className='feedback';
+  if(store.ans[q._qid]!==undefined){ delete store.ans[q._qid]; delete store.ok[q._qid]; save(); updateResults(); }
+}
+function judgeNum(q,raw,record){
+  const stu=toNum(raw);
+  if(stu===null)return show(q,'info','Enter a number using digits, like 12 or -5.',false);
+  if(q.dataset.answer.split('|').some(a=>Number(a)===stu))return show(q,'good','Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  const hit=Object.keys(mm).find(k=>Number(k)===stu);
+  show(q,'wrong',hit?mm[hit]:'Not quite. Review: '+q.dataset.review,record);
+}
+function judgeMC(q,record){
+  const c=$('input[type=radio]:checked',q);
+  if(!c)return show(q,'info','Select an answer first.',false);
+  if(c.value===q.dataset.answer)return show(q,'good',q.dataset.why||'Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  show(q,'wrong',mm[c.value]||('Not quite. Review: '+q.dataset.review),record);
+}
+const QS=$$('.q');
+QS.forEach((q,k)=>{
+  const qid='q'+(k+1); q._qid=qid; q._num=k+1;
+  const fb=document.createElement('p'); fb.className='feedback'; fb.setAttribute('role','status'); fb.setAttribute('aria-live','polite'); q._fb=fb;
+  const row=document.createElement('div'); row.className='answer-row';
+  let input=null;
+  if(q.dataset.mode==='mc'){
+    row.innerHTML='<button type="button" class="primary">Check</button>';
+    $('fieldset',q).after(row);
+    $$('input[type=radio]',q).forEach(r=>{
+      if(store.ans[qid]===r.value)r.checked=true;
+      r.addEventListener('change',()=>clearFb(q));
+    });
+  } else {
+    const id='ans'+(k+1);
+    row.innerHTML='<div class="inline"><label for="'+id+'">Your answer</label><input type="text" id="'+id+'" autocomplete="off" spellcheck="false" style="max-width:12rem"><button type="button" class="primary">Check</button></div>';
+    $('.prompt',q).after(row);
+    input=$('input',row);
+    if(store.ans[qid]!==undefined)input.value=store.ans[qid];
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();run();}});
+    input.addEventListener('input',()=>clearFb(q));
+  }
+  row.after(fb);
+  function run(){
+    if(q.dataset.mode==='mc'){
+      const c=$('input[type=radio]:checked',q);
+      if(c){store.ans[qid]=c.value; save();}
+      return judgeMC(q,!!c);
+    }
+    const v=input.value.trim();
+    if(!v)return show(q,'info','Type an answer first.',false);
+    if(toNum(v)===null)return judgeNum(q,v,false);
+    store.ans[qid]=v; save(); judgeNum(q,v,true);
+  }
+  $('button',row).addEventListener('click',run);
+  if(store.ans[qid]!==undefined){ q.dataset.mode==='mc'?judgeMC(q,false):judgeNum(q,store.ans[qid],false); }
+});
+
+/* ---------- Desmos issues ---------- */
+const dzBox=$('#dz-diag-box')||document.createElement('div'); const dzChecks=$$('.dz-issue');
+function updateDz(){
+  const checked=dzChecks.filter(cb=>cb.checked);
+  store.dz=checked.map(cb=>cb.value); save();
+  if(!checked.length){dzBox.hidden=true; dzBox.innerHTML=''; return;}
+  dzBox.hidden=false;
+  dzBox.innerHTML='<strong>Quick fixes:</strong><ul style="margin:.5rem 0">'+checked.map(cb=>'<li>'+esc(cb.dataset.tip)+'</li>').join('')+'</ul><p style="margin:.4rem 0 0">Still stuck? These are now in your message for Matt in Section 6. A screenshot helps him spot the problem fast.</p>';
+}
+dzChecks.forEach(cb=>{ cb.checked=store.dz.includes(cb.value); cb.addEventListener('change',()=>{updateDz(); updateResults();}); });
+updateDz();
+
+/* ---------- results and message ---------- */
+const resLine=$('#res-line'), resInit=resLine.textContent, gbWrap=$('#goback-wrap'), gbList=$('#goback-list'), unans=$('#unanswered');
+const stuName=$('#stu-name'), stuQuestion=$('#stu-question'), outText=$('#outreach-text'), copyStatus=$('#copy-status');
+const helpRadios=$$('input[name=helpwant]');
+stuName.value=store.stuName; stuQuestion.value=store.stuQuestion;
+helpRadios.forEach(r=>{ r.checked=store.help===r.value; r.addEventListener('change',()=>{store.help=r.value; save(); updateResults();}); });
+stuName.addEventListener('input',()=>{store.stuName=stuName.value; save(); updateResults();});
+stuQuestion.addEventListener('input',()=>{store.stuQuestion=stuQuestion.value; save(); updateResults();});
+
+function buildMessage(stats){
+  const m=['Hi Matt,','','Section '+SECTION+' exit ticket: I answered '+stats.att+' of '+stats.total+' checks, and '+stats.corr+' were correct.'];
+  if(stats.missed.length){m.push('','Checks I missed:'); stats.missed.forEach(q=>m.push('- Check '+q._num+' ('+q.dataset.title+')'));}
+  if(stats.unanswered.length){m.push('','Not answered yet: Checks '+stats.unanswered.map(q=>q._num).join(', '));}
+  if(store.dz.length){m.push('','Desmos issues I ran into:'); store.dz.forEach(s=>m.push('- '+s));}
+  const qt=stuQuestion.value.trim();
+  if(store.help==='question'){m.push('','I went back to the notes and still have a question:',qt||'[Type your question above]');}
+  else if(store.help==='zoom'){m.push('','I would like a quick 10 to 15 minute Zoom meeting.'); if(qt)m.push('Times that work for me: '+qt);}
+  else { m.push('','No help needed right now. I am just sharing my results.'); if(qt)m.push('',qt); }
+  m.push('','Thank you,',stuName.value.trim()||'[Your name]');
+  return m.join('\n');
+}
+function stats(){
+  const att=QS.filter(q=>store.ans[q._qid]!==undefined&&store.ok[q._qid]!==undefined);
+  const corr=att.filter(q=>store.ok[q._qid]===1).length;
+  return {total:QS.length,att:att.length,corr:corr,missed:att.filter(q=>store.ok[q._qid]!==1),unanswered:QS.filter(q=>!att.includes(q))};
+}
+function updateResults(){
+  if(!ready)return;
+  const s=stats();
+  if(s.att===0){ resLine.textContent=resInit; }
+  else {
+    let t='You answered '+s.att+' of '+s.total+' checks. '+s.corr+' were correct.';
+    if(s.missed.length)t+=' Missing a few on a first try is normal. A second look at the places below usually clears it up.';
+    else if(s.att===s.total)t+=' You are ready for the Section '+SECTION+' homework.';
+    resLine.textContent=t;
+  }
+  gbList.innerHTML='';
+  s.missed.forEach(q=>{const li=document.createElement('li'); li.textContent='Check '+q._num+' ('+q.dataset.title+'): '+q.dataset.review; gbList.appendChild(li);});
+  gbWrap.hidden=!s.missed.length;
+  if(s.att>0&&s.unanswered.length){unans.hidden=false; unans.textContent='Not answered yet: Checks '+s.unanswered.map(q=>q._num).join(', ')+'.';}
+  else {unans.hidden=true; unans.textContent='';}
+  outText.textContent=buildMessage(s);
+}
+function status(cls,text){copyStatus.className='feedback '+cls; copyStatus.textContent=text;}
+function needsQuestion(){
+  if(store.help==='question'&&!stuQuestion.value.trim()){
+    status('almost','Please type your question in the box above first, so Matt knows what to look at.');
+    stuQuestion.focus(); return true;
+  }
+  return false;
+}
+$('#copy-btn').addEventListener('click',async()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const text=outText.textContent; let ok=false;
+  try{ if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text); ok=true;} }catch(e){}
+  if(!ok){
+    try{ const ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.left='-9999px'; document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy'); ta.remove(); }catch(e){}
+  }
+  if(ok)status('good','Copied. Paste it into an email to mread@kish.edu or a D2L message to Matt.');
+  else{ const d=outText.closest('details'); if(d)d.open=true; outText.focus(); status('almost','Your browser blocked copying. Open "See the message," select the text, and copy it with Ctrl+C (Cmd+C on a Mac).'); }
+});
+$('#mailto-btn').addEventListener('click',()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const href='mailto:mread@kish.edu?subject='+encodeURIComponent('Math 150 Section '+SECTION+' exit ticket')+'&body='+encodeURIComponent(outText.textContent);
+  status('info','Opening your email app. If nothing opens, use Copy message instead.');
+  window.location.href=href;
+});
+$('#print-btn').addEventListener('click',()=>window.print());
+let resetPending=false; const resetBtn=$('#reset-btn');
+resetBtn.addEventListener('click',()=>{
+  if(!resetPending){resetPending=true; resetBtn.textContent='Click again to clear everything'; status('almost','This clears every answer on this page. Click again to start over.'); return;}
+  resetPending=false; resetBtn.textContent='Start over';
+  const theme=store.theme; store=blank(); store.theme=theme; save();
+  QS.forEach(q=>{ $$('input',q).forEach(i=>{if(i.type==='radio')i.checked=false; else i.value='';}); q._fb.textContent=''; q._fb.className='feedback'; });
+  dzChecks.forEach(cb=>{cb.checked=false;}); helpRadios.forEach(r=>{r.checked=false;});
+  stuName.value=''; stuQuestion.value='';
+  updateDz(); updateProgress(); updateResults();
+  status('info','Cleared. You can start again from Section 2.');
+});
+
+/* ---------- navigation and progress ---------- */
+const secs=$$('main > section'), navBtns=$$('nav button[data-target]');
+const overall=$('#overall'), overallText=$('#overall-text');
+function updateProgress(){
+  const n=store.done.filter(id=>secs.some(s=>s.id===id)).length;
+  overall.max=secs.length; overall.value=n; overallText.textContent=n+' of '+secs.length;
+  $$('.mark').forEach(b=>{const d=store.done.includes(b.dataset.sec); b.textContent=d?'✓ Marked complete. Click to undo.':'Mark this section complete'; b.setAttribute('aria-pressed',d?'true':'false');});
+  navBtns.forEach(b=>{const m=$('.donemark',b); if(m)m.textContent=store.done.includes(b.dataset.target)?' (complete)':'';});
+}
+function go(id,focus){
+  secs.forEach(s=>{s.hidden=s.id!==id;});
+  navBtns.forEach(b=>{ if(b.dataset.target===id)b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current'); });
+  if(id==='s6')updateResults();
+  if(focus){ const h=$('#'+id+' h2'); if(h)h.focus(); window.scrollTo(0,0); }
+}
+navBtns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target,true)));
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go,true)));
+$$('.mark').forEach(b=>b.addEventListener('click',()=>{const i=store.done.indexOf(b.dataset.sec); if(i>=0)store.done.splice(i,1); else store.done.push(b.dataset.sec); save(); updateProgress();}));
+
+/* ---------- theme ---------- */
+const themeBtn=$('#theme');
+function applyTheme(){
+  const dark=store.theme?store.theme==='dark':(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  root.dataset.theme=dark?'dark':'light';
+  themeBtn.setAttribute('aria-pressed',dark?'true':'false');
+}
+themeBtn.addEventListener('click',()=>{store.theme=root.dataset.theme==='dark'?'light':'dark'; save(); applyTheme();});
+
+ready=true;
+go(secs[0].id,false); updateProgress(); updateResults(); applyTheme();
+window.addEventListener('beforeprint',()=>{secs.forEach(s=>{s.hidden=false;});});
+window.addEventListener('afterprint',()=>{const cur=navBtns.find(b=>b.hasAttribute('aria-current')); go(cur?cur.dataset.target:'s1',false);});
+})();
+
+</script>
+</body>
+</html>

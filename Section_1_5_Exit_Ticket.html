@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.5 Exit Ticket: Quadratic Equations</title>
+<style>
+/* Core CSS */
+:root{color-scheme:light;--bg:#fff;--ink:#1a1a1a;--soft:#374151;--accent:#1d4ed8;--on-accent:#fff;--warm:#fff8e9;--cool:#f1f5fb;--line:#64748b;--good:#166534;--warn:#854d0e;--bad:#b91c1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}
+*{box-sizing:border-box} html{scroll-padding-top:1rem} body{margin:0;background:var(--bg);color:var(--ink);font:1.125rem/1.6 system-ui,sans-serif;overflow-wrap:break-word}
+a{color:var(--accent)} .skip{position:absolute;left:-10000px;top:0} .skip:focus{left:1rem;top:1rem;z-index:10;padding:.75rem 1rem;background:var(--bg);color:var(--accent);border:2px solid var(--accent)}
+header{padding:1.5rem max(1rem,calc((100% - 76rem)/2));background:var(--cool);border-bottom:1px solid var(--line)}
+.tag{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.15;margin:.4rem 0 .6rem;max-width:34ch} h2{font-size:1.75rem;line-height:1.25;margin:.5rem 0 1rem} h3{font-size:1.3rem;line-height:1.3;margin:2rem 0 .75rem}
+button,input,select,textarea{font:inherit;min-height:44px;padding:.45rem .85rem;border:1px solid var(--line);border-radius:.45rem;background:var(--bg);color:var(--ink)} button{cursor:pointer}
+button.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:650}
+button.linkbtn{background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline;padding:.45rem .4rem;font-size:1rem}
+input[type=text],textarea{width:100%;min-width:0;min-height:48px;padding:.5rem;border:1px solid var(--line);border-radius:.35rem;background:var(--bg);color:var(--ink)}
+textarea{min-height:6rem;line-height:1.5;resize:vertical}
+input[type=radio],input[type=checkbox]{width:1.4rem;height:1.4rem;margin:0 .6rem 0 0;flex:none;accent-color:var(--accent)}
+:focus-visible,h2:focus,main:focus{outline:3px solid var(--accent);outline-offset:3px}
+fieldset{border:1px solid var(--line);border-radius:.5rem;padding:.75rem 1rem;margin:0} legend{font-weight:600;padding:0 .25rem} fieldset label{display:flex;align-items:center;min-height:44px;padding:.25rem 0;cursor:pointer}
+.layout{max-width:76rem;margin:auto;display:grid;grid-template-columns:minmax(0,1fr)} nav{padding:.75rem 1rem;border-bottom:1px solid var(--line)} nav ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem}
+nav button{display:block;width:100%;text-align:left;background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline} nav button[aria-current]{background:var(--accent);color:var(--on-accent);font-weight:650;text-decoration:none}
+main{min-width:0;padding:1rem;max-width:78ch}
+@media(min-width:62rem){html.js .layout{grid-template-columns:minmax(18rem,20rem) minmax(0,1fr)} nav{border-bottom:0;border-right:1px solid var(--line)} nav ol{display:block;position:sticky;top:1rem} main{padding:1.5rem 2rem}}
+.q,.tool{border:1px solid var(--line);border-radius:.6rem;padding:1rem;margin:1rem 0;background:var(--bg)} .q{background:var(--cool)} .tool{border-width:2px}
+.why{border-left:4px solid var(--accent);background:var(--cool);padding:.75rem 1rem;margin:1rem 0}
+.qlabel{font-weight:700;margin-right:.35rem} .inline{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center} .help{font-size:.95rem;margin:.25rem 0;color:var(--soft)}
+.feedback{margin:.5rem 0} .feedback:empty{margin:0} .feedback.good,.feedback.almost,.feedback.wrong,.feedback.info{border-left:5px solid var(--line);padding:.5rem .8rem;background:var(--bg)} .feedback.good{border-color:var(--good)} .feedback.almost{border-color:var(--warn)} .feedback.wrong{border-color:var(--bad)}
+details{margin:.3rem 0} summary{display:list-item;cursor:pointer;min-height:44px;padding:.55rem 0;font-weight:600;color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0} .section-end{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem} .pager{display:flex;justify-content:space-between;gap:.5rem;margin-top:.75rem}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0} [hidden]{display:none!important}
+.answer-row{margin:.5rem 0}
+.bridge{border:2px solid var(--accent);border-radius:.6rem;padding:1rem;margin:2rem 0 1rem;background:var(--bg)}
+.doors{display:grid;gap:1rem;margin:1rem 0} .door{border:1px solid var(--line);border-radius:.6rem;padding:1rem;background:var(--cool)}
+.door ul{padding-left:1.2rem} .door li{margin:.6rem 0} .door button{margin:.2rem .3rem .2rem 0}
+.outreach-box{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.98rem;background:var(--cool);border:1px solid var(--line);border-radius:.35rem;padding:.75rem;white-space:pre-wrap;margin:.5rem 0}
+.small-links{margin:.75rem 0 0}
+html:not(.js) .js-only{display:none!important}
+.ptr{font-size:1rem;margin:.4rem 0 0;color:var(--soft)}
+code{font-size:1em}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{nav,.actions,.section-end,.answer-row,#theme,.small-links,.skip{display:none!important} main>section,main>section[hidden]{display:block!important} details>*{display:block}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+<div class="tag">Math 150 · Section 1.5 Exit Ticket</div>
+<h1>Section 1.5 Exit Ticket: Quadratic Equations</h1>
+<p>A short, ungraded check after the Section 1.5 notes and videos. It shows what clicked, points you back to the right page or video for anything that did not, and makes it easy to reach Matt.</p>
+<div class="actions"><button type="button" id="theme" class="js-only" aria-pressed="false">Dark mode</button></div>
+<div class="js-only"><label for="overall">Sections marked complete: <span id="overall-text">0 of 8</span></label><br><progress id="overall" max="8" value="0"></progress></div>
+</header>
+<div class="layout">
+<nav class="js-only" aria-label="Exit ticket sections"><ol>
+<li><button type="button" data-target="s1">1. How this works<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s2">2. Vocabulary<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s3">3. Solving by Factoring<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s4">4. Square Root Property<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s5">5. Completing the Square<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s6">6. Quadratic Formula<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s7">7. Desmos check<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s8">8. Your results and help from Matt<span class="donemark sr"></span></button></li>
+</ol></nav>
+<main id="main" tabindex="-1">
+
+<section id="s1" aria-labelledby="s1h">
+<h2 id="s1h" tabindex="-1">1. How this works</h2>
+<div class="why">
+<strong>Why this is here.</strong> In a face-to-face class, your instructor, Matt Read, would see how the lesson went just by looking around the room. Online, this exit ticket does that job. It has 20 quick checks on the Section 1.5 notes and videos, including Desmos. It is ungraded, and nobody sees your answers unless you choose to send them.
+</div>
+<ul>
+<li>Do this <strong>after</strong> you finish the Section 1.5 notes and videos. It takes about 10 to 15 minutes.</li>
+<li>Each check tells you right away whether you have it. If not, it names the exact item, page, or video to go back to.</li>
+<li>Have Desmos open for Section 7.</li>
+<li>Section 8 shows your results and makes it easy to reach Matt by email or set up a quick Zoom meeting.</li>
+<li>Your answers save on this device so you can come back later.</li>
+</ul>
+<div class="doors">
+<div class="door">
+<p><strong>Take it in order.</strong></p>
+<button type="button" class="primary" data-go="s2">Start with Section 2</button>
+</div>
+<div class="door js-only">
+<p><strong>Jump to one part.</strong></p>
+<ul>
+<li><button type="button" data-go="s2">Vocabulary</button></li>
+<li><button type="button" data-go="s3">Solving by Factoring</button></li>
+<li><button type="button" data-go="s4">Square Root Property</button></li>
+<li><button type="button" data-go="s5">Completing the Square</button></li>
+<li><button type="button" data-go="s6">Quadratic Formula</button></li>
+<li><button type="button" data-go="s7">Desmos check</button></li>
+<li><button type="button" data-go="s8">Your results and help from Matt</button></li>
+</ul>
+</div>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s1" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><span></span><button type="button" class="primary" data-go="s2">Next section</button></div>
+</div>
+</section>
+
+<section id="s2" aria-labelledby="s2h">
+<h2 id="s2h" tabindex="-1">2. Vocabulary</h2>
+<p>These checks match item 1 on page 1.</p>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. Standard form has every term on one side, set equal to 0. Review: item 1a (Standard Form of a Quadratic Equation) on page 1 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. The 7 needs to move so the equation is set equal to 0. Review: item 1a (Standard Form of a Quadratic Equation) on page 1 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. Standard form is written ax squared + bx + c = 0, with 0 on the right. Review: item 1a (Standard Form of a Quadratic Equation) on page 1 of the notes.&quot;}" data-review="item 1a (Standard Form of a Quadratic Equation) on page 1 of the notes." data-title="Standard Form" data-why="Correct. All terms are on one side in the order ax squared + bx + c, set equal to 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 1 (Standard Form).</b> Which equation is in standard form, as the notes define it?</legend>
+<label><input type="radio" name="mc1" value="a"> <span class="m"><span aria-hidden="true">x² = 4x + 1</span><span class="sr">x squared equals 4 x plus 1</span></span></label>
+<label><input type="radio" name="mc1" value="b"> <span class="m"><span aria-hidden="true">2x² − 5x + 3 = 0</span><span class="sr">2 x squared minus 5 x plus 3 equals 0</span></span></label>
+<label><input type="radio" name="mc1" value="c"> <span class="m"><span aria-hidden="true">3x² + 4x = 7</span><span class="sr">3 x squared plus 4 x equals 7</span></span></label>
+<label><input type="radio" name="mc1" value="d"> <span class="m"><span aria-hidden="true">0 = x² + 6x</span><span class="sr">0 equals x squared plus 6 x</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">2x² − 5x + 3 = 0</span><span class="sr">2 x squared minus 5 x plus 3 equals 0</span></span></strong></p><p class="ptr">Where this is in your notes: item 1a (Standard Form of a Quadratic Equation) on page 1 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. The \u00b1 means there is also a negative solution. Review: item 1b (Double Sign Notation) on page 1 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. The \u00b1 does not cancel out. It gives two separate solutions. Review: item 1b (Double Sign Notation) on page 1 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. The \u00b1 gives exactly two values, not a range. Review: item 1b (Double Sign Notation) on page 1 of the notes.&quot;}" data-review="item 1b (Double Sign Notation) on page 1 of the notes." data-title="Double Sign Notation" data-why="Correct. The double sign gives two solutions.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 2 (Double Sign Notation).</b> What does <span class="m"><span aria-hidden="true">x = ±5</span><span class="sr">x equals plus or minus 5</span></span> mean?</legend>
+<label><input type="radio" name="mc2" value="a"> x = 5 only</label>
+<label><input type="radio" name="mc2" value="b"> x = 0</label>
+<label><input type="radio" name="mc2" value="c"> x = 5 or x = −5</label>
+<label><input type="radio" name="mc2" value="d"> x is any number between −5 and 5</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>x = 5 or x = −5</strong></p><p class="ptr">Where this is in your notes: item 1b (Double Sign Notation) on page 1 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. Only one of the factors needs to be 0, so the word is or. Review: item 1c (Zero-Factor Theorem) on page 1 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. The product is 0, so a factor must be 0, not 1. Review: item 1c (Zero-Factor Theorem) on page 1 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. Set each factor equal to 0, not x itself. Review: item 1c (Zero-Factor Theorem) on page 1 of the notes.&quot;}" data-review="item 1c (Zero-Factor Theorem) on page 1 of the notes." data-title="Zero-Factor Theorem" data-why="Correct. If a product is 0, at least one factor is 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 3 (Zero-Factor Theorem).</b> If <span class="m"><span aria-hidden="true">(x − 4)(2x + 1) = 0</span><span class="sr">the quantity x minus 4, times the quantity 2 x plus 1, equals 0</span></span>, what does the Zero-Factor Theorem tell you?</legend>
+<label><input type="radio" name="mc3" value="a"> <span class="m"><span aria-hidden="true">x − 4 = 0 or 2x + 1 = 0</span><span class="sr">x minus 4 equals 0, or 2 x plus 1 equals 0</span></span></label>
+<label><input type="radio" name="mc3" value="b"> <span class="m"><span aria-hidden="true">x − 4 = 0 and 2x + 1 = 0 at the same time</span><span class="sr">x minus 4 equals 0 and 2 x plus 1 equals 0 at the same time</span></span></label>
+<label><input type="radio" name="mc3" value="c"> <span class="m"><span aria-hidden="true">x − 4 = 1 or 2x + 1 = 1</span><span class="sr">x minus 4 equals 1, or 2 x plus 1 equals 1</span></span></label>
+<label><input type="radio" name="mc3" value="d"> x = 0</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x − 4 = 0 or 2x + 1 = 0</span><span class="sr">x minus 4 equals 0, or 2 x plus 1 equals 0</span></span></strong></p><p class="ptr">Where this is in your notes: item 1c (Zero-Factor Theorem) on page 1 of the notes.</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s2">
+<h3 id="br-s2" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Standard Form, Double Sign Notation, Zero-Factor Theorem: items 1a to 1c, page 1</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s2" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s1">Previous section</button><button type="button" class="primary" data-go="s3">Next section</button></div>
+</div>
+</section>
+
+<section id="s3" aria-labelledby="s3h">
+<h2 id="s3h" tabindex="-1">3. Solving by Factoring</h2>
+<p>These checks match item 4 on pages 3 and 4 and Classroom Examples 1.5.1 to 1.5.3 on page 8.</p>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. The equation has to be set equal to 0 before factoring. Review: item 4 (Solving Quadratic Equations by Factoring) on pages 3 and 4 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. That is the square root property, which needs the x squared term by itself. Review: item 4 (Solving Quadratic Equations by Factoring) on pages 3 and 4 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. Setting factors equal to 0 comes after the equation is in standard form and factored. Review: item 4 (Solving Quadratic Equations by Factoring) on pages 3 and 4 of the notes.&quot;}" data-review="item 4 (Solving Quadratic Equations by Factoring) on pages 3 and 4 of the notes." data-title="Factoring Steps" data-why="Correct. Step 1 is to write the equation in standard form.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 4 (Factoring Steps).</b> To solve <span class="m"><span aria-hidden="true">x² = 3x + 10</span><span class="sr">x squared equals 3 x plus 10</span></span> by factoring, what is the first step?</legend>
+<label><input type="radio" name="mc4" value="a"> Factor the right side.</label>
+<label><input type="radio" name="mc4" value="b"> Take the square root of both sides.</label>
+<label><input type="radio" name="mc4" value="c"> Set x equal to 0.</label>
+<label><input type="radio" name="mc4" value="d"> <span class="m"><span aria-hidden="true">Write it as x² − 3x − 10 = 0.</span><span class="sr">Write it as x squared minus 3 x minus 10 equals 0.</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">Write it as x² − 3x − 10 = 0.</span><span class="sr">Write it as x squared minus 3 x minus 10 equals 0.</span></span></strong></p><p class="ptr">Where this is in your notes: item 4 (Solving Quadratic Equations by Factoring) on pages 3 and 4 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. Setting x minus 7 = 0 gives x = 7. Check the signs. Review: item 4 on pages 3 and 4, Classroom Example 1.5.1 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.1.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. The product of the two numbers must be negative 21, so one solution is negative. Review: item 4 on pages 3 and 4, Classroom Example 1.5.1 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.1.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Write the equation in standard form and factor before solving. Review: item 4 on pages 3 and 4, Classroom Example 1.5.1 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.1.\&quot;&quot;}" data-review="item 4 on pages 3 and 4, Classroom Example 1.5.1 on page 8 of the notes, and the video &quot;Classroom Example 1.5.1.&quot;" data-title="Classroom Example 1.5.1" data-why="Correct. x squared minus 4x minus 21 factors as (x minus 7)(x + 3).">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 5 (Classroom Example 1.5.1).</b> Solve <span class="m"><span aria-hidden="true">x² = 4x + 21</span><span class="sr">x squared equals 4 x plus 21</span></span> by factoring.</legend>
+<label><input type="radio" name="mc5" value="a"> x = −7 or x = 3</label>
+<label><input type="radio" name="mc5" value="b"> x = 7 or x = −3</label>
+<label><input type="radio" name="mc5" value="c"> x = 7 or x = 3</label>
+<label><input type="radio" name="mc5" value="d"> x = 21 or x = 4</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>x = 7 or x = −3</strong></p><p class="ptr">Where this is in your notes: item 4 on pages 3 and 4, Classroom Example 1.5.1 on page 8 of the notes, and the video &quot;Classroom Example 1.5.1.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. Check the signs. Setting 5x minus 1 = 0 gives x = 1/5. Review: item 4 on pages 3 and 4, Classroom Example 1.5.2 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.2.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Solve 5x minus 1 = 0 by dividing by 5, which gives a fraction. Review: item 4 on pages 3 and 4, Classroom Example 1.5.2 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.2.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Factor first, then solve each factor set equal to 0. Review: item 4 on pages 3 and 4, Classroom Example 1.5.2 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.2.\&quot;&quot;}" data-review="item 4 on pages 3 and 4, Classroom Example 1.5.2 on page 8 of the notes, and the video &quot;Classroom Example 1.5.2.&quot;" data-title="Classroom Example 1.5.2" data-why="Correct. It factors as (5x minus 1)(2x + 1).">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 6 (Classroom Example 1.5.2).</b> Solve <span class="m"><span aria-hidden="true">10x² + 3x − 1 = 0</span><span class="sr">10 x squared plus 3 x minus 1 equals 0</span></span> by factoring.</legend>
+<label><input type="radio" name="mc6" value="a"> <span class="m"><span aria-hidden="true">x = 1/5 or x = −1/2</span><span class="sr">x equals 1 fifth or x equals negative 1 half</span></span></label>
+<label><input type="radio" name="mc6" value="b"> <span class="m"><span aria-hidden="true">−1/5 or 1/2</span><span class="sr">negative 1 fifth or 1 half</span></span></label>
+<label><input type="radio" name="mc6" value="c"> <span class="m"><span aria-hidden="true">x = 5 or x = −2</span><span class="sr">x equals 5 or x equals negative 2</span></span></label>
+<label><input type="radio" name="mc6" value="d"> <span class="m"><span aria-hidden="true">x = 1 or x = −1</span><span class="sr">x equals 1 or x equals negative 1</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x = 1/5 or x = −1/2</span><span class="sr">x equals 1 fifth or x equals negative 1 half</span></span></strong></p><p class="ptr">Where this is in your notes: item 4 on pages 3 and 4, Classroom Example 1.5.2 on page 8 of the notes, and the video &quot;Classroom Example 1.5.2.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. Dividing both sides by x loses a solution. Factor out 3x instead. Review: item 4 on pages 3 and 4, Classroom Example 1.5.3 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.3.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Setting x + 4 = 0 gives x = negative 4. Review: item 4 on pages 3 and 4, Classroom Example 1.5.3 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.3.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Setting 3x = 0 gives x = 0, not 3. Review: item 4 on pages 3 and 4, Classroom Example 1.5.3 on page 8 of the notes, and the video \&quot;Classroom Example 1.5.3.\&quot;&quot;}" data-review="item 4 on pages 3 and 4, Classroom Example 1.5.3 on page 8 of the notes, and the video &quot;Classroom Example 1.5.3.&quot;" data-title="Classroom Example 1.5.3" data-why="Correct. Factoring out 3x gives 3x(x + 4) = 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 7 (Classroom Example 1.5.3).</b> Solve <span class="m"><span aria-hidden="true">3x² + 12x = 0</span><span class="sr">3 x squared plus 12 x equals 0</span></span> by factoring.</legend>
+<label><input type="radio" name="mc7" value="a"> x = −4 only</label>
+<label><input type="radio" name="mc7" value="b"> x = 4 or x = 0</label>
+<label><input type="radio" name="mc7" value="c"> x = 3 or x = −4</label>
+<label><input type="radio" name="mc7" value="d"> x = 0 or x = −4</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>x = 0 or x = −4</strong></p><p class="ptr">Where this is in your notes: item 4 on pages 3 and 4, Classroom Example 1.5.3 on page 8 of the notes, and the video &quot;Classroom Example 1.5.3.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s3">
+<h3 id="br-s3" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Solving by Factoring: item 4, pages 3 and 4, and the two factoring review videos on page 4</li>
+<li>Classroom Examples 1.5.1 to 1.5.3, page 8, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s3" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s2">Previous section</button><button type="button" class="primary" data-go="s4">Next section</button></div>
+</div>
+</section>
+
+<section id="s4" aria-labelledby="s4h">
+<h2 id="s4h" tabindex="-1">4. Square Root Property</h2>
+<p>These checks match item 5 on pages 4 and 5 and Classroom Examples 1.5.4 and 1.5.5 on page 9.</p>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. The square root of a negative number brings in i. Review: item 5 (Square Root Property) and its example on pages 4 and 5 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. Taking the square root of both sides gives \u00b1, so there are two solutions. Review: item 5 (Square Root Property) and its example on pages 4 and 5 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. Take the square root of 25, which is 5. Review: item 5 (Square Root Property) and its example on pages 4 and 5 of the notes.&quot;}" data-review="item 5 (Square Root Property) and its example on pages 4 and 5 of the notes." data-title="Square Root Property" data-why="Correct. x squared = negative 25, so x = ± the square root of negative 25.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 8 (Square Root Property).</b> Solve <span class="m"><span aria-hidden="true">2x² = −50</span><span class="sr">2 x squared equals negative 50</span></span>.</legend>
+<label><input type="radio" name="mc8" value="a"> <span class="m"><span aria-hidden="true">x = ±5</span><span class="sr">x equals plus or minus 5</span></span></label>
+<label><input type="radio" name="mc8" value="b"> <span class="m"><span aria-hidden="true">x = ±5i</span><span class="sr">x equals plus or minus 5 i</span></span></label>
+<label><input type="radio" name="mc8" value="c"> <span class="m"><span aria-hidden="true">x = 5i</span><span class="sr">x equals 5 i</span></span></label>
+<label><input type="radio" name="mc8" value="d"> <span class="m"><span aria-hidden="true">x = ±25i</span><span class="sr">x equals plus or minus 25 i</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x = ±5i</span><span class="sr">x equals plus or minus 5 i</span></span></strong></p><p class="ptr">Where this is in your notes: item 5 (Square Root Property) and its example on pages 4 and 5 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Subtract 5 before dividing by 2, so x squared = 8. Review: item 5 on pages 4 and 5, Classroom Example 1.5.4 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.4.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Taking a square root gives two solutions, so keep the \u00b1. Review: item 5 on pages 4 and 5, Classroom Example 1.5.4 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.4.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Divide 16 by 2 before taking the square root. Review: item 5 on pages 4 and 5, Classroom Example 1.5.4 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.4.\&quot;&quot;}" data-review="item 5 on pages 4 and 5, Classroom Example 1.5.4 on page 9 of the notes, and the video &quot;Classroom Example 1.5.4.&quot;" data-title="Classroom Example 1.5.4" data-why="Correct. x squared = 8, and the square root of 8 simplifies to 2 square root of 2.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 9 (Classroom Example 1.5.4).</b> Solve <span class="m"><span aria-hidden="true">2x² + 5 = 21</span><span class="sr">2 x squared plus 5 equals 21</span></span> using the square root property.</legend>
+<label><input type="radio" name="mc9" value="a"> <span class="m"><span aria-hidden="true">x = ±√13</span><span class="sr">x equals plus or minus the square root of 13</span></span></label>
+<label><input type="radio" name="mc9" value="b"> <span class="m"><span aria-hidden="true">x = 2√2</span><span class="sr">x equals 2 square root of 2</span></span></label>
+<label><input type="radio" name="mc9" value="c"> <span class="m"><span aria-hidden="true">x = ±2√2</span><span class="sr">x equals plus or minus 2 square root of 2</span></span></label>
+<label><input type="radio" name="mc9" value="d"> <span class="m"><span aria-hidden="true">x = ±4</span><span class="sr">x equals plus or minus 4</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x = ±2√2</span><span class="sr">x equals plus or minus 2 square root of 2</span></span></strong></p><p class="ptr">Where this is in your notes: item 5 on pages 4 and 5, Classroom Example 1.5.4 on page 9 of the notes, and the video &quot;Classroom Example 1.5.4.&quot;</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. To undo minus 3, add 3 to both sides. Review: item 5 on pages 4 and 5, Classroom Example 1.5.5 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.5.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. The square root of negative 16 is 4i. Review: item 5 on pages 4 and 5, Classroom Example 1.5.5 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.5.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. After taking the square root, add 3 to both sides to finish. Review: item 5 on pages 4 and 5, Classroom Example 1.5.5 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.5.\&quot;&quot;}" data-review="item 5 on pages 4 and 5, Classroom Example 1.5.5 on page 9 of the notes, and the video &quot;Classroom Example 1.5.5.&quot;" data-title="Classroom Example 1.5.5" data-why="Correct. x minus 3 = ±4i, so add 3 to both sides.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 10 (Classroom Example 1.5.5).</b> Solve <span class="m"><span aria-hidden="true">(x − 3)² = −16</span><span class="sr">the quantity x minus 3, squared, equals negative 16</span></span>.</legend>
+<label><input type="radio" name="mc10" value="a"> <span class="m"><span aria-hidden="true">x = −3 ± 4i</span><span class="sr">x equals negative 3 plus or minus 4 i</span></span></label>
+<label><input type="radio" name="mc10" value="b"> <span class="m"><span aria-hidden="true">x = 3 ± 4</span><span class="sr">x equals 3 plus or minus 4</span></span></label>
+<label><input type="radio" name="mc10" value="c"> <span class="m"><span aria-hidden="true">x = ±4i</span><span class="sr">x equals plus or minus 4 i</span></span></label>
+<label><input type="radio" name="mc10" value="d"> <span class="m"><span aria-hidden="true">x = 3 ± 4i</span><span class="sr">x equals 3 plus or minus 4 i</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x = 3 ± 4i</span><span class="sr">x equals 3 plus or minus 4 i</span></span></strong></p><p class="ptr">Where this is in your notes: item 5 on pages 4 and 5, Classroom Example 1.5.5 on page 9 of the notes, and the video &quot;Classroom Example 1.5.5.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s4">
+<h3 id="br-s4" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Square Root Property: item 5, pages 4 and 5, and the radical review videos on page 5</li>
+<li>Classroom Examples 1.5.4 and 1.5.5, page 9, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s4" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s3">Previous section</button><button type="button" class="primary" data-go="s5">Next section</button></div>
+</div>
+</section>
+
+<section id="s5" aria-labelledby="s5h">
+<h2 id="s5h" tabindex="-1">5. Completing the Square</h2>
+<p>These checks match item 6 on pages 5 and 6 and Classroom Examples 1.5.6 to 1.5.8 on page 9.</p>
+<div class="q" data-topic="s5" data-mode="num" data-answer="36" data-miss="{&quot;6&quot;: &quot;Not quite. Divide 12 by 2, then square the result. Review: item 6 (Completing the Square), step 3, on pages 5 and 6 of the notes.&quot;, &quot;144&quot;: &quot;Not quite. Divide 12 by 2 before you square it. Review: item 6 (Completing the Square), step 3, on pages 5 and 6 of the notes.&quot;, &quot;12&quot;: &quot;Not quite. Divide the coefficient of x by 2, then square it. Review: item 6 (Completing the Square), step 3, on pages 5 and 6 of the notes.&quot;}" data-review="item 6 (Completing the Square), step 3, on pages 5 and 6 of the notes." data-title="Completing the Square">
+<p class="prompt"><b class="qlabel">Check 11 (Completing the Square).</b> To complete the square for <span class="m"><span aria-hidden="true">x² + 12x = 5</span><span class="sr">x squared plus 12 x equals 5</span></span>, what number do you add to both sides?</p>
+<details><summary>Hint</summary><p>Step 3 on page 5: divide the coefficient of x by 2, then square the result.</p></details>
+<details><summary>Show answer</summary><p><strong>36</strong></p><p class="ptr">Where this is in your notes: item 6 (Completing the Square), step 3, on pages 5 and 6 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s5" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. (x minus 4) squared = 20, so add 4 to both sides. Review: item 6 on pages 5 and 6, Classroom Example 1.5.6 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.6.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Add 16 to both sides, so the right side is 4 + 16 = 20. Review: item 6 on pages 5 and 6, Classroom Example 1.5.6 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.6.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. The square root of 20 still has a perfect square factor. Simplify it. Review: item 6 on pages 5 and 6, Classroom Example 1.5.6 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.6.\&quot;&quot;}" data-review="item 6 on pages 5 and 6, Classroom Example 1.5.6 on page 9 of the notes, and the video &quot;Classroom Example 1.5.6.&quot;" data-title="Classroom Example 1.5.6" data-why="Correct. (x minus 4) squared = 20, and the square root of 20 is 2 square root of 5.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 12 (Classroom Example 1.5.6).</b> Solve <span class="m"><span aria-hidden="true">x² − 8x − 4 = 0</span><span class="sr">x squared minus 8 x minus 4 equals 0</span></span> by completing the square.</legend>
+<label><input type="radio" name="mc12" value="a"> <span class="m"><span aria-hidden="true">x = 4 ± 2√5</span><span class="sr">x equals 4 plus or minus 2 square root of 5</span></span></label>
+<label><input type="radio" name="mc12" value="b"> <span class="m"><span aria-hidden="true">x = −4 ± 2√5</span><span class="sr">x equals negative 4 plus or minus 2 square root of 5</span></span></label>
+<label><input type="radio" name="mc12" value="c"> <span class="m"><span aria-hidden="true">x = 4 ± 2√3</span><span class="sr">x equals 4 plus or minus 2 square root of 3</span></span></label>
+<label><input type="radio" name="mc12" value="d"> <span class="m"><span aria-hidden="true">x = 4 ± √20</span><span class="sr">x equals 4 plus or minus the square root of 20, not simplified</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x = 4 ± 2√5</span><span class="sr">x equals 4 plus or minus 2 square root of 5</span></span></strong></p><p class="ptr">Where this is in your notes: item 6 on pages 5 and 6, Classroom Example 1.5.6 on page 9 of the notes, and the video &quot;Classroom Example 1.5.6.&quot;</p></details>
+</div>
+<div class="q" data-topic="s5" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. After dividing by 2, square the result. Review: item 6 on pages 5 and 6, Classroom Example 1.5.7 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.7.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Divide 5 by 2 before you square it. Review: item 6 on pages 5 and 6, Classroom Example 1.5.7 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.7.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Square both the 5 and the 2. Review: item 6 on pages 5 and 6, Classroom Example 1.5.7 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.7.\&quot;&quot;}" data-review="item 6 on pages 5 and 6, Classroom Example 1.5.7 on page 9 of the notes, and the video &quot;Classroom Example 1.5.7.&quot;" data-title="Classroom Example 1.5.7" data-why="Correct. Half of 5 is 5/2, and (5/2) squared is 25/4.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 13 (Classroom Example 1.5.7).</b> To complete the square for <span class="m"><span aria-hidden="true">x² + 5x = 1</span><span class="sr">x squared plus 5 x equals 1</span></span>, what number do you add to both sides?</legend>
+<label><input type="radio" name="mc13" value="a"> <span class="m"><span aria-hidden="true">5/2</span><span class="sr">5 halves</span></span></label>
+<label><input type="radio" name="mc13" value="b"> 25</label>
+<label><input type="radio" name="mc13" value="c"> <span class="m"><span aria-hidden="true">25/2</span><span class="sr">25 halves</span></span></label>
+<label><input type="radio" name="mc13" value="d"> <span class="m"><span aria-hidden="true">25/4</span><span class="sr">25 fourths</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">25/4</span><span class="sr">25 fourths</span></span></strong></p><p class="ptr">Where this is in your notes: item 6 on pages 5 and 6, Classroom Example 1.5.7 on page 9 of the notes, and the video &quot;Classroom Example 1.5.7.&quot;</p></details>
+</div>
+<div class="q" data-topic="s5" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. The coefficient of x squared has to be 1 before you complete the square. Review: item 6, step 1, on page 5, Classroom Example 1.5.8 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.8.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. That comes at the end, after the left side is a perfect square. Review: item 6, step 1, on page 5, Classroom Example 1.5.8 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.8.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Every term has to be divided by 2, or the equation changes. Review: item 6, step 1, on page 5, Classroom Example 1.5.8 on page 9 of the notes, and the video \&quot;Classroom Example 1.5.8.\&quot;&quot;}" data-review="item 6, step 1, on page 5, Classroom Example 1.5.8 on page 9 of the notes, and the video &quot;Classroom Example 1.5.8.&quot;" data-title="Classroom Example 1.5.8" data-why="Correct. Step 1 makes the coefficient of x squared equal to 1.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 14 (Classroom Example 1.5.8).</b> You want to solve <span class="m"><span aria-hidden="true">2x² − 6x − 3 = 0</span><span class="sr">2 x squared minus 6 x minus 3 equals 0</span></span> by completing the square. What is the first step?</legend>
+<label><input type="radio" name="mc14" value="a"> Add 9 to both sides.</label>
+<label><input type="radio" name="mc14" value="b"> Divide every term by 2.</label>
+<label><input type="radio" name="mc14" value="c"> Take the square root of both sides.</label>
+<label><input type="radio" name="mc14" value="d"> Divide only the x squared term by 2.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Divide every term by 2.</strong></p><p class="ptr">Where this is in your notes: item 6, step 1, on page 5, Classroom Example 1.5.8 on page 9 of the notes, and the video &quot;Classroom Example 1.5.8.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s5">
+<h3 id="br-s5" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Completing the Square: item 6, pages 5 and 6</li>
+<li>Classroom Examples 1.5.6 to 1.5.8, page 9, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s5" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s4">Previous section</button><button type="button" class="primary" data-go="s6">Next section</button></div>
+</div>
+</section>
+
+<section id="s6" aria-labelledby="s6h">
+<h2 id="s6h" tabindex="-1">6. Quadratic Formula</h2>
+<p>These checks match item 7 on pages 7 and 8 and Classroom Examples 1.5.9 and 1.5.10 on page 10.</p>
+<div class="q" data-topic="s6" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Distribute the 3x and set the equation equal to 0 first. Review: item 7 (Quadratic Formula) and its example on pages 7 and 8 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. Subtract 4 from both sides so the equation equals 0. Then c is negative 4. Review: item 7 (Quadratic Formula) and its example on pages 7 and 8 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. 3x times negative 2 is negative 6x. Review: item 7 (Quadratic Formula) and its example on pages 7 and 8 of the notes.&quot;}" data-review="item 7 (Quadratic Formula) and its example on pages 7 and 8 of the notes." data-title="Identifying a, b, and c" data-why="Correct. In standard form it is 3x squared minus 6x minus 4 = 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 15 (Identifying a, b, and c).</b> To use the quadratic formula on <span class="m"><span aria-hidden="true">3x(x − 2) = 4</span><span class="sr">3 x times the quantity x minus 2, equals 4</span></span>, what are a, b, and c?</legend>
+<label><input type="radio" name="mc15" value="a"> a = 3, b = −2, c = 4</label>
+<label><input type="radio" name="mc15" value="b"> a = 3, b = −6, c = 4</label>
+<label><input type="radio" name="mc15" value="c"> a = 3, b = −6, c = −4</label>
+<label><input type="radio" name="mc15" value="d"> a = 3, b = 6, c = −4</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>a = 3, b = −6, c = −4</strong></p><p class="ptr">Where this is in your notes: item 7 (Quadratic Formula) and its example on pages 7 and 8 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s6" data-mode="num" data-answer="73" data-miss="{&quot;25&quot;: &quot;Not quite. c is negative 3, so negative 4 times 2 times negative 3 is positive 24. Review: item 7 on pages 7 and 8, Classroom Example 1.5.9 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.9.\&quot;&quot;, &quot;-73&quot;: &quot;Not quite. b squared is (negative 7) squared, which is positive 49. Review: item 7 on pages 7 and 8, Classroom Example 1.5.9 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.9.\&quot;&quot;, &quot;-25&quot;: &quot;Not quite. (Negative 7) squared is positive 49, and negative 4ac is positive 24. Review: item 7 on pages 7 and 8, Classroom Example 1.5.9 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.9.\&quot;&quot;}" data-review="item 7 on pages 7 and 8, Classroom Example 1.5.9 on page 10 of the notes, and the video &quot;Classroom Example 1.5.9.&quot;" data-title="Classroom Example 1.5.9">
+<p class="prompt"><b class="qlabel">Check 16 (Classroom Example 1.5.9).</b> For <span class="m"><span aria-hidden="true">2x² − 7x − 3 = 0</span><span class="sr">2 x squared minus 7 x minus 3 equals 0</span></span>, find the value under the square root in the quadratic formula, b² − 4ac.</p>
+<details><summary>Hint</summary><p>Identify a, b, and c, then substitute into b squared minus 4ac, as in Classroom Example 1.5.9.</p></details>
+<details><summary>Show answer</summary><p><strong>73</strong></p><p class="ptr">Where this is in your notes: item 7 on pages 7 and 8, Classroom Example 1.5.9 on page 10 of the notes, and the video &quot;Classroom Example 1.5.9.&quot;</p></details>
+</div>
+<div class="q" data-topic="s6" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. Negative b is negative (negative 4), which is positive 4. Review: item 7 on pages 7 and 8, Classroom Example 1.5.10 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.10.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Both terms still need to be divided by 2a, which is 2. Review: item 7 on pages 7 and 8, Classroom Example 1.5.10 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.10.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. b squared minus 4ac is negative 36, so its square root is 6i. Review: item 7 on pages 7 and 8, Classroom Example 1.5.10 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.10.\&quot;&quot;}" data-review="item 7 on pages 7 and 8, Classroom Example 1.5.10 on page 10 of the notes, and the video &quot;Classroom Example 1.5.10.&quot;" data-title="Classroom Example 1.5.10" data-why="Correct. The formula gives (4 ± 6i) over 2, which is 2 ± 3i.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 17 (Classroom Example 1.5.10).</b> Solve <span class="m"><span aria-hidden="true">x² − 4x + 13 = 0</span><span class="sr">x squared minus 4 x plus 13 equals 0</span></span> using the quadratic formula.</legend>
+<label><input type="radio" name="mc17" value="a"> <span class="m"><span aria-hidden="true">x = −2 ± 3i</span><span class="sr">x equals negative 2 plus or minus 3 i</span></span></label>
+<label><input type="radio" name="mc17" value="b"> <span class="m"><span aria-hidden="true">x = 4 ± 6i</span><span class="sr">x equals 4 plus or minus 6 i</span></span></label>
+<label><input type="radio" name="mc17" value="c"> <span class="m"><span aria-hidden="true">x = 2 ± 3</span><span class="sr">x equals 2 plus or minus 3</span></span></label>
+<label><input type="radio" name="mc17" value="d"> <span class="m"><span aria-hidden="true">x = 2 ± 3i</span><span class="sr">x equals 2 plus or minus 3 i</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x = 2 ± 3i</span><span class="sr">x equals 2 plus or minus 3 i</span></span></strong></p><p class="ptr">Where this is in your notes: item 7 on pages 7 and 8, Classroom Example 1.5.10 on page 10 of the notes, and the video &quot;Classroom Example 1.5.10.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s6">
+<h3 id="br-s6" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Quadratic Formula: item 7, pages 7 and 8</li>
+<li>Classroom Examples 1.5.9 and 1.5.10, page 10, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s6" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s5">Previous section</button><button type="button" class="primary" data-go="s7">Next section</button></div>
+</div>
+</section>
+
+<section id="s7" aria-labelledby="s7h">
+<h2 id="s7h" tabindex="-1">7. Desmos check</h2>
+<p>Desmos is the graphing calculator for this course, so this part checks that it is working for you. Open Desmos now. The steps are in items 2 and 3 on pages 1 to 3, with the video "How to Use Desmos to Find X-Intercepts." Each method in the notes also has a "Using Desmos to Check a Solution" video. If anything goes wrong, Matt can look at it with you.</p>
+<div class="q" data-topic="s7" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. Rounding gives an approximation, not the exact answer. Review: item 3 (Using Desmos to Find X-Intercepts) on pages 2 and 3 of the notes and the video \&quot;How to Use Desmos to Find X-Intercepts.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Zooming changes the view, not the value. Review: item 3 (Using Desmos to Find X-Intercepts) on pages 2 and 3 of the notes and the video \&quot;How to Use Desmos to Find X-Intercepts.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. At an x-intercept the y-coordinate is always 0. Review: item 3 (Using Desmos to Find X-Intercepts) on pages 2 and 3 of the notes and the video \&quot;How to Use Desmos to Find X-Intercepts.\&quot;&quot;}" data-review="item 3 (Using Desmos to Find X-Intercepts) on pages 2 and 3 of the notes and the video &quot;How to Use Desmos to Find X-Intercepts.&quot;" data-title="Decimal to Fraction" data-why="Correct. The fraction button shows it as negative 5/3.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 18 (Decimal to Fraction).</b> Desmos shows an x-intercept at <span class="m"><span aria-hidden="true">(−1.666667, 0)</span><span class="sr">the point negative 1 point 6 6 6 6 6 7 comma 0</span></span>. How do the notes get the exact value?</legend>
+<label><input type="radio" name="mc18" value="a"> Round it to −1.7.</label>
+<label><input type="radio" name="mc18" value="b"> Type the decimal in a new expression line and select the fraction button.</label>
+<label><input type="radio" name="mc18" value="c"> Zoom in until the decimal becomes a whole number.</label>
+<label><input type="radio" name="mc18" value="d"> Use the y-coordinate instead.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Type the decimal in a new expression line and select the fraction button.</strong></p><p class="ptr">Where this is in your notes: item 3 (Using Desmos to Find X-Intercepts) on pages 2 and 3 of the notes and the video &quot;How to Use Desmos to Find X-Intercepts.&quot;</p></details>
+</div>
+<div class="q" data-topic="s7" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. It still has two complex solutions. The graph just cannot show them. Review: the square root property example on page 5 of the notes and the video \&quot;Using Desmos to Check a Solution\&quot; on that page.&quot;, &quot;c&quot;: &quot;Not quite. x = 0 would show up as an x-intercept at the origin. Review: the square root property example on page 5 of the notes and the video \&quot;Using Desmos to Check a Solution\&quot; on that page.&quot;, &quot;d&quot;: &quot;Not quite. This happens whenever the solutions are complex. Review: the square root property example on page 5 of the notes and the video \&quot;Using Desmos to Check a Solution\&quot; on that page.&quot;}" data-review="the square root property example on page 5 of the notes and the video &quot;Using Desmos to Check a Solution&quot; on that page." data-title="No x-intercepts" data-why="Correct. No x-intercepts means no real solutions. The graph cannot show the complex ones.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 19 (No x-intercepts).</b> You graph a quadratic in standard form in Desmos, and it never touches the x-axis. What does that tell you?</legend>
+<label><input type="radio" name="mc19" value="a"> The equation has no real solutions, so its solutions are complex.</label>
+<label><input type="radio" name="mc19" value="b"> The equation has no solutions of any kind.</label>
+<label><input type="radio" name="mc19" value="c"> The solution is x = 0.</label>
+<label><input type="radio" name="mc19" value="d"> Desmos made an error.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>The equation has no real solutions, so its solutions are complex.</strong></p><p class="ptr">Where this is in your notes: the square root property example on page 5 of the notes and the video &quot;Using Desmos to Check a Solution&quot; on that page.</p></details>
+</div>
+<div class="q" data-topic="s7" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Graph it and read where it crosses the x-axis. Review: items 2 and 3 on pages 1 to 3, Classroom Example 1.5.11 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.11.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. An x-intercept has y equal to 0, so the 0 goes second. Review: items 2 and 3 on pages 1 to 3, Classroom Example 1.5.11 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.11.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. That point is the top of the graph, not where it crosses the x-axis. Review: items 2 and 3 on pages 1 to 3, Classroom Example 1.5.11 on page 10 of the notes, and the video \&quot;Classroom Example 1.5.11.\&quot;&quot;}" data-review="items 2 and 3 on pages 1 to 3, Classroom Example 1.5.11 on page 10 of the notes, and the video &quot;Classroom Example 1.5.11.&quot;" data-title="Classroom Example 1.5.11" data-why="Correct. The graph crosses the x-axis at x = negative 2 and x = 6.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 20 (Classroom Example 1.5.11).</b> Use Desmos to find the x-intercepts of <span class="m"><span aria-hidden="true">y = −(x − 2)² + 16</span><span class="sr">y equals negative the quantity x minus 2 squared, plus 16</span></span>.</legend>
+<label><input type="radio" name="mc20" value="a"> <span class="m"><span aria-hidden="true">(2, 0)</span><span class="sr">the point 2 comma 0</span></span> and <span class="m"><span aria-hidden="true">(16, 0)</span><span class="sr">the point 16 comma 0</span></span></label>
+<label><input type="radio" name="mc20" value="b"> <span class="m"><span aria-hidden="true">(0, −2)</span><span class="sr">the point 0 comma negative 2</span></span> and <span class="m"><span aria-hidden="true">(0, 6)</span><span class="sr">the point 0 comma 6</span></span></label>
+<label><input type="radio" name="mc20" value="c"> <span class="m"><span aria-hidden="true">(−2, 0)</span><span class="sr">the point negative 2 comma 0</span></span> and <span class="m"><span aria-hidden="true">(6, 0)</span><span class="sr">the point 6 comma 0</span></span></label>
+<label><input type="radio" name="mc20" value="d"> <span class="m"><span aria-hidden="true">(2, 16)</span><span class="sr">the point 2 comma 16</span></span> only</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">(−2, 0)</span><span class="sr">the point negative 2 comma 0</span></span> and <span class="m"><span aria-hidden="true">(6, 0)</span><span class="sr">the point 6 comma 0</span></span></strong></p><p class="ptr">Where this is in your notes: items 2 and 3 on pages 1 to 3, Classroom Example 1.5.11 on page 10 of the notes, and the video &quot;Classroom Example 1.5.11.&quot;</p></details>
+</div>
+
+<div class="tool" role="region" aria-labelledby="dz-trouble-h">
+<h3 id="dz-trouble-h" style="margin-top:0">Did Desmos give you any trouble?</h3>
+<p>Check anything that happened. You will see a quick fix, and it will be added to your message for Matt in Section 8.</p>
+<fieldset>
+<legend><strong>Desmos issues I ran into:</strong></legend>
+<label><input type="checkbox" class="dz-issue" data-tip="Go to desmos.com in your web browser and click Open Graphing Calculator. The first screenshots of each Desmos guide in the notes show where it is." value="I could not get the Desmos graphing calculator open."> I could not get the Desmos graphing calculator open.</label>
+<label><input type="checkbox" class="dz-issue" data-tip="Use Zoom Out (the minus button) until the graph shows every place it touches or crosses the x-axis, as on page 2." value="I could not see all of the x-intercepts."> I could not see all of the x-intercepts.</label>
+<label><input type="checkbox" class="dz-issue" data-tip="Type the decimal in a new expression line and select the fraction button for it. If it does not convert, type more of the decimal places. Page 3 shows this." value="Desmos showed a decimal, and I needed a fraction."> Desmos showed a decimal, and I needed a fraction.</label>
+<label><input type="checkbox" class="dz-issue" data-tip="That means there are no real solutions. The solutions are complex, so find them with the square root property or the quadratic formula. The video on page 5 shows this." value="My graph never touched the x-axis."> My graph never touched the x-axis.</label>
+</fieldset>
+<div id="dz-diag-box" class="why" role="status" aria-live="polite" hidden></div>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s7">
+<h3 id="br-s7" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Finding x-intercepts in Desmos: items 2 and 3, pages 1 to 3, and the video &quot;How to Use Desmos to Find X-Intercepts&quot;</li>
+<li>Checking solutions: the &quot;Using Desmos to Check a Solution&quot; videos on pages 4 to 8</li>
+<li>Classroom Example 1.5.11, page 10, and its video</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s7" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s6">Previous section</button><button type="button" class="primary" data-go="s8">Next: Your results</button></div>
+</div>
+</section>
+
+<section id="s8" aria-labelledby="s8h">
+<h2 id="s8h" tabindex="-1">8. Your results and help from Matt</h2>
+<p id="res-line" role="status" aria-live="polite">Answer the checks in Sections 2 to 7 and your results will show here.</p>
+<div id="goback-wrap" hidden>
+<h3>Go back to</h3>
+<ul id="goback-list"></ul>
+</div>
+<p id="unanswered" hidden></p>
+
+<div class="tool" role="region" aria-labelledby="help-h">
+<h3 id="help-h" style="margin-top:0">Would you like help from Matt?</h3>
+<p>Start with the "Go back to" list. If something is still unclear after that, Matt would rather hear from you now than after a quiz.</p>
+<fieldset>
+<legend class="sr">Would you like help from Matt?</legend>
+<label><input type="radio" name="helpwant" value="none"> No thanks. I am just sharing my results.</label>
+<label><input type="radio" name="helpwant" value="question"> I went back to the notes and still have a specific question.</label>
+<label><input type="radio" name="helpwant" value="zoom"> I would like a quick 10 to 15 minute Zoom meeting.</label>
+</fieldset>
+<div style="margin:1rem 0">
+<label for="stu-name"><strong>Your name</strong></label>
+<input type="text" id="stu-name" autocomplete="name">
+</div>
+<div style="margin-bottom:1rem">
+<label for="stu-question"><strong>Your question, or a few times that work for Zoom</strong></label>
+<p class="help" id="q-ex">Example: "On Check 10, I got x = 2 plus or minus 4i. Where did I go wrong?"</p>
+<textarea id="stu-question" aria-describedby="q-ex"></textarea>
+</div>
+<div class="actions">
+<button type="button" id="mailto-btn" class="primary">Email Matt</button>
+<button type="button" id="copy-btn">Copy message</button>
+</div>
+<p id="copy-status" class="feedback" role="status" aria-live="polite"></p>
+<p class="help">If the email button does nothing, copy the message and paste it into an email to <a href="mailto:mread@kish.edu">mread@kish.edu</a> or a D2L message to Matt.</p>
+<details><summary>See the message</summary><pre id="outreach-text" class="outreach-box" tabindex="0" aria-label="Your message to Matt"></pre></details>
+<p class="small-links"><button type="button" id="print-btn" class="linkbtn">Print or save as PDF</button> <button type="button" id="reset-btn" class="linkbtn">Start over</button></p>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s8" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s7">Previous section</button><span></span></div>
+</div>
+</section>
+
+</main>
+</div>
+<script>
+'use strict';
+(function(){
+const root=document.documentElement; root.classList.add('js');
+const $=(s,c=document)=>c.querySelector(s); const $$=(s,c=document)=>Array.from(c.querySelectorAll(s));
+const KEY='coreq-math150-exitticket-1-5-v1';
+const SECTION='1.5';
+const blank=()=>({done:[],theme:null,ans:{},ok:{},dz:[],help:'',stuName:'',stuQuestion:''});
+let store=blank();
+try{
+  const x=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(x&&typeof x==='object'){
+    const b=blank();
+    for(const k of Object.keys(b)){ if(x[k]!==undefined&&x[k]!==null&&typeof x[k]===typeof b[k]&&Array.isArray(x[k])===Array.isArray(b[k]))store[k]=x[k]; }
+    if(typeof x.theme==='string')store.theme=x.theme;
+  }
+}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+let ready=false; /* results wait until everything below is set up */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ---------- answer checking ---------- */
+const norm=s=>String(s).toLowerCase().replace(/[−–—]/g,'-').replace(/[,%$\s]/g,'');
+function toNum(s){ s=norm(s); return /^-?(\d+\.?\d*|\.\d+)$/.test(s)?Number(s):null; }
+function show(q,state,msg,record){
+  const fb=q._fb; fb.className='feedback '+state; fb.textContent=msg;
+  if(record){ store.ok[q._qid]=state==='good'?1:0; save(); updateResults(); }
+}
+function clearFb(q){
+  q._fb.textContent=''; q._fb.className='feedback';
+  if(store.ans[q._qid]!==undefined){ delete store.ans[q._qid]; delete store.ok[q._qid]; save(); updateResults(); }
+}
+function judgeNum(q,raw,record){
+  const stu=toNum(raw);
+  if(stu===null)return show(q,'info','Enter a number using digits, like 12 or -5.',false);
+  if(q.dataset.answer.split('|').some(a=>Number(a)===stu))return show(q,'good','Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  const hit=Object.keys(mm).find(k=>Number(k)===stu);
+  show(q,'wrong',hit?mm[hit]:'Not quite. Review: '+q.dataset.review,record);
+}
+function judgeMC(q,record){
+  const c=$('input[type=radio]:checked',q);
+  if(!c)return show(q,'info','Select an answer first.',false);
+  if(c.value===q.dataset.answer)return show(q,'good',q.dataset.why||'Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  show(q,'wrong',mm[c.value]||('Not quite. Review: '+q.dataset.review),record);
+}
+const QS=$$('.q');
+QS.forEach((q,k)=>{
+  const qid='q'+(k+1); q._qid=qid; q._num=k+1;
+  const fb=document.createElement('p'); fb.className='feedback'; fb.setAttribute('role','status'); fb.setAttribute('aria-live','polite'); q._fb=fb;
+  const row=document.createElement('div'); row.className='answer-row';
+  let input=null;
+  if(q.dataset.mode==='mc'){
+    row.innerHTML='<button type="button" class="primary">Check</button>';
+    $('fieldset',q).after(row);
+    $$('input[type=radio]',q).forEach(r=>{
+      if(store.ans[qid]===r.value)r.checked=true;
+      r.addEventListener('change',()=>clearFb(q));
+    });
+  } else {
+    const id='ans'+(k+1);
+    row.innerHTML='<div class="inline"><label for="'+id+'">Your answer</label><input type="text" id="'+id+'" autocomplete="off" spellcheck="false" style="max-width:12rem"><button type="button" class="primary">Check</button></div>';
+    $('.prompt',q).after(row);
+    input=$('input',row);
+    if(store.ans[qid]!==undefined)input.value=store.ans[qid];
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();run();}});
+    input.addEventListener('input',()=>clearFb(q));
+  }
+  row.after(fb);
+  function run(){
+    if(q.dataset.mode==='mc'){
+      const c=$('input[type=radio]:checked',q);
+      if(c){store.ans[qid]=c.value; save();}
+      return judgeMC(q,!!c);
+    }
+    const v=input.value.trim();
+    if(!v)return show(q,'info','Type an answer first.',false);
+    if(toNum(v)===null)return judgeNum(q,v,false);
+    store.ans[qid]=v; save(); judgeNum(q,v,true);
+  }
+  $('button',row).addEventListener('click',run);
+  if(store.ans[qid]!==undefined){ q.dataset.mode==='mc'?judgeMC(q,false):judgeNum(q,store.ans[qid],false); }
+});
+
+/* ---------- Desmos issues ---------- */
+const dzBox=$('#dz-diag-box'); const dzChecks=$$('.dz-issue');
+function updateDz(){
+  const checked=dzChecks.filter(cb=>cb.checked);
+  store.dz=checked.map(cb=>cb.value); save();
+  if(!checked.length){dzBox.hidden=true; dzBox.innerHTML=''; return;}
+  dzBox.hidden=false;
+  dzBox.innerHTML='<strong>Quick fixes:</strong><ul style="margin:.5rem 0">'+checked.map(cb=>'<li>'+esc(cb.dataset.tip)+'</li>').join('')+'</ul><p style="margin:.4rem 0 0">Still stuck? These are now in your message for Matt in Section 6. A screenshot helps him spot the problem fast.</p>';
+}
+dzChecks.forEach(cb=>{ cb.checked=store.dz.includes(cb.value); cb.addEventListener('change',()=>{updateDz(); updateResults();}); });
+updateDz();
+
+/* ---------- results and message ---------- */
+const resLine=$('#res-line'), resInit=resLine.textContent, gbWrap=$('#goback-wrap'), gbList=$('#goback-list'), unans=$('#unanswered');
+const stuName=$('#stu-name'), stuQuestion=$('#stu-question'), outText=$('#outreach-text'), copyStatus=$('#copy-status');
+const helpRadios=$$('input[name=helpwant]');
+stuName.value=store.stuName; stuQuestion.value=store.stuQuestion;
+helpRadios.forEach(r=>{ r.checked=store.help===r.value; r.addEventListener('change',()=>{store.help=r.value; save(); updateResults();}); });
+stuName.addEventListener('input',()=>{store.stuName=stuName.value; save(); updateResults();});
+stuQuestion.addEventListener('input',()=>{store.stuQuestion=stuQuestion.value; save(); updateResults();});
+
+function buildMessage(stats){
+  const m=['Hi Matt,','','Section '+SECTION+' exit ticket: I answered '+stats.att+' of '+stats.total+' checks, and '+stats.corr+' were correct.'];
+  if(stats.missed.length){m.push('','Checks I missed:'); stats.missed.forEach(q=>m.push('- Check '+q._num+' ('+q.dataset.title+')'));}
+  if(stats.unanswered.length){m.push('','Not answered yet: Checks '+stats.unanswered.map(q=>q._num).join(', '));}
+  if(store.dz.length){m.push('','Desmos issues I ran into:'); store.dz.forEach(s=>m.push('- '+s));}
+  const qt=stuQuestion.value.trim();
+  if(store.help==='question'){m.push('','I went back to the notes and still have a question:',qt||'[Type your question above]');}
+  else if(store.help==='zoom'){m.push('','I would like a quick 10 to 15 minute Zoom meeting.'); if(qt)m.push('Times that work for me: '+qt);}
+  else { m.push('','No help needed right now. I am just sharing my results.'); if(qt)m.push('',qt); }
+  m.push('','Thank you,',stuName.value.trim()||'[Your name]');
+  return m.join('\n');
+}
+function stats(){
+  const att=QS.filter(q=>store.ans[q._qid]!==undefined&&store.ok[q._qid]!==undefined);
+  const corr=att.filter(q=>store.ok[q._qid]===1).length;
+  return {total:QS.length,att:att.length,corr:corr,missed:att.filter(q=>store.ok[q._qid]!==1),unanswered:QS.filter(q=>!att.includes(q))};
+}
+function updateResults(){
+  if(!ready)return;
+  const s=stats();
+  if(s.att===0){ resLine.textContent=resInit; }
+  else {
+    let t='You answered '+s.att+' of '+s.total+' checks. '+s.corr+' were correct.';
+    if(s.missed.length)t+=' Missing a few on a first try is normal. A second look at the places below usually clears it up.';
+    else if(s.att===s.total)t+=' You are ready for the Section '+SECTION+' homework.';
+    resLine.textContent=t;
+  }
+  gbList.innerHTML='';
+  s.missed.forEach(q=>{const li=document.createElement('li'); li.textContent='Check '+q._num+' ('+q.dataset.title+'): '+q.dataset.review; gbList.appendChild(li);});
+  gbWrap.hidden=!s.missed.length;
+  if(s.att>0&&s.unanswered.length){unans.hidden=false; unans.textContent='Not answered yet: Checks '+s.unanswered.map(q=>q._num).join(', ')+'.';}
+  else {unans.hidden=true; unans.textContent='';}
+  outText.textContent=buildMessage(s);
+}
+function status(cls,text){copyStatus.className='feedback '+cls; copyStatus.textContent=text;}
+function needsQuestion(){
+  if(store.help==='question'&&!stuQuestion.value.trim()){
+    status('almost','Please type your question in the box above first, so Matt knows what to look at.');
+    stuQuestion.focus(); return true;
+  }
+  return false;
+}
+$('#copy-btn').addEventListener('click',async()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const text=outText.textContent; let ok=false;
+  try{ if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text); ok=true;} }catch(e){}
+  if(!ok){
+    try{ const ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.left='-9999px'; document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy'); ta.remove(); }catch(e){}
+  }
+  if(ok)status('good','Copied. Paste it into an email to mread@kish.edu or a D2L message to Matt.');
+  else{ const d=outText.closest('details'); if(d)d.open=true; outText.focus(); status('almost','Your browser blocked copying. Open "See the message," select the text, and copy it with Ctrl+C (Cmd+C on a Mac).'); }
+});
+$('#mailto-btn').addEventListener('click',()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const href='mailto:mread@kish.edu?subject='+encodeURIComponent('Math 150 Section '+SECTION+' exit ticket')+'&body='+encodeURIComponent(outText.textContent);
+  status('info','Opening your email app. If nothing opens, use Copy message instead.');
+  window.location.href=href;
+});
+$('#print-btn').addEventListener('click',()=>window.print());
+let resetPending=false; const resetBtn=$('#reset-btn');
+resetBtn.addEventListener('click',()=>{
+  if(!resetPending){resetPending=true; resetBtn.textContent='Click again to clear everything'; status('almost','This clears every answer on this page. Click again to start over.'); return;}
+  resetPending=false; resetBtn.textContent='Start over';
+  const theme=store.theme; store=blank(); store.theme=theme; save();
+  QS.forEach(q=>{ $$('input',q).forEach(i=>{if(i.type==='radio')i.checked=false; else i.value='';}); q._fb.textContent=''; q._fb.className='feedback'; });
+  dzChecks.forEach(cb=>{cb.checked=false;}); helpRadios.forEach(r=>{r.checked=false;});
+  stuName.value=''; stuQuestion.value='';
+  updateDz(); updateProgress(); updateResults();
+  status('info','Cleared. You can start again from Section 2.');
+});
+
+/* ---------- navigation and progress ---------- */
+const secs=$$('main > section'), navBtns=$$('nav button[data-target]');
+const overall=$('#overall'), overallText=$('#overall-text');
+function updateProgress(){
+  const n=store.done.filter(id=>secs.some(s=>s.id===id)).length;
+  overall.max=secs.length; overall.value=n; overallText.textContent=n+' of '+secs.length;
+  $$('.mark').forEach(b=>{const d=store.done.includes(b.dataset.sec); b.textContent=d?'✓ Marked complete. Click to undo.':'Mark this section complete'; b.setAttribute('aria-pressed',d?'true':'false');});
+  navBtns.forEach(b=>{const m=$('.donemark',b); if(m)m.textContent=store.done.includes(b.dataset.target)?' (complete)':'';});
+}
+function go(id,focus){
+  secs.forEach(s=>{s.hidden=s.id!==id;});
+  navBtns.forEach(b=>{ if(b.dataset.target===id)b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current'); });
+  if(id==='s6')updateResults();
+  if(focus){ const h=$('#'+id+' h2'); if(h)h.focus(); window.scrollTo(0,0); }
+}
+navBtns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target,true)));
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go,true)));
+$$('.mark').forEach(b=>b.addEventListener('click',()=>{const i=store.done.indexOf(b.dataset.sec); if(i>=0)store.done.splice(i,1); else store.done.push(b.dataset.sec); save(); updateProgress();}));
+
+/* ---------- theme ---------- */
+const themeBtn=$('#theme');
+function applyTheme(){
+  const dark=store.theme?store.theme==='dark':(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  root.dataset.theme=dark?'dark':'light';
+  themeBtn.setAttribute('aria-pressed',dark?'true':'false');
+}
+themeBtn.addEventListener('click',()=>{store.theme=root.dataset.theme==='dark'?'light':'dark'; save(); applyTheme();});
+
+ready=true;
+go(secs[0].id,false); updateProgress(); updateResults(); applyTheme();
+window.addEventListener('beforeprint',()=>{secs.forEach(s=>{s.hidden=false;});});
+window.addEventListener('afterprint',()=>{const cur=navBtns.find(b=>b.hasAttribute('aria-current')); go(cur?cur.dataset.target:'s1',false);});
+})();
+
+</script>
+</body>
+</html>

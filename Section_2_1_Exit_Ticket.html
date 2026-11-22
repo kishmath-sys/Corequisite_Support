@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 2.1 Exit Ticket: Basics of Functions and Their Graphs</title>
+<style>
+/* Core CSS */
+:root{color-scheme:light;--bg:#fff;--ink:#1a1a1a;--soft:#374151;--accent:#1d4ed8;--on-accent:#fff;--warm:#fff8e9;--cool:#f1f5fb;--line:#64748b;--good:#166534;--warn:#854d0e;--bad:#b91c1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}
+*{box-sizing:border-box} html{scroll-padding-top:1rem} body{margin:0;background:var(--bg);color:var(--ink);font:1.125rem/1.6 system-ui,sans-serif;overflow-wrap:break-word}
+a{color:var(--accent)} .skip{position:absolute;left:-10000px;top:0} .skip:focus{left:1rem;top:1rem;z-index:10;padding:.75rem 1rem;background:var(--bg);color:var(--accent);border:2px solid var(--accent)}
+header{padding:1.5rem max(1rem,calc((100% - 76rem)/2));background:var(--cool);border-bottom:1px solid var(--line)}
+.tag{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.15;margin:.4rem 0 .6rem;max-width:34ch} h2{font-size:1.75rem;line-height:1.25;margin:.5rem 0 1rem} h3{font-size:1.3rem;line-height:1.3;margin:2rem 0 .75rem}
+button,input,select,textarea{font:inherit;min-height:44px;padding:.45rem .85rem;border:1px solid var(--line);border-radius:.45rem;background:var(--bg);color:var(--ink)} button{cursor:pointer}
+button.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:650}
+button.linkbtn{background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline;padding:.45rem .4rem;font-size:1rem}
+input[type=text],textarea{width:100%;min-width:0;min-height:48px;padding:.5rem;border:1px solid var(--line);border-radius:.35rem;background:var(--bg);color:var(--ink)}
+textarea{min-height:6rem;line-height:1.5;resize:vertical}
+input[type=radio],input[type=checkbox]{width:1.4rem;height:1.4rem;margin:0 .6rem 0 0;flex:none;accent-color:var(--accent)}
+:focus-visible,h2:focus,main:focus{outline:3px solid var(--accent);outline-offset:3px}
+fieldset{border:1px solid var(--line);border-radius:.5rem;padding:.75rem 1rem;margin:0} legend{font-weight:600;padding:0 .25rem} fieldset label{display:flex;align-items:center;min-height:44px;padding:.25rem 0;cursor:pointer}
+.layout{max-width:76rem;margin:auto;display:grid;grid-template-columns:minmax(0,1fr)} nav{padding:.75rem 1rem;border-bottom:1px solid var(--line)} nav ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem}
+nav button{display:block;width:100%;text-align:left;background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline} nav button[aria-current]{background:var(--accent);color:var(--on-accent);font-weight:650;text-decoration:none}
+main{min-width:0;padding:1rem;max-width:78ch}
+@media(min-width:62rem){html.js .layout{grid-template-columns:minmax(18rem,20rem) minmax(0,1fr)} nav{border-bottom:0;border-right:1px solid var(--line)} nav ol{display:block;position:sticky;top:1rem} main{padding:1.5rem 2rem}}
+.q,.tool{border:1px solid var(--line);border-radius:.6rem;padding:1rem;margin:1rem 0;background:var(--bg)} .q{background:var(--cool)} .tool{border-width:2px}
+.why{border-left:4px solid var(--accent);background:var(--cool);padding:.75rem 1rem;margin:1rem 0}
+.qlabel{font-weight:700;margin-right:.35rem} .inline{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center} .help{font-size:.95rem;margin:.25rem 0;color:var(--soft)}
+.feedback{margin:.5rem 0} .feedback:empty{margin:0} .feedback.good,.feedback.almost,.feedback.wrong,.feedback.info{border-left:5px solid var(--line);padding:.5rem .8rem;background:var(--bg)} .feedback.good{border-color:var(--good)} .feedback.almost{border-color:var(--warn)} .feedback.wrong{border-color:var(--bad)}
+details{margin:.3rem 0} summary{display:list-item;cursor:pointer;min-height:44px;padding:.55rem 0;font-weight:600;color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0} .section-end{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem} .pager{display:flex;justify-content:space-between;gap:.5rem;margin-top:.75rem}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0} [hidden]{display:none!important}
+.answer-row{margin:.5rem 0}
+.bridge{border:2px solid var(--accent);border-radius:.6rem;padding:1rem;margin:2rem 0 1rem;background:var(--bg)}
+.doors{display:grid;gap:1rem;margin:1rem 0} .door{border:1px solid var(--line);border-radius:.6rem;padding:1rem;background:var(--cool)}
+.door ul{padding-left:1.2rem} .door li{margin:.6rem 0} .door button{margin:.2rem .3rem .2rem 0}
+.outreach-box{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.98rem;background:var(--cool);border:1px solid var(--line);border-radius:.35rem;padding:.75rem;white-space:pre-wrap;margin:.5rem 0}
+.small-links{margin:.75rem 0 0}
+html:not(.js) .js-only{display:none!important}
+.ptr{font-size:1rem;margin:.4rem 0 0;color:var(--soft)}
+code{font-size:1em}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{nav,.actions,.section-end,.answer-row,#theme,.small-links,.skip{display:none!important} main>section,main>section[hidden]{display:block!important} details>*{display:block}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+<div class="tag">Math 150 · Section 2.1 Exit Ticket</div>
+<h1>Section 2.1 Exit Ticket: Basics of Functions and Their Graphs</h1>
+<p>A short, ungraded check after the Section 2.1 notes and videos. It shows what clicked, points you back to the right page or video for anything that did not, and makes it easy to reach Matt.</p>
+<div class="actions"><button type="button" id="theme" class="js-only" aria-pressed="false">Dark mode</button></div>
+<div class="js-only"><label for="overall">Sections marked complete: <span id="overall-text">0 of 6</span></label><br><progress id="overall" max="6" value="0"></progress></div>
+</header>
+<div class="layout">
+<nav class="js-only" aria-label="Exit ticket sections"><ol>
+<li><button type="button" data-target="s1">1. How this works<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s2">2. Relations and Functions<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s3">3. Evaluating Functions<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s4">4. Graphing and Comparing Functions<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s5">5. Reading Graphs<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s6">6. Your results and help from Matt<span class="donemark sr"></span></button></li>
+</ol></nav>
+<main id="main" tabindex="-1">
+
+<section id="s1" aria-labelledby="s1h">
+<h2 id="s1h" tabindex="-1">1. How this works</h2>
+<div class="why">
+<strong>Why this is here.</strong> In a face-to-face class, your instructor, Matt Read, would see how the lesson went just by looking around the room. Online, this exit ticket does that job. It has 16 quick checks on the Section 2.1 notes and videos. It is ungraded, and nobody sees your answers unless you choose to send them.
+</div>
+<ul>
+<li>Do this <strong>after</strong> you finish the Section 2.1 notes and videos. It takes about 10 to 15 minutes.</li>
+<li>Each check tells you right away whether you have it. If not, it names the exact item, page, or video to go back to.</li>
+<li>Section 6 shows your results and makes it easy to reach Matt by email or set up a quick Zoom meeting.</li>
+<li>Your answers save on this device so you can come back later.</li>
+</ul>
+<div class="doors">
+<div class="door">
+<p><strong>Take it in order.</strong></p>
+<button type="button" class="primary" data-go="s2">Start with Section 2</button>
+</div>
+<div class="door js-only">
+<p><strong>Jump to one part.</strong></p>
+<ul>
+<li><button type="button" data-go="s2">Relations and Functions</button></li>
+<li><button type="button" data-go="s3">Evaluating Functions</button></li>
+<li><button type="button" data-go="s4">Graphing and Comparing Functions</button></li>
+<li><button type="button" data-go="s5">Reading Graphs</button></li>
+<li><button type="button" data-go="s6">Your results and help from Matt</button></li>
+</ul>
+</div>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s1" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><span></span><button type="button" class="primary" data-go="s2">Next section</button></div>
+</div>
+</section>
+
+<section id="s2" aria-labelledby="s2h">
+<h2 id="s2h" tabindex="-1">2. Relations and Functions</h2>
+<p>These checks match Classroom Examples 2.1.1 to 2.1.5 on pages 1 and 2.</p>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. A repeated output is fine. Only a repeated input with different outputs breaks a function. Review: Classroom Example 2.1.1 on page 1 of the notes and the video \&quot;Classroom Example 2.1.1.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. The domain is the set of inputs, the first values in each pair. Review: Classroom Example 2.1.1 on page 1 of the notes and the video \&quot;Classroom Example 2.1.1.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. 3 is an output. Two inputs can share an output in a function. Review: Classroom Example 2.1.1 on page 1 of the notes and the video \&quot;Classroom Example 2.1.1.\&quot;&quot;}" data-review="Classroom Example 2.1.1 on page 1 of the notes and the video &quot;Classroom Example 2.1.1.&quot;" data-title="Classroom Example 2.1.1" data-why="Correct. Each input has one output. The inputs form the domain and the outputs form the range.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 1 (Classroom Example 2.1.1).</b> Is the relation {<span class="m"><span aria-hidden="true">(1, 3)</span><span class="sr">the point 1 comma 3</span></span>, <span class="m"><span aria-hidden="true">(4, 3)</span><span class="sr">the point 4 comma 3</span></span>, <span class="m"><span aria-hidden="true">(6, 8)</span><span class="sr">the point 6 comma 8</span></span>} a function? What are its domain and range?</legend>
+<label><input type="radio" name="mc1" value="a"> Not a function. Domain {3, 8}, range {1, 4, 6}</label>
+<label><input type="radio" name="mc1" value="b"> A function. Domain {3, 8}, range {1, 4, 6}</label>
+<label><input type="radio" name="mc1" value="c"> A function. Domain {1, 4, 6}, range {3, 8}</label>
+<label><input type="radio" name="mc1" value="d"> Not a function, because 3 appears twice.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>A function. Domain {1, 4, 6}, range {3, 8}</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.1 on page 1 of the notes and the video &quot;Classroom Example 2.1.1.&quot;</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. Look at the inputs. The input 3 goes to both 2 and 5. Review: Classroom Example 2.1.2 on page 1 of the notes and the video \&quot;Classroom Example 2.1.2.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. A repeated output is allowed. The problem is the repeated input 3. Review: Classroom Example 2.1.2 on page 1 of the notes and the video \&quot;Classroom Example 2.1.2.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. The number of pairs does not decide it. Check whether any input has two outputs. Review: Classroom Example 2.1.2 on page 1 of the notes and the video \&quot;Classroom Example 2.1.2.\&quot;&quot;}" data-review="Classroom Example 2.1.2 on page 1 of the notes and the video &quot;Classroom Example 2.1.2.&quot;" data-title="Classroom Example 2.1.2" data-why="Correct. One input with two different outputs means it is not a function.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 2 (Classroom Example 2.1.2).</b> Is the relation {<span class="m"><span aria-hidden="true">(3, 2)</span><span class="sr">the point 3 comma 2</span></span>, <span class="m"><span aria-hidden="true">(3, 5)</span><span class="sr">the point 3 comma 5</span></span>, <span class="m"><span aria-hidden="true">(4, 2)</span><span class="sr">the point 4 comma 2</span></span>} a function?</legend>
+<label><input type="radio" name="mc2" value="a"> Yes, because every pair has a different output.</label>
+<label><input type="radio" name="mc2" value="b"> No, because the input 3 is paired with two different outputs.</label>
+<label><input type="radio" name="mc2" value="c"> No, because the output 2 is used twice.</label>
+<label><input type="radio" name="mc2" value="d"> Yes, because there are only three pairs.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>No, because the input 3 is paired with two different outputs.</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.2 on page 1 of the notes and the video &quot;Classroom Example 2.1.2.&quot;</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. Solve for y. The square root gives a positive and a negative value. Review: Classroom Example 2.1.3 on page 2 of the notes and the video \&quot;Classroom Example 2.1.3.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Solve for y and see how many outputs one input can have. Review: Classroom Example 2.1.3 on page 2 of the notes and the video \&quot;Classroom Example 2.1.3.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Solve for y first. The reason is that one input gives two outputs. Review: Classroom Example 2.1.3 on page 2 of the notes and the video \&quot;Classroom Example 2.1.3.\&quot;&quot;}" data-review="Classroom Example 2.1.3 on page 2 of the notes and the video &quot;Classroom Example 2.1.3.&quot;" data-title="Classroom Example 2.1.3" data-why="Correct. For example, x = 0 gives y = 2 and y = negative 2.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 3 (Classroom Example 2.1.3).</b> Does <span class="m"><span aria-hidden="true">x + 4 = y²</span><span class="sr">x plus 4 equals y squared</span></span> define y as a function of x?</legend>
+<label><input type="radio" name="mc3" value="a"> Yes, because y appears only once.</label>
+<label><input type="radio" name="mc3" value="b"> Yes, because x is not squared.</label>
+<label><input type="radio" name="mc3" value="c"> No, because there is no y by itself.</label>
+<label><input type="radio" name="mc3" value="d"> No, because solving gives y = ±√(x + 4), two outputs for one input.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>No, because solving gives y = ±√(x + 4), two outputs for one input.</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.3 on page 2 of the notes and the video &quot;Classroom Example 2.1.3.&quot;</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. The symbol \u221a means the principal (nonnegative) square root, so there is one output. Review: Classroom Example 2.1.4 on page 2 of the notes and the video \&quot;Classroom Example 2.1.4.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. A restricted domain does not stop it from being a function. Review: Classroom Example 2.1.4 on page 2 of the notes and the video \&quot;Classroom Example 2.1.4.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Every x of 5 or more gives one output. Review: Classroom Example 2.1.4 on page 2 of the notes and the video \&quot;Classroom Example 2.1.4.\&quot;&quot;}" data-review="Classroom Example 2.1.4 on page 2 of the notes and the video &quot;Classroom Example 2.1.4.&quot;" data-title="Classroom Example 2.1.4" data-why="Correct. The square root symbol gives one value for each allowed input.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 4 (Classroom Example 2.1.4).</b> Does <span class="m"><span aria-hidden="true">y = √(x − 5)</span><span class="sr">y equals the square root of x minus 5</span></span> define y as a function of x?</legend>
+<label><input type="radio" name="mc4" value="a"> Yes, because each allowed input gives exactly one output.</label>
+<label><input type="radio" name="mc4" value="b"> No, because a square root always gives two answers.</label>
+<label><input type="radio" name="mc4" value="c"> No, because some inputs are not allowed.</label>
+<label><input type="radio" name="mc4" value="d"> Yes, but only for x = 5.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Yes, because each allowed input gives exactly one output.</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.4 on page 2 of the notes and the video &quot;Classroom Example 2.1.4.&quot;</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Squaring x is fine. What matters is whether one x gives two y-values. Review: Classroom Example 2.1.5 on page 2 of the notes and the video \&quot;Classroom Example 2.1.5.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Two inputs sharing an output is allowed in a function. Review: Classroom Example 2.1.5 on page 2 of the notes and the video \&quot;Classroom Example 2.1.5.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Isolate y and check whether each input gives one output. Review: Classroom Example 2.1.5 on page 2 of the notes and the video \&quot;Classroom Example 2.1.5.\&quot;&quot;}" data-review="Classroom Example 2.1.5 on page 2 of the notes and the video &quot;Classroom Example 2.1.5.&quot;" data-title="Classroom Example 2.1.5" data-why="Correct. With y by itself, each x gives one y.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 5 (Classroom Example 2.1.5).</b> Does <span class="m"><span aria-hidden="true">x² + y = 9</span><span class="sr">x squared plus y equals 9</span></span> define y as a function of x?</legend>
+<label><input type="radio" name="mc5" value="a"> No, because x is squared.</label>
+<label><input type="radio" name="mc5" value="b"> No, because x = 3 and x = −3 give the same y.</label>
+<label><input type="radio" name="mc5" value="c"> <span class="m"><span aria-hidden="true">Yes, because y = 9 − x² gives one output for each input.</span><span class="sr">Yes, because y equals 9 minus x squared gives one output for each input.</span></span></label>
+<label><input type="radio" name="mc5" value="d"> It cannot be decided without a graph.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">Yes, because y = 9 − x² gives one output for each input.</span><span class="sr">Yes, because y equals 9 minus x squared gives one output for each input.</span></span></strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.5 on page 2 of the notes and the video &quot;Classroom Example 2.1.5.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s2">
+<h3 id="br-s2" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>The Math Antics video &quot;Algebra Basics: What Are Functions?&quot; on page 1</li>
+<li>Classroom Examples 2.1.1 and 2.1.2, page 1, and their videos</li>
+<li>Classroom Examples 2.1.3 to 2.1.5, page 2, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s2" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s1">Previous section</button><button type="button" class="primary" data-go="s3">Next section</button></div>
+</div>
+</section>
+
+<section id="s3" aria-labelledby="s3h">
+<h2 id="s3h" tabindex="-1">3. Evaluating Functions</h2>
+<p>These checks match Classroom Examples 2.1.6 and 2.1.7 on page 2.</p>
+<div class="q" data-topic="s3" data-mode="num" data-answer="3" data-miss="{&quot;7&quot;: &quot;Not quite. Check the sign: the function subtracts 2 after the square root. Review: Classroom Example 2.1.6 on page 2 of the notes and the video \&quot;Classroom Example 2.1.6.\&quot;&quot;, &quot;23&quot;: &quot;Not quite. Take the square root of 25 before subtracting 2. Review: Classroom Example 2.1.6 on page 2 of the notes and the video \&quot;Classroom Example 2.1.6.\&quot;&quot;, &quot;2&quot;: &quot;Not quite. Add 16 and 9 before taking the square root. Review: Classroom Example 2.1.6 on page 2 of the notes and the video \&quot;Classroom Example 2.1.6.\&quot;&quot;}" data-review="Classroom Example 2.1.6 on page 2 of the notes and the video &quot;Classroom Example 2.1.6.&quot;" data-title="Classroom Example 2.1.6">
+<p class="prompt"><b class="qlabel">Check 6 (Classroom Example 2.1.6).</b> For <span class="m"><span aria-hidden="true">f(r) = √(r + 9) − 2</span><span class="sr">f of r equals the square root of r plus 9, minus 2</span></span>, find f(16).</p>
+<details><summary>Hint</summary><p>Substitute 16 for r and simplify, as in Classroom Example 2.1.6.</p></details>
+<details><summary>Show answer</summary><p><strong>3</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.6 on page 2 of the notes and the video &quot;Classroom Example 2.1.6.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. The input replaces r under the square root only. The minus 2 stays as is. Review: Classroom Example 2.1.6 on page 2 of the notes and the video \&quot;Classroom Example 2.1.6.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Substitute x minus 9 for r: x minus 9 + 9 = x. Review: Classroom Example 2.1.6 on page 2 of the notes and the video \&quot;Classroom Example 2.1.6.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. The square root stays. Only the expression under it simplifies. Review: Classroom Example 2.1.6 on page 2 of the notes and the video \&quot;Classroom Example 2.1.6.\&quot;&quot;}" data-review="Classroom Example 2.1.6 on page 2 of the notes and the video &quot;Classroom Example 2.1.6.&quot;" data-title="Classroom Example 2.1.6" data-why="Correct. Under the root, x minus 9 + 9 = x.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 7 (Classroom Example 2.1.6).</b> For <span class="m"><span aria-hidden="true">f(r) = √(r + 9) − 2</span><span class="sr">f of r equals the square root of r plus 9, minus 2</span></span>, find f(x − 9).</legend>
+<label><input type="radio" name="mc7" value="a"> <span class="m"><span aria-hidden="true">√x − 11</span><span class="sr">the square root of x, minus 11</span></span></label>
+<label><input type="radio" name="mc7" value="b"> <span class="m"><span aria-hidden="true">√(x + 18) − 2</span><span class="sr">the square root of x plus 18, minus 2</span></span></label>
+<label><input type="radio" name="mc7" value="c"> <span class="m"><span aria-hidden="true">√x − 2</span><span class="sr">the square root of x, minus 2</span></span></label>
+<label><input type="radio" name="mc7" value="d"> <span class="m"><span aria-hidden="true">x − 11</span><span class="sr">x minus 11</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">√x − 2</span><span class="sr">the square root of x, minus 2</span></span></strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.6 on page 2 of the notes and the video &quot;Classroom Example 2.1.6.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="num" data-answer="9" data-miss="{&quot;-23&quot;: &quot;Not quite. Use parentheses: (negative 2) to the fourth is positive 16. Review: Classroom Example 2.1.7 on page 2 of the notes and the video \&quot;Classroom Example 2.1.7.\&quot;&quot;, &quot;33&quot;: &quot;Not quite. (Negative 2) squared is 4, so minus 3 times 4 is minus 12. Review: Classroom Example 2.1.7 on page 2 of the notes and the video \&quot;Classroom Example 2.1.7.\&quot;&quot;, &quot;1&quot;: &quot;Not quite. (Negative 2) to the fourth is 16, not 8. Review: Classroom Example 2.1.7 on page 2 of the notes and the video \&quot;Classroom Example 2.1.7.\&quot;&quot;}" data-review="Classroom Example 2.1.7 on page 2 of the notes and the video &quot;Classroom Example 2.1.7.&quot;" data-title="Classroom Example 2.1.7">
+<p class="prompt"><b class="qlabel">Check 8 (Classroom Example 2.1.7).</b> For <span class="m"><span aria-hidden="true">h(x) = x⁴ − 3x² + 5</span><span class="sr">h of x equals x to the fourth minus 3 x squared plus 5</span></span>, find h(−2).</p>
+<details><summary>Hint</summary><p>Put the input in parentheses before you raise it to a power, as in Classroom Example 2.1.7.</p></details>
+<details><summary>Show answer</summary><p><strong>9</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.7 on page 2 of the notes and the video &quot;Classroom Example 2.1.7.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. (Negative x) to the fourth is positive x to the fourth. Review: Classroom Example 2.1.7 on page 2 of the notes and the video \&quot;Classroom Example 2.1.7.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Only the input changes. The rest of the function stays the same. Review: Classroom Example 2.1.7 on page 2 of the notes and the video \&quot;Classroom Example 2.1.7.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. (Negative x) squared is x squared, so the minus 3x squared stays. Review: Classroom Example 2.1.7 on page 2 of the notes and the video \&quot;Classroom Example 2.1.7.\&quot;&quot;}" data-review="Classroom Example 2.1.7 on page 2 of the notes and the video &quot;Classroom Example 2.1.7.&quot;" data-title="Classroom Example 2.1.7" data-why="Correct. (Negative x) to an even power is the same as x to that power.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 9 (Classroom Example 2.1.7).</b> For <span class="m"><span aria-hidden="true">h(x) = x⁴ − 3x² + 5</span><span class="sr">h of x equals x to the fourth minus 3 x squared plus 5</span></span>, find h(−x).</legend>
+<label><input type="radio" name="mc9" value="a"> <span class="m"><span aria-hidden="true">−x⁴ + 3x² + 5</span><span class="sr">negative x to the fourth plus 3 x squared plus 5</span></span></label>
+<label><input type="radio" name="mc9" value="b"> <span class="m"><span aria-hidden="true">−x⁴ − 3x² − 5</span><span class="sr">negative x to the fourth minus 3 x squared minus 5</span></span></label>
+<label><input type="radio" name="mc9" value="c"> <span class="m"><span aria-hidden="true">x⁴ + 3x² + 5</span><span class="sr">x to the fourth plus 3 x squared plus 5</span></span></label>
+<label><input type="radio" name="mc9" value="d"> <span class="m"><span aria-hidden="true">x⁴ − 3x² + 5</span><span class="sr">x to the fourth minus 3 x squared plus 5</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">x⁴ − 3x² + 5</span><span class="sr">x to the fourth minus 3 x squared plus 5</span></span></strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.7 on page 2 of the notes and the video &quot;Classroom Example 2.1.7.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s3">
+<h3 id="br-s3" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Classroom Examples 2.1.6 and 2.1.7, page 2, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s3" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s2">Previous section</button><button type="button" class="primary" data-go="s4">Next section</button></div>
+</div>
+</section>
+
+<section id="s4" aria-labelledby="s4h">
+<h2 id="s4h" tabindex="-1">4. Graphing and Comparing Functions</h2>
+<p>These checks match Classroom Examples 2.1.8 to 2.1.11 on page 3.</p>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. Subtracting 4 lowers every y-value. Review: Classroom Examples 2.1.8 and 2.1.9 on page 3 of the notes and their videos.&quot;, &quot;c&quot;: &quot;Not quite. The 4 is subtracted outside the square, so it changes y-values, not x-values. Review: Classroom Examples 2.1.8 and 2.1.9 on page 3 of the notes and their videos.&quot;, &quot;d&quot;: &quot;Not quite. The 4 is subtracted from the output, which moves the graph vertically. Review: Classroom Examples 2.1.8 and 2.1.9 on page 3 of the notes and their videos.&quot;}" data-review="Classroom Examples 2.1.8 and 2.1.9 on page 3 of the notes and their videos." data-title="Classroom Examples 2.1.8 and 2.1.9" data-why="Correct. Every output of g is 4 less than the output of f.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 10 (Classroom Examples 2.1.8 and 2.1.9).</b> How is the graph of <span class="m"><span aria-hidden="true">g(x) = x² − 4</span><span class="sr">g of x equals x squared minus 4</span></span> related to the graph of <span class="m"><span aria-hidden="true">f(x) = x²</span><span class="sr">f of x equals x squared</span></span>?</legend>
+<label><input type="radio" name="mc10" value="a"> It is the graph of f shifted down 4 units.</label>
+<label><input type="radio" name="mc10" value="b"> It is the graph of f shifted up 4 units.</label>
+<label><input type="radio" name="mc10" value="c"> It is the graph of f shifted left 4 units.</label>
+<label><input type="radio" name="mc10" value="d"> It is the graph of f shifted right 4 units.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>It is the graph of f shifted down 4 units.</strong></p><p class="ptr">Where this is in your notes: Classroom Examples 2.1.8 and 2.1.9 on page 3 of the notes and their videos.</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. That point is on f(x) = \u221ax. Subtract 2 for g. Review: Classroom Example 2.1.10 on page 3 of the notes and the video \&quot;Classroom Example 2.1.10.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. The input goes first in the ordered pair. Review: Classroom Example 2.1.10 on page 3 of the notes and the video \&quot;Classroom Example 2.1.10.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Take the square root of 4 before subtracting 2. Review: Classroom Example 2.1.10 on page 3 of the notes and the video \&quot;Classroom Example 2.1.10.\&quot;&quot;}" data-review="Classroom Example 2.1.10 on page 3 of the notes and the video &quot;Classroom Example 2.1.10.&quot;" data-title="Classroom Example 2.1.10" data-why="Correct. The square root of 4 is 2, and 2 minus 2 is 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 11 (Classroom Example 2.1.10).</b> For <span class="m"><span aria-hidden="true">g(x) = √x − 2</span><span class="sr">g of x equals the square root of x, minus 2</span></span>, which ordered pair is on the graph when x = 4?</legend>
+<label><input type="radio" name="mc11" value="a"> <span class="m"><span aria-hidden="true">(4, 2)</span><span class="sr">the point 4 comma 2</span></span></label>
+<label><input type="radio" name="mc11" value="b"> <span class="m"><span aria-hidden="true">(4, 0)</span><span class="sr">the point 4 comma 0</span></span></label>
+<label><input type="radio" name="mc11" value="c"> <span class="m"><span aria-hidden="true">(2, 4)</span><span class="sr">the point 2 comma 4</span></span></label>
+<label><input type="radio" name="mc11" value="d"> <span class="m"><span aria-hidden="true">(4, −2)</span><span class="sr">the point 4 comma negative 2</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">(4, 0)</span><span class="sr">the point 4 comma 0</span></span></strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.10 on page 3 of the notes and the video &quot;Classroom Example 2.1.10.&quot;</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. The 5 is added under the square root, so it changes the inputs, not the outputs. Review: Classroom Example 2.1.11 on page 3 of the notes and the video \&quot;Classroom Example 2.1.11.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Adding 5 inside moves the graph left. Try x = negative 5 in g. Review: Classroom Example 2.1.11 on page 3 of the notes and the video \&quot;Classroom Example 2.1.11.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. The 5 is inside the square root, so the shift is horizontal. Review: Classroom Example 2.1.11 on page 3 of the notes and the video \&quot;Classroom Example 2.1.11.\&quot;&quot;}" data-review="Classroom Example 2.1.11 on page 3 of the notes and the video &quot;Classroom Example 2.1.11.&quot;" data-title="Classroom Example 2.1.11" data-why="Correct. g starts at x = negative 5 instead of x = 0.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 12 (Classroom Example 2.1.11).</b> How is the graph of <span class="m"><span aria-hidden="true">g(x) = √(x + 5)</span><span class="sr">g of x equals the square root of x plus 5</span></span> related to the graph of <span class="m"><span aria-hidden="true">f(x) = √x</span><span class="sr">f of x equals the square root of x</span></span>?</legend>
+<label><input type="radio" name="mc12" value="a"> Shifted 5 units up</label>
+<label><input type="radio" name="mc12" value="b"> Shifted 5 units right</label>
+<label><input type="radio" name="mc12" value="c"> Shifted 5 units left</label>
+<label><input type="radio" name="mc12" value="d"> Shifted 5 units down</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Shifted 5 units left</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.11 on page 3 of the notes and the video &quot;Classroom Example 2.1.11.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s4">
+<h3 id="br-s4" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Classroom Examples 2.1.8 and 2.1.9, page 3, and their videos</li>
+<li>Classroom Examples 2.1.10 and 2.1.11, page 3, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s4" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s3">Previous section</button><button type="button" class="primary" data-go="s5">Next section</button></div>
+</div>
+</section>
+
+<section id="s5" aria-labelledby="s5h">
+<h2 id="s5h" tabindex="-1">5. Reading Graphs</h2>
+<p>These checks match Classroom Examples 2.1.12 to 2.1.14 on page 4 and the domain and range videos on page 1.</p>
+<div class="q" data-topic="s5" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. One input, x = 1, has two outputs. That breaks the definition of a function. Review: Classroom Examples 2.1.12 and 2.1.13 on page 4 of the notes and their videos.&quot;, &quot;b&quot;: &quot;Not quite. The test asks whether any vertical line crosses more than once. Review: Classroom Examples 2.1.12 and 2.1.13 on page 4 of the notes and their videos.&quot;, &quot;c&quot;: &quot;Not quite. Finding one vertical line that crosses twice is enough. Review: Classroom Examples 2.1.12 and 2.1.13 on page 4 of the notes and their videos.&quot;}" data-review="Classroom Examples 2.1.12 and 2.1.13 on page 4 of the notes and their videos." data-title="Vertical Line Test" data-why="Correct. One vertical line crossing twice is enough to fail the test.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 13 (Vertical Line Test).</b> The vertical line x = 1 crosses a graph at <span class="m"><span aria-hidden="true">(1, 2)</span><span class="sr">the point 1 comma 2</span></span> and <span class="m"><span aria-hidden="true">(1, −2)</span><span class="sr">the point 1 comma negative 2</span></span>. What does the vertical line test tell you?</legend>
+<label><input type="radio" name="mc13" value="a"> The graph is a function, because both points have x = 1.</label>
+<label><input type="radio" name="mc13" value="b"> The graph is a function, because the line crosses it.</label>
+<label><input type="radio" name="mc13" value="c"> Nothing, unless every vertical line is tested first.</label>
+<label><input type="radio" name="mc13" value="d"> The graph is not a function, because one vertical line crosses it twice.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>The graph is not a function, because one vertical line crosses it twice.</strong></p><p class="ptr">Where this is in your notes: Classroom Examples 2.1.12 and 2.1.13 on page 4 of the notes and their videos.</p></details>
+</div>
+<div class="q" data-topic="s5" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. Domain uses the x-values and range uses the y-values. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;, &quot;c&quot;: &quot;Not quite. The lowest y-value is negative 2, at the right end. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;, &quot;d&quot;: &quot;Not quite. Closed dots mean the endpoints are included, so use brackets. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;}" data-review="Classroom Example 2.1.14 on page 4 of the notes, the video &quot;Classroom Example 2.1.14,&quot; and the domain and range videos on page 1." data-title="Domain and Range from a Graph" data-why="Correct. The x-values run from negative 4 to 5, and the y-values from negative 2 to 3.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 14 (Domain and Range from a Graph).</b> A graph is made of two line segments. One goes from <span class="m"><span aria-hidden="true">(−4, −1)</span><span class="sr">the point negative 4 comma negative 1</span></span> to <span class="m"><span aria-hidden="true">(0, 3)</span><span class="sr">the point 0 comma 3</span></span>. The other goes from <span class="m"><span aria-hidden="true">(0, 3)</span><span class="sr">the point 0 comma 3</span></span> to <span class="m"><span aria-hidden="true">(5, −2)</span><span class="sr">the point 5 comma negative 2</span></span>. The ends <span class="m"><span aria-hidden="true">(−4, −1)</span><span class="sr">the point negative 4 comma negative 1</span></span> and <span class="m"><span aria-hidden="true">(5, −2)</span><span class="sr">the point 5 comma negative 2</span></span> are closed dots. What are its domain and range?</legend>
+<label><input type="radio" name="mc14" value="a"> <span class="m"><span aria-hidden="true">Domain [−4, 5], range [−2, 3]</span><span class="sr">Domain negative 4 to 5, range negative 2 to 3, all included</span></span></label>
+<label><input type="radio" name="mc14" value="b"> <span class="m"><span aria-hidden="true">Domain [−2, 3], range [−4, 5]</span><span class="sr">Domain negative 2 to 3, range negative 4 to 5</span></span></label>
+<label><input type="radio" name="mc14" value="c"> <span class="m"><span aria-hidden="true">Domain [−4, 5], range [−1, 3]</span><span class="sr">Domain negative 4 to 5, range negative 1 to 3</span></span></label>
+<label><input type="radio" name="mc14" value="d"> <span class="m"><span aria-hidden="true">Domain (−4, 5), range (−2, 3)</span><span class="sr">Domain and range with parentheses on every end</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">Domain [−4, 5], range [−2, 3]</span><span class="sr">Domain negative 4 to 5, range negative 2 to 3, all included</span></span></strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.14 on page 4 of the notes, the video &quot;Classroom Example 2.1.14,&quot; and the domain and range videos on page 1.</p></details>
+</div>
+<div class="q" data-topic="s5" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. The x-intercepts and y-intercept are swapped. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;, &quot;c&quot;: &quot;Not quite. The ends of the graph are not on the x-axis. Find where each segment has y = 0. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;, &quot;d&quot;: &quot;Not quite. The first segment also crosses the x-axis, and the graph crosses the y-axis at (0, 3). Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;}" data-review="Classroom Example 2.1.14 on page 4 of the notes, the video &quot;Classroom Example 2.1.14,&quot; and the domain and range videos on page 1." data-title="Intercepts from a Graph" data-why="Correct. The segments cross the x-axis at negative 3 and 3 and the y-axis at 3.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 15 (Intercepts from a Graph).</b> For the same graph, what are the intercepts?</legend>
+<label><input type="radio" name="mc15" value="a"> x-intercept <span class="m"><span aria-hidden="true">(0, 3)</span><span class="sr">the point 0 comma 3</span></span>; y-intercepts <span class="m"><span aria-hidden="true">(−3, 0)</span><span class="sr">the point negative 3 comma 0</span></span> and <span class="m"><span aria-hidden="true">(3, 0)</span><span class="sr">the point 3 comma 0</span></span></label>
+<label><input type="radio" name="mc15" value="b"> x-intercepts <span class="m"><span aria-hidden="true">(−3, 0)</span><span class="sr">the point negative 3 comma 0</span></span> and <span class="m"><span aria-hidden="true">(3, 0)</span><span class="sr">the point 3 comma 0</span></span>; y-intercept <span class="m"><span aria-hidden="true">(0, 3)</span><span class="sr">the point 0 comma 3</span></span></label>
+<label><input type="radio" name="mc15" value="c"> x-intercepts <span class="m"><span aria-hidden="true">(−4, 0)</span><span class="sr">the point negative 4 comma 0</span></span> and <span class="m"><span aria-hidden="true">(5, 0)</span><span class="sr">the point 5 comma 0</span></span>; y-intercept <span class="m"><span aria-hidden="true">(0, 3)</span><span class="sr">the point 0 comma 3</span></span></label>
+<label><input type="radio" name="mc15" value="d"> x-intercept <span class="m"><span aria-hidden="true">(3, 0)</span><span class="sr">the point 3 comma 0</span></span> only; no y-intercept</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>x-intercepts <span class="m"><span aria-hidden="true">(−3, 0)</span><span class="sr">the point negative 3 comma 0</span></span> and <span class="m"><span aria-hidden="true">(3, 0)</span><span class="sr">the point 3 comma 0</span></span>; y-intercept <span class="m"><span aria-hidden="true">(0, 3)</span><span class="sr">the point 0 comma 3</span></span></strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.14 on page 4 of the notes, the video &quot;Classroom Example 2.1.14,&quot; and the domain and range videos on page 1.</p></details>
+</div>
+<div class="q" data-topic="s5" data-mode="num" data-answer="-1" data-miss="{&quot;3&quot;: &quot;Not quite. That is f(0). Find the y-value where x = negative 4. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;, &quot;-4&quot;: &quot;Not quite. f(negative 4) is the y-value at x = negative 4, not the x-value. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;, &quot;1&quot;: &quot;Not quite. Check the sign of the y-value at x = negative 4. Review: Classroom Example 2.1.14 on page 4 of the notes, the video \&quot;Classroom Example 2.1.14,\&quot; and the domain and range videos on page 1.&quot;}" data-review="Classroom Example 2.1.14 on page 4 of the notes, the video &quot;Classroom Example 2.1.14,&quot; and the domain and range videos on page 1." data-title="Function Values from a Graph">
+<p class="prompt"><b class="qlabel">Check 16 (Function Values from a Graph).</b> For the same graph, what is f(−4)?</p>
+<details><summary>Hint</summary><p>Find the point on the graph with x = negative 4 and read its y-value, as in Classroom Example 2.1.14.</p></details>
+<details><summary>Show answer</summary><p><strong>−1</strong></p><p class="ptr">Where this is in your notes: Classroom Example 2.1.14 on page 4 of the notes, the video &quot;Classroom Example 2.1.14,&quot; and the domain and range videos on page 1.</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s5">
+<h3 id="br-s5" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Finding Domain and Range from a Graph: the two videos on page 1</li>
+<li>Vertical line test: Classroom Examples 2.1.12 and 2.1.13, page 4, and their videos</li>
+<li>Classroom Example 2.1.14, page 4, and its video</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s5" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s4">Previous section</button><button type="button" class="primary" data-go="s6">Next: Your results</button></div>
+</div>
+</section>
+
+<section id="s6" aria-labelledby="s6h">
+<h2 id="s6h" tabindex="-1">6. Your results and help from Matt</h2>
+<p id="res-line" role="status" aria-live="polite">Answer the checks in Sections 2 to 5 and your results will show here.</p>
+<div id="goback-wrap" hidden>
+<h3>Go back to</h3>
+<ul id="goback-list"></ul>
+</div>
+<p id="unanswered" hidden></p>
+
+<div class="tool" role="region" aria-labelledby="help-h">
+<h3 id="help-h" style="margin-top:0">Would you like help from Matt?</h3>
+<p>Start with the "Go back to" list. If something is still unclear after that, Matt would rather hear from you now than after a quiz.</p>
+<fieldset>
+<legend class="sr">Would you like help from Matt?</legend>
+<label><input type="radio" name="helpwant" value="none"> No thanks. I am just sharing my results.</label>
+<label><input type="radio" name="helpwant" value="question"> I went back to the notes and still have a specific question.</label>
+<label><input type="radio" name="helpwant" value="zoom"> I would like a quick 10 to 15 minute Zoom meeting.</label>
+</fieldset>
+<div style="margin:1rem 0">
+<label for="stu-name"><strong>Your name</strong></label>
+<input type="text" id="stu-name" autocomplete="name">
+</div>
+<div style="margin-bottom:1rem">
+<label for="stu-question"><strong>Your question, or a few times that work for Zoom</strong></label>
+<p class="help" id="q-ex">Example: "On Check 8, I got -23. Where did I go wrong?"</p>
+<textarea id="stu-question" aria-describedby="q-ex"></textarea>
+</div>
+<div class="actions">
+<button type="button" id="mailto-btn" class="primary">Email Matt</button>
+<button type="button" id="copy-btn">Copy message</button>
+</div>
+<p id="copy-status" class="feedback" role="status" aria-live="polite"></p>
+<p class="help">If the email button does nothing, copy the message and paste it into an email to <a href="mailto:mread@kish.edu">mread@kish.edu</a> or a D2L message to Matt.</p>
+<details><summary>See the message</summary><pre id="outreach-text" class="outreach-box" tabindex="0" aria-label="Your message to Matt"></pre></details>
+<p class="small-links"><button type="button" id="print-btn" class="linkbtn">Print or save as PDF</button> <button type="button" id="reset-btn" class="linkbtn">Start over</button></p>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s6" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s5">Previous section</button><span></span></div>
+</div>
+</section>
+
+</main>
+</div>
+<script>
+'use strict';
+(function(){
+const root=document.documentElement; root.classList.add('js');
+const $=(s,c=document)=>c.querySelector(s); const $$=(s,c=document)=>Array.from(c.querySelectorAll(s));
+const KEY='coreq-math150-exitticket-2-1-v1';
+const SECTION='2.1';
+const blank=()=>({done:[],theme:null,ans:{},ok:{},dz:[],help:'',stuName:'',stuQuestion:''});
+let store=blank();
+try{
+  const x=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(x&&typeof x==='object'){
+    const b=blank();
+    for(const k of Object.keys(b)){ if(x[k]!==undefined&&x[k]!==null&&typeof x[k]===typeof b[k]&&Array.isArray(x[k])===Array.isArray(b[k]))store[k]=x[k]; }
+    if(typeof x.theme==='string')store.theme=x.theme;
+  }
+}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+let ready=false; /* results wait until everything below is set up */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ---------- answer checking ---------- */
+const norm=s=>String(s).toLowerCase().replace(/[−–—]/g,'-').replace(/[,%$\s]/g,'');
+function toNum(s){ s=norm(s); return /^-?(\d+\.?\d*|\.\d+)$/.test(s)?Number(s):null; }
+function show(q,state,msg,record){
+  const fb=q._fb; fb.className='feedback '+state; fb.textContent=msg;
+  if(record){ store.ok[q._qid]=state==='good'?1:0; save(); updateResults(); }
+}
+function clearFb(q){
+  q._fb.textContent=''; q._fb.className='feedback';
+  if(store.ans[q._qid]!==undefined){ delete store.ans[q._qid]; delete store.ok[q._qid]; save(); updateResults(); }
+}
+function judgeNum(q,raw,record){
+  const stu=toNum(raw);
+  if(stu===null)return show(q,'info','Enter a number using digits, like 12 or -5.',false);
+  if(q.dataset.answer.split('|').some(a=>Number(a)===stu))return show(q,'good','Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  const hit=Object.keys(mm).find(k=>Number(k)===stu);
+  show(q,'wrong',hit?mm[hit]:'Not quite. Review: '+q.dataset.review,record);
+}
+function judgeMC(q,record){
+  const c=$('input[type=radio]:checked',q);
+  if(!c)return show(q,'info','Select an answer first.',false);
+  if(c.value===q.dataset.answer)return show(q,'good',q.dataset.why||'Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  show(q,'wrong',mm[c.value]||('Not quite. Review: '+q.dataset.review),record);
+}
+const QS=$$('.q');
+QS.forEach((q,k)=>{
+  const qid='q'+(k+1); q._qid=qid; q._num=k+1;
+  const fb=document.createElement('p'); fb.className='feedback'; fb.setAttribute('role','status'); fb.setAttribute('aria-live','polite'); q._fb=fb;
+  const row=document.createElement('div'); row.className='answer-row';
+  let input=null;
+  if(q.dataset.mode==='mc'){
+    row.innerHTML='<button type="button" class="primary">Check</button>';
+    $('fieldset',q).after(row);
+    $$('input[type=radio]',q).forEach(r=>{
+      if(store.ans[qid]===r.value)r.checked=true;
+      r.addEventListener('change',()=>clearFb(q));
+    });
+  } else {
+    const id='ans'+(k+1);
+    row.innerHTML='<div class="inline"><label for="'+id+'">Your answer</label><input type="text" id="'+id+'" autocomplete="off" spellcheck="false" style="max-width:12rem"><button type="button" class="primary">Check</button></div>';
+    $('.prompt',q).after(row);
+    input=$('input',row);
+    if(store.ans[qid]!==undefined)input.value=store.ans[qid];
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();run();}});
+    input.addEventListener('input',()=>clearFb(q));
+  }
+  row.after(fb);
+  function run(){
+    if(q.dataset.mode==='mc'){
+      const c=$('input[type=radio]:checked',q);
+      if(c){store.ans[qid]=c.value; save();}
+      return judgeMC(q,!!c);
+    }
+    const v=input.value.trim();
+    if(!v)return show(q,'info','Type an answer first.',false);
+    if(toNum(v)===null)return judgeNum(q,v,false);
+    store.ans[qid]=v; save(); judgeNum(q,v,true);
+  }
+  $('button',row).addEventListener('click',run);
+  if(store.ans[qid]!==undefined){ q.dataset.mode==='mc'?judgeMC(q,false):judgeNum(q,store.ans[qid],false); }
+});
+
+/* ---------- Desmos issues ---------- */
+const dzBox=$('#dz-diag-box')||document.createElement('div'); const dzChecks=$$('.dz-issue');
+function updateDz(){
+  const checked=dzChecks.filter(cb=>cb.checked);
+  store.dz=checked.map(cb=>cb.value); save();
+  if(!checked.length){dzBox.hidden=true; dzBox.innerHTML=''; return;}
+  dzBox.hidden=false;
+  dzBox.innerHTML='<strong>Quick fixes:</strong><ul style="margin:.5rem 0">'+checked.map(cb=>'<li>'+esc(cb.dataset.tip)+'</li>').join('')+'</ul><p style="margin:.4rem 0 0">Still stuck? These are now in your message for Matt in Section 6. A screenshot helps him spot the problem fast.</p>';
+}
+dzChecks.forEach(cb=>{ cb.checked=store.dz.includes(cb.value); cb.addEventListener('change',()=>{updateDz(); updateResults();}); });
+updateDz();
+
+/* ---------- results and message ---------- */
+const resLine=$('#res-line'), resInit=resLine.textContent, gbWrap=$('#goback-wrap'), gbList=$('#goback-list'), unans=$('#unanswered');
+const stuName=$('#stu-name'), stuQuestion=$('#stu-question'), outText=$('#outreach-text'), copyStatus=$('#copy-status');
+const helpRadios=$$('input[name=helpwant]');
+stuName.value=store.stuName; stuQuestion.value=store.stuQuestion;
+helpRadios.forEach(r=>{ r.checked=store.help===r.value; r.addEventListener('change',()=>{store.help=r.value; save(); updateResults();}); });
+stuName.addEventListener('input',()=>{store.stuName=stuName.value; save(); updateResults();});
+stuQuestion.addEventListener('input',()=>{store.stuQuestion=stuQuestion.value; save(); updateResults();});
+
+function buildMessage(stats){
+  const m=['Hi Matt,','','Section '+SECTION+' exit ticket: I answered '+stats.att+' of '+stats.total+' checks, and '+stats.corr+' were correct.'];
+  if(stats.missed.length){m.push('','Checks I missed:'); stats.missed.forEach(q=>m.push('- Check '+q._num+' ('+q.dataset.title+')'));}
+  if(stats.unanswered.length){m.push('','Not answered yet: Checks '+stats.unanswered.map(q=>q._num).join(', '));}
+  if(store.dz.length){m.push('','Desmos issues I ran into:'); store.dz.forEach(s=>m.push('- '+s));}
+  const qt=stuQuestion.value.trim();
+  if(store.help==='question'){m.push('','I went back to the notes and still have a question:',qt||'[Type your question above]');}
+  else if(store.help==='zoom'){m.push('','I would like a quick 10 to 15 minute Zoom meeting.'); if(qt)m.push('Times that work for me: '+qt);}
+  else { m.push('','No help needed right now. I am just sharing my results.'); if(qt)m.push('',qt); }
+  m.push('','Thank you,',stuName.value.trim()||'[Your name]');
+  return m.join('\n');
+}
+function stats(){
+  const att=QS.filter(q=>store.ans[q._qid]!==undefined&&store.ok[q._qid]!==undefined);
+  const corr=att.filter(q=>store.ok[q._qid]===1).length;
+  return {total:QS.length,att:att.length,corr:corr,missed:att.filter(q=>store.ok[q._qid]!==1),unanswered:QS.filter(q=>!att.includes(q))};
+}
+function updateResults(){
+  if(!ready)return;
+  const s=stats();
+  if(s.att===0){ resLine.textContent=resInit; }
+  else {
+    let t='You answered '+s.att+' of '+s.total+' checks. '+s.corr+' were correct.';
+    if(s.missed.length)t+=' Missing a few on a first try is normal. A second look at the places below usually clears it up.';
+    else if(s.att===s.total)t+=' You are ready for the Section '+SECTION+' homework.';
+    resLine.textContent=t;
+  }
+  gbList.innerHTML='';
+  s.missed.forEach(q=>{const li=document.createElement('li'); li.textContent='Check '+q._num+' ('+q.dataset.title+'): '+q.dataset.review; gbList.appendChild(li);});
+  gbWrap.hidden=!s.missed.length;
+  if(s.att>0&&s.unanswered.length){unans.hidden=false; unans.textContent='Not answered yet: Checks '+s.unanswered.map(q=>q._num).join(', ')+'.';}
+  else {unans.hidden=true; unans.textContent='';}
+  outText.textContent=buildMessage(s);
+}
+function status(cls,text){copyStatus.className='feedback '+cls; copyStatus.textContent=text;}
+function needsQuestion(){
+  if(store.help==='question'&&!stuQuestion.value.trim()){
+    status('almost','Please type your question in the box above first, so Matt knows what to look at.');
+    stuQuestion.focus(); return true;
+  }
+  return false;
+}
+$('#copy-btn').addEventListener('click',async()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const text=outText.textContent; let ok=false;
+  try{ if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text); ok=true;} }catch(e){}
+  if(!ok){
+    try{ const ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.left='-9999px'; document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy'); ta.remove(); }catch(e){}
+  }
+  if(ok)status('good','Copied. Paste it into an email to mread@kish.edu or a D2L message to Matt.');
+  else{ const d=outText.closest('details'); if(d)d.open=true; outText.focus(); status('almost','Your browser blocked copying. Open "See the message," select the text, and copy it with Ctrl+C (Cmd+C on a Mac).'); }
+});
+$('#mailto-btn').addEventListener('click',()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const href='mailto:mread@kish.edu?subject='+encodeURIComponent('Math 150 Section '+SECTION+' exit ticket')+'&body='+encodeURIComponent(outText.textContent);
+  status('info','Opening your email app. If nothing opens, use Copy message instead.');
+  window.location.href=href;
+});
+$('#print-btn').addEventListener('click',()=>window.print());
+let resetPending=false; const resetBtn=$('#reset-btn');
+resetBtn.addEventListener('click',()=>{
+  if(!resetPending){resetPending=true; resetBtn.textContent='Click again to clear everything'; status('almost','This clears every answer on this page. Click again to start over.'); return;}
+  resetPending=false; resetBtn.textContent='Start over';
+  const theme=store.theme; store=blank(); store.theme=theme; save();
+  QS.forEach(q=>{ $$('input',q).forEach(i=>{if(i.type==='radio')i.checked=false; else i.value='';}); q._fb.textContent=''; q._fb.className='feedback'; });
+  dzChecks.forEach(cb=>{cb.checked=false;}); helpRadios.forEach(r=>{r.checked=false;});
+  stuName.value=''; stuQuestion.value='';
+  updateDz(); updateProgress(); updateResults();
+  status('info','Cleared. You can start again from Section 2.');
+});
+
+/* ---------- navigation and progress ---------- */
+const secs=$$('main > section'), navBtns=$$('nav button[data-target]');
+const overall=$('#overall'), overallText=$('#overall-text');
+function updateProgress(){
+  const n=store.done.filter(id=>secs.some(s=>s.id===id)).length;
+  overall.max=secs.length; overall.value=n; overallText.textContent=n+' of '+secs.length;
+  $$('.mark').forEach(b=>{const d=store.done.includes(b.dataset.sec); b.textContent=d?'✓ Marked complete. Click to undo.':'Mark this section complete'; b.setAttribute('aria-pressed',d?'true':'false');});
+  navBtns.forEach(b=>{const m=$('.donemark',b); if(m)m.textContent=store.done.includes(b.dataset.target)?' (complete)':'';});
+}
+function go(id,focus){
+  secs.forEach(s=>{s.hidden=s.id!==id;});
+  navBtns.forEach(b=>{ if(b.dataset.target===id)b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current'); });
+  if(id==='s6')updateResults();
+  if(focus){ const h=$('#'+id+' h2'); if(h)h.focus(); window.scrollTo(0,0); }
+}
+navBtns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target,true)));
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go,true)));
+$$('.mark').forEach(b=>b.addEventListener('click',()=>{const i=store.done.indexOf(b.dataset.sec); if(i>=0)store.done.splice(i,1); else store.done.push(b.dataset.sec); save(); updateProgress();}));
+
+/* ---------- theme ---------- */
+const themeBtn=$('#theme');
+function applyTheme(){
+  const dark=store.theme?store.theme==='dark':(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  root.dataset.theme=dark?'dark':'light';
+  themeBtn.setAttribute('aria-pressed',dark?'true':'false');
+}
+themeBtn.addEventListener('click',()=>{store.theme=root.dataset.theme==='dark'?'light':'dark'; save(); applyTheme();});
+
+ready=true;
+go(secs[0].id,false); updateProgress(); updateResults(); applyTheme();
+window.addEventListener('beforeprint',()=>{secs.forEach(s=>{s.hidden=false;});});
+window.addEventListener('afterprint',()=>{const cur=navBtns.find(b=>b.hasAttribute('aria-current')); go(cur?cur.dataset.target:'s1',false);});
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1.2 Exit Ticket: Linear Equations and Rational Equations</title>
+<style>
+/* Core CSS */
+:root{color-scheme:light;--bg:#fff;--ink:#1a1a1a;--soft:#374151;--accent:#1d4ed8;--on-accent:#fff;--warm:#fff8e9;--cool:#f1f5fb;--line:#64748b;--good:#166534;--warn:#854d0e;--bad:#b91c1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#101827;--ink:#f1f5f9;--soft:#cbd5e1;--accent:#93c5fd;--on-accent:#101827;--warm:#29251e;--cool:#1e293b;--line:#94a3b8;--good:#86efac;--warn:#fde68a;--bad:#fca5a5}
+*{box-sizing:border-box} html{scroll-padding-top:1rem} body{margin:0;background:var(--bg);color:var(--ink);font:1.125rem/1.6 system-ui,sans-serif;overflow-wrap:break-word}
+a{color:var(--accent)} .skip{position:absolute;left:-10000px;top:0} .skip:focus{left:1rem;top:1rem;z-index:10;padding:.75rem 1rem;background:var(--bg);color:var(--accent);border:2px solid var(--accent)}
+header{padding:1.5rem max(1rem,calc((100% - 76rem)/2));background:var(--cool);border-bottom:1px solid var(--line)}
+.tag{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.15;margin:.4rem 0 .6rem;max-width:34ch} h2{font-size:1.75rem;line-height:1.25;margin:.5rem 0 1rem} h3{font-size:1.3rem;line-height:1.3;margin:2rem 0 .75rem}
+button,input,select,textarea{font:inherit;min-height:44px;padding:.45rem .85rem;border:1px solid var(--line);border-radius:.45rem;background:var(--bg);color:var(--ink)} button{cursor:pointer}
+button.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:650}
+button.linkbtn{background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline;padding:.45rem .4rem;font-size:1rem}
+input[type=text],textarea{width:100%;min-width:0;min-height:48px;padding:.5rem;border:1px solid var(--line);border-radius:.35rem;background:var(--bg);color:var(--ink)}
+textarea{min-height:6rem;line-height:1.5;resize:vertical}
+input[type=radio],input[type=checkbox]{width:1.4rem;height:1.4rem;margin:0 .6rem 0 0;flex:none;accent-color:var(--accent)}
+:focus-visible,h2:focus,main:focus{outline:3px solid var(--accent);outline-offset:3px}
+fieldset{border:1px solid var(--line);border-radius:.5rem;padding:.75rem 1rem;margin:0} legend{font-weight:600;padding:0 .25rem} fieldset label{display:flex;align-items:center;min-height:44px;padding:.25rem 0;cursor:pointer}
+.layout{max-width:76rem;margin:auto;display:grid;grid-template-columns:minmax(0,1fr)} nav{padding:.75rem 1rem;border-bottom:1px solid var(--line)} nav ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem}
+nav button{display:block;width:100%;text-align:left;background:transparent;border-color:transparent;color:var(--accent);text-decoration:underline} nav button[aria-current]{background:var(--accent);color:var(--on-accent);font-weight:650;text-decoration:none}
+main{min-width:0;padding:1rem;max-width:78ch}
+@media(min-width:62rem){html.js .layout{grid-template-columns:minmax(18rem,20rem) minmax(0,1fr)} nav{border-bottom:0;border-right:1px solid var(--line)} nav ol{display:block;position:sticky;top:1rem} main{padding:1.5rem 2rem}}
+.q,.tool{border:1px solid var(--line);border-radius:.6rem;padding:1rem;margin:1rem 0;background:var(--bg)} .q{background:var(--cool)} .tool{border-width:2px}
+.why{border-left:4px solid var(--accent);background:var(--cool);padding:.75rem 1rem;margin:1rem 0}
+.qlabel{font-weight:700;margin-right:.35rem} .inline{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center} .help{font-size:.95rem;margin:.25rem 0;color:var(--soft)}
+.feedback{margin:.5rem 0} .feedback:empty{margin:0} .feedback.good,.feedback.almost,.feedback.wrong,.feedback.info{border-left:5px solid var(--line);padding:.5rem .8rem;background:var(--bg)} .feedback.good{border-color:var(--good)} .feedback.almost{border-color:var(--warn)} .feedback.wrong{border-color:var(--bad)}
+details{margin:.3rem 0} summary{display:list-item;cursor:pointer;min-height:44px;padding:.55rem 0;font-weight:600;color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0} .section-end{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1rem} .pager{display:flex;justify-content:space-between;gap:.5rem;margin-top:.75rem}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0} [hidden]{display:none!important}
+.answer-row{margin:.5rem 0}
+.bridge{border:2px solid var(--accent);border-radius:.6rem;padding:1rem;margin:2rem 0 1rem;background:var(--bg)}
+.doors{display:grid;gap:1rem;margin:1rem 0} .door{border:1px solid var(--line);border-radius:.6rem;padding:1rem;background:var(--cool)}
+.door ul{padding-left:1.2rem} .door li{margin:.6rem 0} .door button{margin:.2rem .3rem .2rem 0}
+.outreach-box{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.98rem;background:var(--cool);border:1px solid var(--line);border-radius:.35rem;padding:.75rem;white-space:pre-wrap;margin:.5rem 0}
+.small-links{margin:.75rem 0 0}
+html:not(.js) .js-only{display:none!important}
+.ptr{font-size:1rem;margin:.4rem 0 0;color:var(--soft)}
+code{font-size:1em}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{nav,.actions,.section-end,.answer-row,#theme,.small-links,.skip{display:none!important} main>section,main>section[hidden]{display:block!important} details>*{display:block}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+<div class="tag">Math 150 · Section 1.2 Exit Ticket</div>
+<h1>Section 1.2 Exit Ticket: Linear Equations and Rational Equations</h1>
+<p>A short, ungraded check after the Section 1.2 notes and videos. It shows what clicked, points you back to the right page or video for anything that did not, and makes it easy to reach Matt.</p>
+<div class="actions"><button type="button" id="theme" class="js-only" aria-pressed="false">Dark mode</button></div>
+<div class="js-only"><label for="overall">Sections marked complete: <span id="overall-text">0 of 5</span></label><br><progress id="overall" max="5" value="0"></progress></div>
+</header>
+<div class="layout">
+<nav class="js-only" aria-label="Exit ticket sections"><ol>
+<li><button type="button" data-target="s1">1. How this works<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s2">2. Solving Linear Equations<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s3">3. Types of Equations<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s4">4. Desmos check<span class="donemark sr"></span></button></li>
+<li><button type="button" data-target="s5">5. Your results and help from Matt<span class="donemark sr"></span></button></li>
+</ol></nav>
+<main id="main" tabindex="-1">
+
+<section id="s1" aria-labelledby="s1h">
+<h2 id="s1h" tabindex="-1">1. How this works</h2>
+<div class="why">
+<strong>Why this is here.</strong> In a face-to-face class, your instructor, Matt Read, would see how the lesson went just by looking around the room. Online, this exit ticket does that job. It has 14 quick checks on the Section 1.2 notes and videos, including Desmos. It is ungraded, and nobody sees your answers unless you choose to send them.
+</div>
+<ul>
+<li>Do this <strong>after</strong> you finish the Section 1.2 notes and videos. It takes about 10 to 15 minutes.</li>
+<li>Each check tells you right away whether you have it. If not, it names the exact item, page, or video to go back to.</li>
+<li>Have Desmos open for Section 4.</li>
+<li>Section 5 shows your results and makes it easy to reach Matt by email or set up a quick Zoom meeting.</li>
+<li>Your answers save on this device so you can come back later.</li>
+</ul>
+<div class="doors">
+<div class="door">
+<p><strong>Take it in order.</strong></p>
+<button type="button" class="primary" data-go="s2">Start with Section 2</button>
+</div>
+<div class="door js-only">
+<p><strong>Jump to one part.</strong></p>
+<ul>
+<li><button type="button" data-go="s2">Solving Linear Equations</button></li>
+<li><button type="button" data-go="s3">Types of Equations</button></li>
+<li><button type="button" data-go="s4">Desmos check</button></li>
+<li><button type="button" data-go="s5">Your results and help from Matt</button></li>
+</ul>
+</div>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s1" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><span></span><button type="button" class="primary" data-go="s2">Next section</button></div>
+</div>
+</section>
+
+<section id="s2" aria-labelledby="s2h">
+<h2 id="s2h" tabindex="-1">2. Solving Linear Equations</h2>
+<p>These checks match items 1 and 2 on pages 1 to 3 and Classroom Examples 1.2.1 and 1.2.2 on pages 6 and 7.</p>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Whatever you add has to be added to both sides. Review: item 1 (Properties of Equality for Solving Equations) on page 1 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. The notes say multiplying or dividing only works with a value that is not zero. Review: item 1 (Properties of Equality for Solving Equations) on page 1 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. Both sides have to change by the same value. Review: item 1 (Properties of Equality for Solving Equations) on page 1 of the notes.&quot;}" data-review="item 1 (Properties of Equality for Solving Equations) on page 1 of the notes." data-title="Properties of Equality" data-why="Correct. Doing the same thing to both sides, with a nonzero value for multiplying or dividing, keeps the equation balanced.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 1 (Properties of Equality).</b> Which step matches the properties of equality in the notes?</legend>
+<label><input type="radio" name="mc1" value="a"> Add 5 to the left side only.</label>
+<label><input type="radio" name="mc1" value="b"> Divide both sides by the same value, even if that value is zero.</label>
+<label><input type="radio" name="mc1" value="c"> Multiply both sides by the same nonzero value.</label>
+<label><input type="radio" name="mc1" value="d"> Subtract 4 from the left side and 2 from the right side.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Multiply both sides by the same nonzero value.</strong></p><p class="ptr">Where this is in your notes: item 1 (Properties of Equality for Solving Equations) on page 1 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. The negative 4 has to multiply the 3 as well as the x. Review: item 1, Distributive Property, on page 1 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. Negative 4 times negative 3 is positive 12. Review: item 1, Distributive Property, on page 1 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. Negative 4 times x is negative 4x. Review: item 1, Distributive Property, on page 1 of the notes.&quot;}" data-review="item 1, Distributive Property, on page 1 of the notes." data-title="Distributive Property" data-why="Correct. Negative 4 multiplies both terms inside the parentheses.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 2 (Distributive Property).</b> Which expression equals <span class="m"><span aria-hidden="true">−4(x − 3)</span><span class="sr">negative 4 times the quantity x minus 3</span></span>?</legend>
+<label><input type="radio" name="mc2" value="a"> <span class="m"><span aria-hidden="true">−4x − 3</span><span class="sr">negative 4 x minus 3</span></span></label>
+<label><input type="radio" name="mc2" value="b"> <span class="m"><span aria-hidden="true">−4x + 12</span><span class="sr">negative 4 x plus 12</span></span></label>
+<label><input type="radio" name="mc2" value="c"> <span class="m"><span aria-hidden="true">−4x − 12</span><span class="sr">negative 4 x minus 12</span></span></label>
+<label><input type="radio" name="mc2" value="d"> <span class="m"><span aria-hidden="true">4x + 12</span><span class="sr">4 x plus 12</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">−4x + 12</span><span class="sr">negative 4 x plus 12</span></span></strong></p><p class="ptr">Where this is in your notes: item 1, Distributive Property, on page 1 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. The notes say to multiply ALL terms by the LCD, even the 1 that has no fraction. Review: item 2 (Common Strategies), Remove Fractions, on pages 2 and 3 of the notes.&quot;, &quot;b&quot;: &quot;Not quite. Multiplying by 12 does not just remove the denominators. Each term is multiplied by 12. Review: item 2 (Common Strategies), Remove Fractions, on pages 2 and 3 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. 12 times 2 thirds is 8, not 2. Review: item 2 (Common Strategies), Remove Fractions, on pages 2 and 3 of the notes.&quot;}" data-review="item 2 (Common Strategies), Remove Fractions, on pages 2 and 3 of the notes." data-title="Remove Fractions" data-why="Correct. Every term, including the 1, is multiplied by 12.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 3 (Remove Fractions).</b> To solve <span class="m"><span aria-hidden="true">x/4 + 2/3 = 1</span><span class="sr">x over 4 plus 2 thirds equals 1</span></span>, a student multiplies by the LCD, 12. Which equation should they get?</legend>
+<label><input type="radio" name="mc3" value="a"> <span class="m"><span aria-hidden="true">3x + 8 = 1</span><span class="sr">3 x plus 8 equals 1</span></span></label>
+<label><input type="radio" name="mc3" value="b"> <span class="m"><span aria-hidden="true">x + 2 = 12</span><span class="sr">x plus 2 equals 12</span></span></label>
+<label><input type="radio" name="mc3" value="c"> <span class="m"><span aria-hidden="true">3x + 2 = 12</span><span class="sr">3 x plus 2 equals 12</span></span></label>
+<label><input type="radio" name="mc3" value="d"> <span class="m"><span aria-hidden="true">3x + 8 = 12</span><span class="sr">3 x plus 8 equals 12</span></span></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><span class="m"><span aria-hidden="true">3x + 8 = 12</span><span class="sr">3 x plus 8 equals 12</span></span></strong></p><p class="ptr">Where this is in your notes: item 2 (Common Strategies), Remove Fractions, on pages 2 and 3 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="num" data-answer="-9" data-miss="{&quot;-1.5&quot;: &quot;Not quite. It looks like the negative 4 multiplied only the x. It also multiplies the 3. Review: item 2 (Common Strategies), Combine Like Terms, on page 3 of the notes.&quot;, &quot;3&quot;: &quot;Not quite. Check the sign when you distribute: negative 4 times 3 is negative 12. Review: item 2 (Common Strategies), Combine Like Terms, on page 3 of the notes.&quot;, &quot;9&quot;: &quot;Not quite. Check the sign in your last step. Review: item 2 (Common Strategies), Combine Like Terms, on page 3 of the notes.&quot;}" data-review="item 2 (Common Strategies), Combine Like Terms, on page 3 of the notes." data-title="Combine Like Terms">
+<p class="prompt"><b class="qlabel">Check 4 (Combine Like Terms).</b> Solve <span class="m"><span aria-hidden="true">2x − 4(x + 3) = 6</span><span class="sr">2 x minus 4 times the quantity x plus 3, equals 6</span></span>. Enter the value of x.</p>
+<details><summary>Hint</summary><p>Distribute first, then combine the like terms on the left side, like the example on page 3.</p></details>
+<details><summary>Show answer</summary><p><strong>−9</strong></p><p class="ptr">Where this is in your notes: item 2 (Common Strategies), Combine Like Terms, on page 3 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="num" data-answer="-3" data-miss="{&quot;-2&quot;: &quot;Not quite. The 2 has to multiply the 1 inside the parentheses too. Review: Classroom Example 1.2.1 on page 6 of the notes and the video \&quot;Classroom Example 1.2.1.\&quot;&quot;, &quot;1&quot;: &quot;Not quite. The 3 on the right has to multiply the 2 as well as the x. Review: Classroom Example 1.2.1 on page 6 of the notes and the video \&quot;Classroom Example 1.2.1.\&quot;&quot;, &quot;3&quot;: &quot;Not quite. Check the sign in your last step. Review: Classroom Example 1.2.1 on page 6 of the notes and the video \&quot;Classroom Example 1.2.1.\&quot;&quot;}" data-review="Classroom Example 1.2.1 on page 6 of the notes and the video &quot;Classroom Example 1.2.1.&quot;" data-title="Classroom Example 1.2.1">
+<p class="prompt"><b class="qlabel">Check 5 (Classroom Example 1.2.1).</b> Solve <span class="m"><span aria-hidden="true">2(x − 1) + 5 = 3(x + 2)</span><span class="sr">2 times the quantity x minus 1, plus 5, equals 3 times the quantity x plus 2</span></span>. Enter the value of x.</p>
+<details><summary>Hint</summary><p>Distribute and combine like terms on each side first, the same way as Classroom Example 1.2.1.</p></details>
+<details><summary>Show answer</summary><p><strong>−3</strong></p><p class="ptr">Where this is in your notes: Classroom Example 1.2.1 on page 6 of the notes and the video &quot;Classroom Example 1.2.1.&quot;</p></details>
+</div>
+<div class="q" data-topic="s2" data-mode="num" data-answer="6" data-miss="{&quot;1&quot;: &quot;Not quite. The 5 has to be multiplied by the LCD too. Review: Classroom Example 1.2.2 on page 7 of the notes and the video \&quot;Classroom Example 1.2.2.\&quot;&quot;, &quot;0.6&quot;: &quot;Not quite. Check the step where you divide. 5x = 30 gives x = 6. Review: Classroom Example 1.2.2 on page 7 of the notes and the video \&quot;Classroom Example 1.2.2.\&quot;&quot;, &quot;30&quot;: &quot;Not quite. After multiplying by 6, combine 2x and 3x before you divide. Review: Classroom Example 1.2.2 on page 7 of the notes and the video \&quot;Classroom Example 1.2.2.\&quot;&quot;}" data-review="Classroom Example 1.2.2 on page 7 of the notes and the video &quot;Classroom Example 1.2.2.&quot;" data-title="Classroom Example 1.2.2">
+<p class="prompt"><b class="qlabel">Check 6 (Classroom Example 1.2.2).</b> Solve <span class="m"><span aria-hidden="true">x/3 + x/2 = 5</span><span class="sr">x over 3 plus x over 2 equals 5</span></span>. Enter the value of x.</p>
+<details><summary>Hint</summary><p>Find the LCD, multiply every term by it, then solve. Classroom Example 1.2.2 does this.</p></details>
+<details><summary>Show answer</summary><p><strong>6</strong></p><p class="ptr">Where this is in your notes: Classroom Example 1.2.2 on page 7 of the notes and the video &quot;Classroom Example 1.2.2.&quot;</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s2">
+<h3 id="br-s2" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Properties of Equality and the Distributive Property: item 1, page 1, and its two review videos</li>
+<li>Remove Parenthesis, Remove Fractions, Combine Like Terms: item 2, pages 2 and 3</li>
+<li>Classroom Examples 1.2.1 and 1.2.2, pages 6 and 7, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s2" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s1">Previous section</button><button type="button" class="primary" data-go="s3">Next section</button></div>
+</div>
+</section>
+
+<section id="s3" aria-labelledby="s3h">
+<h2 id="s3h" tabindex="-1">3. Types of Equations</h2>
+<p>These checks match item 3 on pages 3 and 4 and Classroom Examples 1.2.3 and 1.2.4 on page 7.</p>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. An identity is true for every value of x, not just one. Review: item 3 (Types of Equations), Conditional Equation, on page 3 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. An inconsistent equation ends in a false statement, like 35 = 3. Review: item 3 (Types of Equations), Conditional Equation, on page 3 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. The result of solving tells you the type. Review: item 3 (Types of Equations), Conditional Equation, on page 3 of the notes.&quot;}" data-review="item 3 (Types of Equations), Conditional Equation, on page 3 of the notes." data-title="Conditional Equation" data-why="Correct. A conditional equation has exactly one solution.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 7 (Conditional Equation).</b> A student solves an equation and ends with x = 4. What type of equation is it?</legend>
+<label><input type="radio" name="mc7" value="a"> Conditional, because it has one solution.</label>
+<label><input type="radio" name="mc7" value="b"> Identity, because it has a true answer.</label>
+<label><input type="radio" name="mc7" value="c"> Inconsistent, because 4 is not 0.</label>
+<label><input type="radio" name="mc7" value="d"> It cannot be classified until it is graphed.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>Conditional, because it has one solution.</strong></p><p class="ptr">Where this is in your notes: item 3 (Types of Equations), Conditional Equation, on page 3 of the notes.</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. The x-terms cancel. Look at the statement that is left. Review: item 3, Inconsistent Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.3.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. An identity leaves a true statement. Check whether 12 = 10 is true. Review: item 3, Inconsistent Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.3.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. Distribute the 3 to both terms. The x-terms then cancel. Review: item 3, Inconsistent Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.3.\&quot;&quot;}" data-review="item 3, Inconsistent Equation, on page 4 of the notes and the video &quot;Classroom Example 1.2.3.&quot;" data-title="Inconsistent Equation" data-why="Correct. It simplifies to 12 = 10, which is false no matter what x is.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 8 (Inconsistent Equation).</b> Solve <span class="m"><span aria-hidden="true">3(x + 4) = 3x + 10</span><span class="sr">3 times the quantity x plus 4 equals 3 x plus 10</span></span>. What is true about this equation?</legend>
+<label><input type="radio" name="mc8" value="a"> It is conditional with solution x = 0.</label>
+<label><input type="radio" name="mc8" value="b"> It is an identity, so every real number is a solution.</label>
+<label><input type="radio" name="mc8" value="c"> It is conditional with solution x = 2.</label>
+<label><input type="radio" name="mc8" value="d"> It is inconsistent, so it has no solution.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>It is inconsistent, so it has no solution.</strong></p><p class="ptr">Where this is in your notes: item 3, Inconsistent Equation, on page 4 of the notes and the video &quot;Classroom Example 1.2.3.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. The empty set is for an equation with no solution. This one ends in a true statement. Review: item 3, Identity Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.4.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. Check whether the statement is true for every x, not just 0. Review: item 3, Identity Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.4.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Distribute the 2 to both terms and compare the two sides. Review: item 3, Identity Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.4.\&quot;&quot;}" data-review="item 3, Identity Equation, on page 4 of the notes and the video &quot;Classroom Example 1.2.4.&quot;" data-title="Identity Equation" data-why="Correct. Both sides simplify to 3x minus 6, so every real number works.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 9 (Identity Equation).</b> Solve <span class="m"><span aria-hidden="true">2(x − 3) + x = 3x − 6</span><span class="sr">2 times the quantity x minus 3, plus x, equals 3 x minus 6</span></span>. How would you write the solution in MML?</legend>
+<label><input type="radio" name="mc9" value="a"> ∅</label>
+<label><input type="radio" name="mc9" value="b"> x = 0</label>
+<label><input type="radio" name="mc9" value="c"> {x | x is a real number}</label>
+<label><input type="radio" name="mc9" value="d"> x = 6</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>{x | x is a real number}</strong></p><p class="ptr">Where this is in your notes: item 3, Identity Equation, on page 4 of the notes and the video &quot;Classroom Example 1.2.4.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="b" data-miss="{&quot;a&quot;: &quot;Not quite. The x is gone, so the 0 is not a value of x. Review: item 3, Identity Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.4.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. No solution comes from a false statement. 0 = 0 is true. Review: item 3, Identity Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.4.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. Losing the variable is how identity and inconsistent equations show up. Review: item 3, Identity Equation, on page 4 of the notes and the video \&quot;Classroom Example 1.2.4.\&quot;&quot;}" data-review="item 3, Identity Equation, on page 4 of the notes and the video &quot;Classroom Example 1.2.4.&quot;" data-title="Reading the Last Line" data-why="Correct. A true statement that does not depend on x means an identity.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 10 (Reading the Last Line).</b> After simplifying, a student is left with 0 = 0. What does that tell them?</legend>
+<label><input type="radio" name="mc10" value="a"> The solution is x = 0.</label>
+<label><input type="radio" name="mc10" value="b"> The equation is an identity, so every real number is a solution.</label>
+<label><input type="radio" name="mc10" value="c"> The equation has no solution.</label>
+<label><input type="radio" name="mc10" value="d"> A mistake was made, because x disappeared.</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>The equation is an identity, so every real number is a solution.</strong></p><p class="ptr">Where this is in your notes: item 3, Identity Equation, on page 4 of the notes and the video &quot;Classroom Example 1.2.4.&quot;</p></details>
+</div>
+<div class="q" data-topic="s3" data-mode="mc" data-answer="a" data-miss="{&quot;b&quot;: &quot;Not quite. That set notation is for an identity, with infinitely many solutions. Review: the Identity Equation and Inconsistent Equation examples on page 4 of the notes.&quot;, &quot;c&quot;: &quot;Not quite. x = 0 is one solution, not no solution. Review: the Identity Equation and Inconsistent Equation examples on page 4 of the notes.&quot;, &quot;d&quot;: &quot;Not quite. {0} is a set containing one solution, 0. Review: the Identity Equation and Inconsistent Equation examples on page 4 of the notes.&quot;}" data-review="the Identity Equation and Inconsistent Equation examples on page 4 of the notes." data-title="Writing No Solution" data-why="Correct. MML uses the empty set symbol for no solution.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 11 (Writing No Solution).</b> How does MML show that an equation has no solution?</legend>
+<label><input type="radio" name="mc11" value="a"> ∅ (the empty set)</label>
+<label><input type="radio" name="mc11" value="b"> {x | x is a real number}</label>
+<label><input type="radio" name="mc11" value="c"> x = 0</label>
+<label><input type="radio" name="mc11" value="d"> {0}</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>∅ (the empty set)</strong></p><p class="ptr">Where this is in your notes: the Identity Equation and Inconsistent Equation examples on page 4 of the notes.</p></details>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s3">
+<h3 id="br-s3" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Conditional Equation: item 3, page 3</li>
+<li>Identity Equation and Inconsistent Equation: item 3, page 4</li>
+<li>Classroom Examples 1.2.3 and 1.2.4, page 7, and their videos</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s3" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s2">Previous section</button><button type="button" class="primary" data-go="s4">Next section</button></div>
+</div>
+</section>
+
+<section id="s4" aria-labelledby="s4h">
+<h2 id="s4h" tabindex="-1">4. Desmos check</h2>
+<p>Desmos is the graphing calculator for this course, so this part checks that it is working for you. Open Desmos now. The steps are on pages 5 and 6 of the notes, with the video "Using Desmos to Solve Linear Equations." If anything goes wrong, Matt can look at it with you.</p>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="c" data-miss="{&quot;a&quot;: &quot;Not quite. Without parentheses, only the 9 is divided by 6. Review: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. This still divides only the 9 by 6. Review: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;, &quot;d&quot;: &quot;Not quite. This subtracts 9 after dividing, which is a different expression. Review: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;}" data-review="Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video &quot;Using Desmos to Solve Linear Equations.&quot;" data-title="Typing a Fraction in Desmos" data-why="Correct. The parentheses keep the whole numerator over 6.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 12 (Typing a Fraction in Desmos).</b> You want Desmos to graph <span class="m"><span aria-hidden="true">(x − 9)/6</span><span class="sr">the quantity x minus 9, over 6</span></span>. What should you type?</legend>
+<label><input type="radio" name="mc12" value="a"> <code>x-9/6</code></label>
+<label><input type="radio" name="mc12" value="b"> <code>x-(9/6)</code></label>
+<label><input type="radio" name="mc12" value="c"> <code>(x-9)/6</code></label>
+<label><input type="radio" name="mc12" value="d"> <code>x/6-9</code></label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong><code>(x-9)/6</code></strong></p><p class="ptr">Where this is in your notes: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video &quot;Using Desmos to Solve Linear Equations.&quot;</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="mc" data-answer="d" data-miss="{&quot;a&quot;: &quot;Not quite. The solution is the x-coordinate, not the y-coordinate. Review: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;, &quot;b&quot;: &quot;Not quite. The equation is in x, so only the x-coordinate is the solution. Review: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;, &quot;c&quot;: &quot;Not quite. The x-coordinate is the first value in the point. Review: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;}" data-review="Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video &quot;Using Desmos to Solve Linear Equations.&quot;" data-title="Reading the Intersection" data-why="Correct. The x-coordinate of the intersection is the solution.">
+<fieldset>
+<legend class="prompt"><b class="qlabel">Check 13 (Reading the Intersection).</b> You graph each side of an equation in Desmos, and the graphs cross at <span class="m"><span aria-hidden="true">(3, −4)</span><span class="sr">the point 3 comma negative 4</span></span>. What is the solution?</legend>
+<label><input type="radio" name="mc13" value="a"> <span class="m"><span aria-hidden="true">y = −4</span><span class="sr">y equals negative 4</span></span></label>
+<label><input type="radio" name="mc13" value="b"> x = 3 and y = −4 are both solutions</label>
+<label><input type="radio" name="mc13" value="c"> <span class="m"><span aria-hidden="true">x = −4</span><span class="sr">x equals negative 4</span></span></label>
+<label><input type="radio" name="mc13" value="d"> x = 3</label>
+</fieldset>
+<details><summary>Show answer</summary><p><strong>x = 3</strong></p><p class="ptr">Where this is in your notes: Using Desmos to Solve Equations on pages 5 and 6 of the notes and the video &quot;Using Desmos to Solve Linear Equations.&quot;</p></details>
+</div>
+<div class="q" data-topic="s4" data-mode="num" data-answer="3" data-miss="{&quot;13&quot;: &quot;Not quite. 13 is the y-coordinate of the intersection. The solution is the x-coordinate. Review: Classroom Example 1.2.5 on page 7 of the notes, the video \&quot;Classroom Example 1.2.5,\&quot; and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;, &quot;2&quot;: &quot;Not quite. Check how you typed 2(x - 1). Desmos needs the parentheses. Review: Classroom Example 1.2.5 on page 7 of the notes, the video \&quot;Classroom Example 1.2.5,\&quot; and the video \&quot;Using Desmos to Solve Linear Equations.\&quot;&quot;}" data-review="Classroom Example 1.2.5 on page 7 of the notes, the video &quot;Classroom Example 1.2.5,&quot; and the video &quot;Using Desmos to Solve Linear Equations.&quot;" data-title="Classroom Example 1.2.5">
+<p class="prompt"><b class="qlabel">Check 14 (Classroom Example 1.2.5).</b> Use Desmos to solve <span class="m"><span aria-hidden="true">3x + 2(x − 1) = 4x + 1</span><span class="sr">3 x plus 2 times the quantity x minus 1, equals 4 x plus 1</span></span>. Enter the value of x.</p>
+<details><summary>Hint</summary><p>Type each side as its own expression, then click the point where they cross.</p></details>
+<details><summary>Show answer</summary><p><strong>3</strong></p><p class="ptr">Where this is in your notes: Classroom Example 1.2.5 on page 7 of the notes, the video &quot;Classroom Example 1.2.5,&quot; and the video &quot;Using Desmos to Solve Linear Equations.&quot;</p></details>
+</div>
+
+<div class="tool" role="region" aria-labelledby="dz-trouble-h">
+<h3 id="dz-trouble-h" style="margin-top:0">Did Desmos give you any trouble?</h3>
+<p>Check anything that happened. You will see a quick fix, and it will be added to your message for Matt in Section 5.</p>
+<fieldset>
+<legend><strong>Desmos issues I ran into:</strong></legend>
+<label><input type="checkbox" class="dz-issue" data-tip="Go to desmos.com in your web browser and click Open Graphing Calculator. The first screenshots of each Desmos guide in the notes show where it is." value="I could not get the Desmos graphing calculator open."> I could not get the Desmos graphing calculator open.</label>
+<label><input type="checkbox" class="dz-issue" data-tip="Put parentheses around each numerator, like (x-9)/6. The Note on page 5 shows this." value="Desmos did not graph the fractions the way I expected."> Desmos did not graph the fractions the way I expected.</label>
+<label><input type="checkbox" class="dz-issue" data-tip="Click right on the point where the two graphs cross. Desmos shows its coordinates, and the x-coordinate is the solution. If the crossing is off the screen, zoom out." value="I could not find where the two graphs cross, or what the solution is."> I could not find where the two graphs cross, or what the solution is.</label>
+</fieldset>
+<div id="dz-diag-box" class="why" role="status" aria-live="polite" hidden></div>
+</div>
+
+<div class="bridge" role="group" aria-labelledby="br-s4">
+<h3 id="br-s4" style="margin-top:0">If any of these felt shaky</h3>
+<ul>
+<li>Solving with Desmos: pages 5 and 6, and the video &quot;Using Desmos to Solve Linear Equations&quot;</li>
+<li>Classroom Example 1.2.5, page 7, and its video</li>
+</ul>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s4" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s3">Previous section</button><button type="button" class="primary" data-go="s5">Next: Your results</button></div>
+</div>
+</section>
+
+<section id="s5" aria-labelledby="s5h">
+<h2 id="s5h" tabindex="-1">5. Your results and help from Matt</h2>
+<p id="res-line" role="status" aria-live="polite">Answer the checks in Sections 2 to 4 and your results will show here.</p>
+<div id="goback-wrap" hidden>
+<h3>Go back to</h3>
+<ul id="goback-list"></ul>
+</div>
+<p id="unanswered" hidden></p>
+
+<div class="tool" role="region" aria-labelledby="help-h">
+<h3 id="help-h" style="margin-top:0">Would you like help from Matt?</h3>
+<p>Start with the "Go back to" list. If something is still unclear after that, Matt would rather hear from you now than after a quiz.</p>
+<fieldset>
+<legend class="sr">Would you like help from Matt?</legend>
+<label><input type="radio" name="helpwant" value="none"> No thanks. I am just sharing my results.</label>
+<label><input type="radio" name="helpwant" value="question"> I went back to the notes and still have a specific question.</label>
+<label><input type="radio" name="helpwant" value="zoom"> I would like a quick 10 to 15 minute Zoom meeting.</label>
+</fieldset>
+<div style="margin:1rem 0">
+<label for="stu-name"><strong>Your name</strong></label>
+<input type="text" id="stu-name" autocomplete="name">
+</div>
+<div style="margin-bottom:1rem">
+<label for="stu-question"><strong>Your question, or a few times that work for Zoom</strong></label>
+<p class="help" id="q-ex">Example: "On Check 4, I got x = 3. Where did I go wrong?"</p>
+<textarea id="stu-question" aria-describedby="q-ex"></textarea>
+</div>
+<div class="actions">
+<button type="button" id="mailto-btn" class="primary">Email Matt</button>
+<button type="button" id="copy-btn">Copy message</button>
+</div>
+<p id="copy-status" class="feedback" role="status" aria-live="polite"></p>
+<p class="help">If the email button does nothing, copy the message and paste it into an email to <a href="mailto:mread@kish.edu">mread@kish.edu</a> or a D2L message to Matt.</p>
+<details><summary>See the message</summary><pre id="outreach-text" class="outreach-box" tabindex="0" aria-label="Your message to Matt"></pre></details>
+<p class="small-links"><button type="button" id="print-btn" class="linkbtn">Print or save as PDF</button> <button type="button" id="reset-btn" class="linkbtn">Start over</button></p>
+</div>
+<div class="section-end">
+<button type="button" class="mark" data-sec="s5" aria-pressed="false">Mark this section complete</button>
+<div class="pager"><button type="button" data-go="s4">Previous section</button><span></span></div>
+</div>
+</section>
+
+</main>
+</div>
+<script>
+'use strict';
+(function(){
+const root=document.documentElement; root.classList.add('js');
+const $=(s,c=document)=>c.querySelector(s); const $$=(s,c=document)=>Array.from(c.querySelectorAll(s));
+const KEY='coreq-math150-exitticket-1-2-v1';
+const SECTION='1.2';
+const blank=()=>({done:[],theme:null,ans:{},ok:{},dz:[],help:'',stuName:'',stuQuestion:''});
+let store=blank();
+try{
+  const x=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(x&&typeof x==='object'){
+    const b=blank();
+    for(const k of Object.keys(b)){ if(x[k]!==undefined&&x[k]!==null&&typeof x[k]===typeof b[k]&&Array.isArray(x[k])===Array.isArray(b[k]))store[k]=x[k]; }
+    if(typeof x.theme==='string')store.theme=x.theme;
+  }
+}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+let ready=false; /* results wait until everything below is set up */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ---------- answer checking ---------- */
+const norm=s=>String(s).toLowerCase().replace(/[−–—]/g,'-').replace(/[,%$\s]/g,'');
+function toNum(s){ s=norm(s); return /^-?(\d+\.?\d*|\.\d+)$/.test(s)?Number(s):null; }
+function show(q,state,msg,record){
+  const fb=q._fb; fb.className='feedback '+state; fb.textContent=msg;
+  if(record){ store.ok[q._qid]=state==='good'?1:0; save(); updateResults(); }
+}
+function clearFb(q){
+  q._fb.textContent=''; q._fb.className='feedback';
+  if(store.ans[q._qid]!==undefined){ delete store.ans[q._qid]; delete store.ok[q._qid]; save(); updateResults(); }
+}
+function judgeNum(q,raw,record){
+  const stu=toNum(raw);
+  if(stu===null)return show(q,'info','Enter a number using digits, like 12 or -5.',false);
+  if(q.dataset.answer.split('|').some(a=>Number(a)===stu))return show(q,'good','Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  const hit=Object.keys(mm).find(k=>Number(k)===stu);
+  show(q,'wrong',hit?mm[hit]:'Not quite. Review: '+q.dataset.review,record);
+}
+function judgeMC(q,record){
+  const c=$('input[type=radio]:checked',q);
+  if(!c)return show(q,'info','Select an answer first.',false);
+  if(c.value===q.dataset.answer)return show(q,'good',q.dataset.why||'Correct.',record);
+  let mm={}; try{mm=JSON.parse(q.dataset.miss||'{}');}catch(e){}
+  show(q,'wrong',mm[c.value]||('Not quite. Review: '+q.dataset.review),record);
+}
+const QS=$$('.q');
+QS.forEach((q,k)=>{
+  const qid='q'+(k+1); q._qid=qid; q._num=k+1;
+  const fb=document.createElement('p'); fb.className='feedback'; fb.setAttribute('role','status'); fb.setAttribute('aria-live','polite'); q._fb=fb;
+  const row=document.createElement('div'); row.className='answer-row';
+  let input=null;
+  if(q.dataset.mode==='mc'){
+    row.innerHTML='<button type="button" class="primary">Check</button>';
+    $('fieldset',q).after(row);
+    $$('input[type=radio]',q).forEach(r=>{
+      if(store.ans[qid]===r.value)r.checked=true;
+      r.addEventListener('change',()=>clearFb(q));
+    });
+  } else {
+    const id='ans'+(k+1);
+    row.innerHTML='<div class="inline"><label for="'+id+'">Your answer</label><input type="text" id="'+id+'" autocomplete="off" spellcheck="false" style="max-width:12rem"><button type="button" class="primary">Check</button></div>';
+    $('.prompt',q).after(row);
+    input=$('input',row);
+    if(store.ans[qid]!==undefined)input.value=store.ans[qid];
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();run();}});
+    input.addEventListener('input',()=>clearFb(q));
+  }
+  row.after(fb);
+  function run(){
+    if(q.dataset.mode==='mc'){
+      const c=$('input[type=radio]:checked',q);
+      if(c){store.ans[qid]=c.value; save();}
+      return judgeMC(q,!!c);
+    }
+    const v=input.value.trim();
+    if(!v)return show(q,'info','Type an answer first.',false);
+    if(toNum(v)===null)return judgeNum(q,v,false);
+    store.ans[qid]=v; save(); judgeNum(q,v,true);
+  }
+  $('button',row).addEventListener('click',run);
+  if(store.ans[qid]!==undefined){ q.dataset.mode==='mc'?judgeMC(q,false):judgeNum(q,store.ans[qid],false); }
+});
+
+/* ---------- Desmos issues ---------- */
+const dzBox=$('#dz-diag-box'); const dzChecks=$$('.dz-issue');
+function updateDz(){
+  const checked=dzChecks.filter(cb=>cb.checked);
+  store.dz=checked.map(cb=>cb.value); save();
+  if(!checked.length){dzBox.hidden=true; dzBox.innerHTML=''; return;}
+  dzBox.hidden=false;
+  dzBox.innerHTML='<strong>Quick fixes:</strong><ul style="margin:.5rem 0">'+checked.map(cb=>'<li>'+esc(cb.dataset.tip)+'</li>').join('')+'</ul><p style="margin:.4rem 0 0">Still stuck? These are now in your message for Matt in Section 6. A screenshot helps him spot the problem fast.</p>';
+}
+dzChecks.forEach(cb=>{ cb.checked=store.dz.includes(cb.value); cb.addEventListener('change',()=>{updateDz(); updateResults();}); });
+updateDz();
+
+/* ---------- results and message ---------- */
+const resLine=$('#res-line'), resInit=resLine.textContent, gbWrap=$('#goback-wrap'), gbList=$('#goback-list'), unans=$('#unanswered');
+const stuName=$('#stu-name'), stuQuestion=$('#stu-question'), outText=$('#outreach-text'), copyStatus=$('#copy-status');
+const helpRadios=$$('input[name=helpwant]');
+stuName.value=store.stuName; stuQuestion.value=store.stuQuestion;
+helpRadios.forEach(r=>{ r.checked=store.help===r.value; r.addEventListener('change',()=>{store.help=r.value; save(); updateResults();}); });
+stuName.addEventListener('input',()=>{store.stuName=stuName.value; save(); updateResults();});
+stuQuestion.addEventListener('input',()=>{store.stuQuestion=stuQuestion.value; save(); updateResults();});
+
+function buildMessage(stats){
+  const m=['Hi Matt,','','Section '+SECTION+' exit ticket: I answered '+stats.att+' of '+stats.total+' checks, and '+stats.corr+' were correct.'];
+  if(stats.missed.length){m.push('','Checks I missed:'); stats.missed.forEach(q=>m.push('- Check '+q._num+' ('+q.dataset.title+')'));}
+  if(stats.unanswered.length){m.push('','Not answered yet: Checks '+stats.unanswered.map(q=>q._num).join(', '));}
+  if(store.dz.length){m.push('','Desmos issues I ran into:'); store.dz.forEach(s=>m.push('- '+s));}
+  const qt=stuQuestion.value.trim();
+  if(store.help==='question'){m.push('','I went back to the notes and still have a question:',qt||'[Type your question above]');}
+  else if(store.help==='zoom'){m.push('','I would like a quick 10 to 15 minute Zoom meeting.'); if(qt)m.push('Times that work for me: '+qt);}
+  else { m.push('','No help needed right now. I am just sharing my results.'); if(qt)m.push('',qt); }
+  m.push('','Thank you,',stuName.value.trim()||'[Your name]');
+  return m.join('\n');
+}
+function stats(){
+  const att=QS.filter(q=>store.ans[q._qid]!==undefined&&store.ok[q._qid]!==undefined);
+  const corr=att.filter(q=>store.ok[q._qid]===1).length;
+  return {total:QS.length,att:att.length,corr:corr,missed:att.filter(q=>store.ok[q._qid]!==1),unanswered:QS.filter(q=>!att.includes(q))};
+}
+function updateResults(){
+  if(!ready)return;
+  const s=stats();
+  if(s.att===0){ resLine.textContent=resInit; }
+  else {
+    let t='You answered '+s.att+' of '+s.total+' checks. '+s.corr+' were correct.';
+    if(s.missed.length)t+=' Missing a few on a first try is normal. A second look at the places below usually clears it up.';
+    else if(s.att===s.total)t+=' You are ready for the Section '+SECTION+' homework.';
+    resLine.textContent=t;
+  }
+  gbList.innerHTML='';
+  s.missed.forEach(q=>{const li=document.createElement('li'); li.textContent='Check '+q._num+' ('+q.dataset.title+'): '+q.dataset.review; gbList.appendChild(li);});
+  gbWrap.hidden=!s.missed.length;
+  if(s.att>0&&s.unanswered.length){unans.hidden=false; unans.textContent='Not answered yet: Checks '+s.unanswered.map(q=>q._num).join(', ')+'.';}
+  else {unans.hidden=true; unans.textContent='';}
+  outText.textContent=buildMessage(s);
+}
+function status(cls,text){copyStatus.className='feedback '+cls; copyStatus.textContent=text;}
+function needsQuestion(){
+  if(store.help==='question'&&!stuQuestion.value.trim()){
+    status('almost','Please type your question in the box above first, so Matt knows what to look at.');
+    stuQuestion.focus(); return true;
+  }
+  return false;
+}
+$('#copy-btn').addEventListener('click',async()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const text=outText.textContent; let ok=false;
+  try{ if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text); ok=true;} }catch(e){}
+  if(!ok){
+    try{ const ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.left='-9999px'; document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy'); ta.remove(); }catch(e){}
+  }
+  if(ok)status('good','Copied. Paste it into an email to mread@kish.edu or a D2L message to Matt.');
+  else{ const d=outText.closest('details'); if(d)d.open=true; outText.focus(); status('almost','Your browser blocked copying. Open "See the message," select the text, and copy it with Ctrl+C (Cmd+C on a Mac).'); }
+});
+$('#mailto-btn').addEventListener('click',()=>{
+  if(needsQuestion())return;
+  updateResults();
+  const href='mailto:mread@kish.edu?subject='+encodeURIComponent('Math 150 Section '+SECTION+' exit ticket')+'&body='+encodeURIComponent(outText.textContent);
+  status('info','Opening your email app. If nothing opens, use Copy message instead.');
+  window.location.href=href;
+});
+$('#print-btn').addEventListener('click',()=>window.print());
+let resetPending=false; const resetBtn=$('#reset-btn');
+resetBtn.addEventListener('click',()=>{
+  if(!resetPending){resetPending=true; resetBtn.textContent='Click again to clear everything'; status('almost','This clears every answer on this page. Click again to start over.'); return;}
+  resetPending=false; resetBtn.textContent='Start over';
+  const theme=store.theme; store=blank(); store.theme=theme; save();
+  QS.forEach(q=>{ $$('input',q).forEach(i=>{if(i.type==='radio')i.checked=false; else i.value='';}); q._fb.textContent=''; q._fb.className='feedback'; });
+  dzChecks.forEach(cb=>{cb.checked=false;}); helpRadios.forEach(r=>{r.checked=false;});
+  stuName.value=''; stuQuestion.value='';
+  updateDz(); updateProgress(); updateResults();
+  status('info','Cleared. You can start again from Section 2.');
+});
+
+/* ---------- navigation and progress ---------- */
+const secs=$$('main > section'), navBtns=$$('nav button[data-target]');
+const overall=$('#overall'), overallText=$('#overall-text');
+function updateProgress(){
+  const n=store.done.filter(id=>secs.some(s=>s.id===id)).length;
+  overall.max=secs.length; overall.value=n; overallText.textContent=n+' of '+secs.length;
+  $$('.mark').forEach(b=>{const d=store.done.includes(b.dataset.sec); b.textContent=d?'✓ Marked complete. Click to undo.':'Mark this section complete'; b.setAttribute('aria-pressed',d?'true':'false');});
+  navBtns.forEach(b=>{const m=$('.donemark',b); if(m)m.textContent=store.done.includes(b.dataset.target)?' (complete)':'';});
+}
+function go(id,focus){
+  secs.forEach(s=>{s.hidden=s.id!==id;});
+  navBtns.forEach(b=>{ if(b.dataset.target===id)b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current'); });
+  if(id==='s6')updateResults();
+  if(focus){ const h=$('#'+id+' h2'); if(h)h.focus(); window.scrollTo(0,0); }
+}
+navBtns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target,true)));
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go,true)));
+$$('.mark').forEach(b=>b.addEventListener('click',()=>{const i=store.done.indexOf(b.dataset.sec); if(i>=0)store.done.splice(i,1); else store.done.push(b.dataset.sec); save(); updateProgress();}));
+
+/* ---------- theme ---------- */
+const themeBtn=$('#theme');
+function applyTheme(){
+  const dark=store.theme?store.theme==='dark':(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  root.dataset.theme=dark?'dark':'light';
+  themeBtn.setAttribute('aria-pressed',dark?'true':'false');
+}
+themeBtn.addEventListener('click',()=>{store.theme=root.dataset.theme==='dark'?'light':'dark'; save(); applyTheme();});
+
+ready=true;
+go(secs[0].id,false); updateProgress(); updateResults(); applyTheme();
+window.addEventListener('beforeprint',()=>{secs.forEach(s=>{s.hidden=false;});});
+window.addEventListener('afterprint',()=>{const cur=navBtns.find(b=>b.hasAttribute('aria-current')); go(cur?cur.dataset.target:'s1',false);});
+})();
+
+</script>
+</body>
+</html>
